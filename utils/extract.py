@@ -1,3 +1,7 @@
+def prune_all(data: list[dict], d_type):
+    return (prune(record, d_type) for record in data)
+    
+
 def prune(data, d_type):
     if d_type == "artist":
         return {
