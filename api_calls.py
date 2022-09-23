@@ -1,6 +1,7 @@
 import spotipy
 import pandas as pd
 import json
+from typing import Collection
 from spotipy.oauth2 import SpotifyClientCredentials
 from dotenv import load_dotenv
 from artist_urls import URLS
@@ -28,20 +29,23 @@ def fetch_and_prune_artist(url: str) -> dict:
         "artist_uri": artist["uri"]
     }
 
-
+def create_artists_df(all_artists: Collection[dict]) -> pd.DataFrame:
+    """
+    this function will go through pruned JSON responses and populate a dict with all the values.
+    NOTE: this will be used to create a pandas DataFrame later.
+    """
+    artists = dict()
+    for artist in all_artists:
+        for key in artist:
+            if key not in artists: # add the field name if not already there
+                artists[key] = []
+            artists[key].append(artist[key]) # add this artist's info to the list for each field
+    
+    return pd.DataFrame(artists)
+    
+    
 # take each artist URL and make a pruned version of the JSON response for each.
 pruned_artists = map(lambda url: fetch_and_prune_artist(url), URLS)
-
-# go through those pruned JSON responses and populate a dict with all the values.
-# NOTE: this will be used to create a pandas DataFrame later.
-artists = dict()
-for artist in pruned_artists:
-    for key in artist:
-        if key not in artists: # add the field name if not already there
-            artists[key] = []
-        artists[key].append(artist[key]) # add this artist's info to the list for each field
-        
-
-df = pd.DataFrame(artists)
-print(df)
-
+# make the artists DataFrame.
+artists = create_artists_df(pruned_artists)
+print(artists)
