@@ -9,6 +9,7 @@ pandas = "*"
 matplotlib = "*"
 jupyter = "*"
 spotipy = "*"
+python-dotenv = "*"
 
 [dev-packages]
 
