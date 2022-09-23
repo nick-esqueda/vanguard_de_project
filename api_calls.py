@@ -5,6 +5,7 @@ from typing import Iterable
 from spotipy.oauth2 import SpotifyClientCredentials
 from dotenv import load_dotenv
 from artist_urls import URLS
+from utils.extract import prune
 load_dotenv()
 
 
@@ -18,17 +19,7 @@ spot = spotipy.Spotify(auth_manager=auth_manager)
 # ARTISTS --------------
 def fetch_and_prune_artist(url: str) -> dict:
     artist = spot.artist(url)
-    return {
-        "artist_id": artist["id"],
-        "artist_name": artist["name"],
-        "external_url": artist["external_urls"]["spotify"],
-        "genre": artist["genres"][0],
-        "image_url": artist["images"][0]["url"],
-        "followers": artist["followers"]["total"],
-        "popularity": artist["popularity"],
-        "type": artist["type"],
-        "artist_uri": artist["uri"]
-    }
+    return prune(artist)
 
     
 # # take each artist URL and make a pruned version of the each artist.
@@ -39,17 +30,7 @@ def fetch_and_prune_artist(url: str) -> dict:
 
 # ALBUMS ---------------
 def prune_album(album):
-    return {
-        "album_id": album["id"],
-        "album_name": album["name"],
-        "external_url": album["external_urls"]["spotify"],
-        "image_url": album["images"][0]["url"],
-        "release_date": album["release_date"],
-        "total_tracks": album["total_tracks"],
-        "type": album["type"],
-        "album_uri": album["uri"],
-        "artist_id": album["artists"][0]["id"]
-    }
+    pass
     
 def fetch_and_prune_albums(url: str) -> list[dict]:
     """
@@ -75,17 +56,7 @@ def fetch_and_prune_albums(url: str) -> list[dict]:
 
 # ALBUM TRACKS ---------
 def prune_track(track, album_id):
-    return {
-        "track_id": track["id"],
-        "song_name": track["name"],
-        "external_url": track["external_urls"]["spotify"],
-        "duration_ms":  track["duration_ms"],
-        "explicit": track["explicit"],
-        "disc_number": track["track_number"],
-        "type": track["type"],
-        "song_uri": track["uri"],
-        "album_id": album_id
-    }
+    pass
 
 def fetch_and_prune_tracks(album_id: str) -> list[dict]:
     """
@@ -109,21 +80,9 @@ def fetch_and_prune_tracks(album_id: str) -> list[dict]:
 # tracks_df.to_csv("data/tracks.csv")
 
 
-# ALBUM TRACKS ---------
+# TRACK FEATURES -------
 def prune_track_features(track):
-    return {
-        "track_id": track["id"],
-        "danceability": track["danceability"],
-        "energy": track["energy"],
-        "instrumentalness": track["instrumentalness"],
-        "liveness": track["liveness"],
-        "loudness": track["loudness"],
-        "speechiness": track["speechiness"],
-        "tempo": track["tempo"],
-        "type": track["type"],
-        "valence": track["valence"],
-        "song_uri": track["uri"],
-    }
+    pass
 
 def fetch_and_prune_track_features(track_ids):
     offset = 0
@@ -139,7 +98,7 @@ def fetch_and_prune_track_features(track_ids):
     return [prune_track_features(track) for track in track_features if track is not None]
     
 
-tracks_df = pd.read_csv("data/tracks.csv")
-pruned_track_features = fetch_and_prune_track_features(tracks_df["track_id"])
-track_features_df = pd.DataFrame(pruned_track_features)
-track_features_df.to_csv("data/track_features.csv")
+# tracks_df = pd.read_csv("data/tracks.csv")
+# pruned_track_features = fetch_and_prune_track_features(tracks_df["track_id"])
+# track_features_df = pd.DataFrame(pruned_track_features)
+# track_features_df.to_csv("data/track_features.csv")
