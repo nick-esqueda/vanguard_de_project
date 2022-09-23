@@ -20,7 +20,6 @@ spot = spotipy.Spotify(auth_manager=auth_manager)
 def fetch_artists(urls: list[str]) -> dict:
     return (spot.artist(url) for url in urls)
 
-# # take each artist URL and make a pruned version of the each artist.
 # artists = fetch_artists(URLS)
 # pruned_artists = prune_all(artists, "artist")
 
@@ -46,7 +45,6 @@ def fetch_artists_albums(urls: list[str]) -> list[dict]:
             albums += response["items"]
     return albums
 
-# # take each artist URL and make a pruned version of all of the albums for each.
 # albums = fetch_artists_albums(URLS)
 # all_pruned_albums = prune_all(albums, "album")
 
@@ -81,20 +79,17 @@ def fetch_tracks(album_ids: list[str]) -> list[dict]:
     return tracks
     
     
-albums_df = pd.read_csv("data/albums.csv")
-tracks = fetch_tracks(albums_df["album_id"])
-all_pruned_tracks = prune_all(tracks, "track")
+# albums_df = pd.read_csv("data/albums.csv")
+# tracks = fetch_tracks(albums_df["album_id"])
+# all_pruned_tracks = prune_all(tracks, "track")
 
-tracks_df = pd.DataFrame(all_pruned_tracks)
-tracks_df.to_csv("data/tracks.csv")
+# tracks_df = pd.DataFrame(all_pruned_tracks)
+# tracks_df.to_csv("data/tracks.csv")
 
 
 
 # TRACK FEATURES -------
-def prune_track_features(track):
-    pass
-
-def fetch_and_prune_track_features(track_ids):
+def fetch_track_features(track_ids):
     offset = 0
     track_features = []
     tracks = track_ids[0:100]
@@ -103,12 +98,12 @@ def fetch_and_prune_track_features(track_ids):
         track_features += response
         offset += 100
         tracks = track_ids[offset:offset + 100]
-    
-    # some tracks are coming back with None in the response, so need to filter those out.
-    return [prune_track_features(track) for track in track_features if track is not None]
-    
+    return track_features
 
-# tracks_df = pd.read_csv("data/tracks.csv")
-# pruned_track_features = fetch_and_prune_track_features(tracks_df["track_id"])
-# track_features_df = pd.DataFrame(pruned_track_features)
-# track_features_df.to_csv("data/track_features.csv")
+
+tracks_df = pd.read_csv("data/tracks.csv")
+track_features = fetch_track_features(tracks_df["track_id"])
+pruned_track_features = prune_all(track_features)
+
+track_features_df = pd.DataFrame(pruned_track_features)
+track_features_df.to_csv("data/track_features.csv")

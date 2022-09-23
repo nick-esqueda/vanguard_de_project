@@ -1,5 +1,7 @@
 def prune_all(data: list[dict], d_type):
-    return (prune(record, d_type) for record in data)
+    # some data might come back with None in the response, so need to filter those out.
+    # (track_features were doing this)
+    return (prune(record, d_type) for record in data if data is not None)
     
 
 def prune(data, d_type): # album_id for tracks (need to get it from previously queried albums)
@@ -29,7 +31,7 @@ def prune(data, d_type): # album_id for tracks (need to get it from previously q
             "artist_id": data["artists"][0]["id"]
         }
         
-    elif d_type == "track": # OG prune_track() took in an album_id param
+    elif d_type == "track":
         return {
             "track_id": data["id"],
             "song_name": data["name"],
@@ -39,7 +41,7 @@ def prune(data, d_type): # album_id for tracks (need to get it from previously q
             "disc_number": data["track_number"],
             "type": data["type"],
             "song_uri": data["uri"],
-            "album_id": data["album_id"] # this is a problem?
+            "album_id": data["album_id"]
         }
         
     elif d_type == "track_features":
