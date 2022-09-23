@@ -33,8 +33,8 @@ def fetch_and_prune_artist(url: str) -> dict:
     
 # # take each artist URL and make a pruned version of the each artist.
 # pruned_artists = map(lambda url: fetch_and_prune_artist(url), URLS)
-# artists = pd.DataFrame(pruned_artists)
-# print(artists)
+# artists_df = pd.DataFrame(pruned_artists)
+# artists_df.to_csv("data/artists.csv")
 
 
 # ALBUMS ---------------
@@ -56,26 +56,24 @@ def fetch_and_prune_albums(url: str) -> list[dict]:
     this function will take in 1 artist url, and fetch all of the artist's albums.
     then, it will prune each of those albums down and return an iterable of those albums.
     """
-    response = spot.artist_albums(url, limit=50)
+    response = spot.artist_albums(url, limit=50, country="US")
     albums = response["items"]
     offset = 0
     while response["next"]: # while there is a next page, request it, then add the new albums from that new page.
         offset += 50
-        response = spot.artist_albums(url, limit=50, offset=offset)
+        response = spot.artist_albums(url, limit=50, offset=offset, country="US")
         albums += response["items"]
         
     return [prune_album(album) for album in albums] # [{}, {}, {}]
     
     
 # # take each artist URL and make a pruned version of all of the albums for each.
-# all_pruned_albums = [album for url in URLS for album in fetch_and_prune_albums(url)] # nested comprehension to flatten the albums to one level.
-# albums = pd.DataFrame(all_pruned_albums)
-# print(albums)
+# all_pruned_albums = (album for url in URLS for album in fetch_and_prune_albums(url)) # nested generator comprehension to flatten the albums to one level.
+# albums_df = pd.DataFrame(all_pruned_albums)
+# albums_df.to_csv("data/albums.csv") # send the albums DF to a .csv to temporarily cut down on queries during testing.
 
 
 # ALBUM TRACKS ---------
-
-# have to loop through every single album id and run the query for every one of those albums.
 def prune_track(track, album_id):
     return {
         "track_id": track["id"],
@@ -94,15 +92,18 @@ def fetch_and_prune_tracks(album_id: str) -> list[dict]:
     this function will take in 1 album album_id, and fetch all of the album's songs.
     then, it will prune each of those songs down and return an iterable of those songs.
     """
-    response = spot.album_tracks(album_id, limit=50)
+    response = spot.album_tracks(album_id, limit=50, market="US")
     tracks = response["items"]
     offset = 0
     while response["next"]: # while there is a next page, request it, then add the new tracks from that new page.
         offset += 50
-        response = spot.album_tracks(album_id, limit=50, offset=offset)
+        response = spot.album_tracks(album_id, limit=50, offset=offset, market="US")
         tracks += response["items"]
         
     return [prune_track(track, album_id) for track in tracks] # [{}, {}, {}]
     
-tracks = fetch_and_prune_tracks("0drWek4H5NfTa2BWAFA3iB")
-print(json.dumps(tracks, indent=2))
+    
+albums_df = pd.read_csv("data/albums.csv")
+all_pruned_tracks = (track for id in albums_df["album_id"] for track in fetch_and_prune_tracks(id)) # nested generator comprehension to flatten the tracks to one level.
+tracks_df = pd.DataFrame(all_pruned_tracks)
+tracks_df.to_csv("data/tracks.csv")
