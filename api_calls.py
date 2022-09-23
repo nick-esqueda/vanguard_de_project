@@ -103,7 +103,7 @@ def fetch_track_features(track_ids):
 
 tracks_df = pd.read_csv("data/tracks.csv")
 track_features = fetch_track_features(tracks_df["track_id"])
-pruned_track_features = prune_all(track_features)
+pruned_track_features = prune_all(track_features, "track_features")
 
 track_features_df = pd.DataFrame(pruned_track_features)
 track_features_df.to_csv("data/track_features.csv")
