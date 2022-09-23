@@ -53,7 +53,7 @@ def create_artists_df(all_artists: Iterable[dict]) -> pd.DataFrame:
 
 
 # ALBUMS ----------------------------------------
-def fetch_and_prune_albums(url: str) -> dict:
+def fetch_and_prune_albums(url: str) -> list[dict]:
     """
     this function will take in 1 artist url, and fetch all of the artist's albums.
     then, it will prune each of those albums down and return an iterable of those albums.
@@ -80,11 +80,24 @@ def fetch_and_prune_albums(url: str) -> dict:
         response = spot.artist_albums(url, limit=50, offset=offset)
         albums += response["items"]
         
-    pruned_albums = map(lambda album: prune(album), albums) # map[{}, {}, {}]
-    return pruned_albums
+    return [prune(album) for album in albums] # [{}, {}, {}]
     
     
-test = fetch_and_prune_albums(URLS[0])
-print(json.dumps(list(test), indent=2)) 
-
-# pruned_albums = map(lambda url: fetch_and_prune_albums(url), URLS)
+def create_albums_df(all_albums: Iterable[dict]) -> pd.DataFrame:
+    """
+    this function will go through pruned JSON responses and populate a dict with all the values.
+    NOTE: this will be used to create a pandas DataFrame later.
+    """
+    albums = dict()
+    for artist in all_albums:
+        for key in artist:
+            if key not in albums: # add the field name if not already there
+                albums[key] = []
+            albums[key].append(artist[key]) # add this artist's info to the list for each field
+    
+    return pd.DataFrame(albums)
+    
+    
+all_pruned_albums = [album for url in URLS for album in fetch_and_prune_albums(url)]
+albums = create_albums_df(all_pruned_albums)
+print(albums)
