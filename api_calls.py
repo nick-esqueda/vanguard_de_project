@@ -111,22 +111,35 @@ def fetch_and_prune_tracks(album_id: str) -> list[dict]:
 
 # ALBUM TRACKS ---------
 def prune_track_features(track):
-    pass
+    return {
+        "track_id": track["id"],
+        "danceability": track["danceability"],
+        "energy": track["energy"],
+        "instrumentalness": track["instrumentalness"],
+        "liveness": track["liveness"],
+        "loudness": track["loudness"],
+        "speechiness": track["speechiness"],
+        "tempo": track["tempo"],
+        "type": track["type"],
+        "valence": track["valence"],
+        "song_uri": track["uri"],
+    }
 
-def fetch_and_prune_track_features(track_ids: pd.Series):
+def fetch_and_prune_track_features(track_ids):
     offset = 0
-    track_features = [] # for un-pruned track features
+    track_features = []
     tracks = track_ids[0:100]
-    while tracks:
+    while len(tracks) > 0: # change to "while track" and pass in an array for param?
         response = spot.audio_features(tracks=tracks) # [{}, {}, {}]
         track_features += response
         offset += 100
         tracks = track_ids[offset:offset + 100]
-        
-    return [prune_track_features(track) for track in track_features]
+    
+    # some tracks are coming back with None in the response, so need to filter those out.
+    return [prune_track_features(track) for track in track_features if track is not None]
     
 
 tracks_df = pd.read_csv("data/tracks.csv")
 pruned_track_features = fetch_and_prune_track_features(tracks_df["track_id"])
 track_features_df = pd.DataFrame(pruned_track_features)
-track_features_df.to_csv("data/track_features")
+track_features_df.to_csv("data/track_features.csv")
