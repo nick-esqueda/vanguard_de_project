@@ -103,7 +103,30 @@ def fetch_and_prune_tracks(album_id: str) -> list[dict]:
     return [prune_track(track, album_id) for track in tracks] # [{}, {}, {}]
     
     
-albums_df = pd.read_csv("data/albums.csv")
-all_pruned_tracks = (track for id in albums_df["album_id"] for track in fetch_and_prune_tracks(id)) # nested generator comprehension to flatten the tracks to one level.
-tracks_df = pd.DataFrame(all_pruned_tracks)
-tracks_df.to_csv("data/tracks.csv")
+# albums_df = pd.read_csv("data/albums.csv")
+# all_pruned_tracks = (track for id in albums_df["album_id"] for track in fetch_and_prune_tracks(id)) # nested generator comprehension to flatten the tracks to one level.
+# tracks_df = pd.DataFrame(all_pruned_tracks)
+# tracks_df.to_csv("data/tracks.csv")
+
+
+# ALBUM TRACKS ---------
+def prune_track_features(track):
+    pass
+
+def fetch_and_prune_track_features(track_ids: pd.Series):
+    offset = 0
+    track_features = [] # for un-pruned track features
+    tracks = track_ids[0:100]
+    while tracks:
+        response = spot.audio_features(tracks=tracks) # [{}, {}, {}]
+        track_features += response
+        offset += 100
+        tracks = track_ids[offset:offset + 100]
+        
+    return [prune_track_features(track) for track in track_features]
+    
+
+tracks_df = pd.read_csv("data/tracks.csv")
+pruned_track_features = fetch_and_prune_track_features(tracks_df["track_id"])
+track_features_df = pd.DataFrame(pruned_track_features)
+track_features_df.to_csv("data/track_features")
