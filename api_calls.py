@@ -1,9 +1,11 @@
 import spotipy
-from spotipy.oauth2 import SpotifyClientCredentials
+import pandas as pd
 import json
-from artist_urls import URLS
+from spotipy.oauth2 import SpotifyClientCredentials
 from dotenv import load_dotenv
+from artist_urls import URLS
 load_dotenv()
+
 
 # API SETUP #####################################
 auth_manager = SpotifyClientCredentials()
@@ -11,6 +13,7 @@ spot = spotipy.Spotify(auth_manager=auth_manager)
 
 
 # REQUESTS ######################################
+# ARTISTS 
 def fetch_and_prune_artist(url: str) -> dict:
     artist = spot.artist(url)
     return {
@@ -38,4 +41,7 @@ for artist in pruned_artists:
             artists[key] = []
         artists[key].append(artist[key]) # add this artist's info to the list for each field
         
-print(json.dumps(artists, indent=2))
+
+df = pd.DataFrame(artists)
+print(df)
+
