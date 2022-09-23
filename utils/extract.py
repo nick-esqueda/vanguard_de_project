@@ -2,7 +2,7 @@ def prune_all(data: list[dict], d_type):
     return (prune(record, d_type) for record in data)
     
 
-def prune(data, d_type):
+def prune(data, d_type): # album_id for tracks (need to get it from previously queried albums)
     if d_type == "artist":
         return {
             "artist_id": data["id"],
@@ -39,7 +39,7 @@ def prune(data, d_type):
             "disc_number": data["track_number"],
             "type": data["type"],
             "song_uri": data["uri"],
-            "album_id": album_id # this is a problem
+            "album_id": data["album_id"] # this is a problem?
         }
         
     elif d_type == "track_features":

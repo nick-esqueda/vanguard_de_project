@@ -46,39 +46,47 @@ def fetch_artists_albums(urls: list[str]) -> list[dict]:
             albums += response["items"]
     return albums
 
-# take each artist URL and make a pruned version of all of the albums for each.
-albums = fetch_artists_albums(URLS)
-all_pruned_albums = prune_all(albums, "album")
+# # take each artist URL and make a pruned version of all of the albums for each.
+# albums = fetch_artists_albums(URLS)
+# all_pruned_albums = prune_all(albums, "album")
 
-albums_df = pd.DataFrame(all_pruned_albums)
-albums_df.to_csv("data/albums.csv") # send the albums DF to a .csv to temporarily cut down on queries during testing.
+# albums_df = pd.DataFrame(all_pruned_albums)
+# albums_df.to_csv("data/albums.csv") # send the albums DF to a .csv to temporarily cut down on queries during testing.
 
 
 
 # ALBUM TRACKS ---------
-def prune_track(track, album_id):
-    pass
+def add_album_id(tracks, album_id):
+    for track in tracks: # put the album_id on each track.
+        track["album_id"] = album_id
 
-def fetch_and_prune_tracks(album_id: str) -> list[dict]:
+def fetch_tracks(album_ids: list[str]) -> list[dict]:
     """
     this function will take in 1 album album_id, and fetch all of the album's songs.
     then, it will prune each of those songs down and return an iterable of those songs.
     """
-    response = spot.album_tracks(album_id, limit=50, market="US")
-    tracks = response["items"]
-    offset = 0
-    while response["next"]: # while there is a next page, request it, then add the new tracks from that new page.
-        offset += 50
-        response = spot.album_tracks(album_id, limit=50, offset=offset, market="US")
+    tracks = [] # try not to use extra space! maybe map instead or something
+    for id in album_ids:
+        response = spot.album_tracks(id, limit=50, market="US")
+        add_album_id(response["items"], id)
         tracks += response["items"]
         
-    return [prune_track(track, album_id) for track in tracks] # [{}, {}, {}]
+        offset = 0
+        while response["next"]: # while there is a next page, request it, then add the new tracks from that new page.
+            offset += 50
+            response = spot.album_tracks(id, limit=50, offset=offset, market="US")
+            add_album_id(response["items"], id)
+            tracks += response["items"]
+        
+    return tracks
     
     
-# albums_df = pd.read_csv("data/albums.csv")
-# all_pruned_tracks = (track for id in albums_df["album_id"] for track in fetch_and_prune_tracks(id)) # nested generator comprehension to flatten the tracks to one level.
-# tracks_df = pd.DataFrame(all_pruned_tracks)
-# tracks_df.to_csv("data/tracks.csv")
+albums_df = pd.read_csv("data/albums.csv")
+tracks = fetch_tracks(albums_df["album_id"])
+all_pruned_tracks = prune_all(tracks, "track")
+
+tracks_df = pd.DataFrame(all_pruned_tracks)
+tracks_df.to_csv("data/tracks.csv")
 
 
 
