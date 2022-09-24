@@ -55,14 +55,11 @@ def fetch_artists_albums(urls: Iterable[str]) -> list[dict]:
             
     return albums
 
-albums = fetch_artists_albums(URLS)
-all_pruned_albums = prune_all(albums, "album")
+# albums = fetch_artists_albums(URLS)
+# all_pruned_albums = prune_all(albums, "album")
 
-albums_df = pd.DataFrame(all_pruned_albums)
-albums_df.to_csv("data/albums.csv") # send the albums DF to a .csv to temporarily cut down on queries during testing.
-
-# a = spot.artist_albums("https://open.spotify.com/artist/3YLUvWzk9eBm1WrHFlZxM4?si=DdbVig84TCOYOpfhzkvOTw", limit=50)
-# print(json.dumps(a, indent=2))
+# albums_df = pd.DataFrame(all_pruned_albums)
+# albums_df.to_csv("data/albums.csv") # send the albums DF to a .csv to temporarily cut down on queries during testing.
 
 
 
