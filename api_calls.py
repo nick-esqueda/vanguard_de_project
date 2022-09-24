@@ -1,11 +1,11 @@
 import spotipy
 import pandas as pd
 import json
-from typing import Iterable, Iterator
+from typing import Iterable, Iterator, Literal
 from spotipy.oauth2 import SpotifyClientCredentials
 from dotenv import load_dotenv
 from artist_urls import URLS
-from utils.extract import prune_all
+from utils.extract import prune_all, add_id
 load_dotenv()
 
 
@@ -40,13 +40,19 @@ def fetch_artists_albums(urls: Iterable[str]) -> list[dict]:
     """
     albums = []
     for url in urls:
+        id = url.split('/')[-1].split('?')[0]  
+        
         response = spot.artist_albums(url, limit=50, country="US")
+        add_id(response["items"], id, "artist_id")
         albums += response["items"]
+        
         offset = 0
         while response["next"]: # while there is a next page, request it, then add the new albums from that new page.
             offset += 50
             response = spot.artist_albums(url, limit=50, offset=offset, country="US")
+            add_id(response["items"], id, "artist_id")
             albums += response["items"]
+            
     return albums
 
 # albums = fetch_artists_albums(URLS)
@@ -58,13 +64,6 @@ def fetch_artists_albums(urls: Iterable[str]) -> list[dict]:
 
 
 # ALBUM TRACKS ---------
-def add_album_id(tracks: Iterable[dict], album_id: str) -> None:
-    """
-    mutates each of the given albums, adding an "album_id" key on it. 
-    """
-    for track in tracks:
-        track["album_id"] = album_id
-
 def fetch_tracks(album_ids: Iterable[str]) -> list[dict]:
     """
     takes in an iterable of album ids, and fetches every song for each of those albums from the Spotify API.
@@ -73,14 +72,14 @@ def fetch_tracks(album_ids: Iterable[str]) -> list[dict]:
     tracks = []
     for id in album_ids:
         response = spot.album_tracks(id, limit=50, market="US")
-        add_album_id(response["items"], id)
+        add_id(response["items"], id, "album_id")
         tracks += response["items"]
         
         offset = 0
         while response["next"]: # while there is a next page, request it, then add the new tracks from that new page.
             offset += 50
             response = spot.album_tracks(id, limit=50, offset=offset, market="US")
-            add_album_id(response["items"], id)
+            add_id(response["items"], id, "album_id")
             tracks += response["items"]
         
     return tracks

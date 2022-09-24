@@ -1,4 +1,4 @@
-from typing import Iterator, Literal
+from typing import Iterable, Iterator, Literal
 
 
 def prune_all(data: list[dict], d_type: Literal["artist", "album", "track", "track_features"]) -> Iterator[dict]:
@@ -38,8 +38,10 @@ def prune(data: dict, d_type: Literal["artist", "album", "track", "track_feature
             "release_date": data["release_date"],
             "total_tracks": data["total_tracks"],
             "type": data["type"],
+            "album_group": data["album_group"],
+            "album_type": data["album_type"],
             "album_uri": data["uri"],
-            "artist_id": data["artists"][0]["id"]
+            "artist_id": data["artist_id"]
         }
         
     elif d_type == "track":
@@ -73,3 +75,10 @@ def prune(data: dict, d_type: Literal["artist", "album", "track", "track_feature
     else:
         raise Exception("invalid data type. valid types: ['artist', 'album', 'track', 'track_features']")
         
+        
+def add_id(data: Iterable[dict], id: str, id_type: Literal["artist_id", "album_id"]) -> None:
+    """
+    mutates each of the given records, adding a property to it with the "id_type" as the key and "id" as the value.
+    """
+    for record in data:
+        record[id_type] = id
