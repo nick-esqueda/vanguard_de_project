@@ -2,12 +2,20 @@ from typing import Generator, Literal
 
 
 def prune_all(data: list[dict], d_type: Literal["artist", "album", "track", "track_features"]) -> Generator[dict]:
+    """
+    takes in a list of JSON responses (as dictionaries) and prunes out the relevant information for each of them, 
+    returning a generator that returns the pruned data on each iteration.
+    a "d_type" must be specified to prune out the correct information.
+    """
     # some data might come back with None in the response, so need to filter those out.
-    # (track_features were doing this)
     return (prune(record, d_type) for record in data if record is not None)
     
 
 def prune(data: dict, d_type: Literal["artist", "album", "track", "track_features"]):
+    """
+    takes in a JSON response dictionary and prunes out the relevant information, based on the passed in "d_type".
+    the d_type argument must be one of these values as a string: ["artist", "album", "track", "track_features"].
+    """
     if d_type == "artist":
         return {
             "artist_id": data["id"],

@@ -18,6 +18,10 @@ spot = spotipy.Spotify(auth_manager=auth_manager)
 
 # ARTISTS --------------
 def fetch_artists(urls: Iterable[str]) -> Generator[dict]:
+    """
+    makes a call to the Spotify API to retrieve each artist's data from the passed in iterable. 
+    returns a generator that returns each artist's data on each iteration. 
+    """
     return (spot.artist(url) for url in urls)
 
 # artists = fetch_artists(URLS)
@@ -31,8 +35,8 @@ def fetch_artists(urls: Iterable[str]) -> Generator[dict]:
 # ALBUMS ---------------   
 def fetch_artists_albums(urls: Iterable[str]) -> list[dict]:
     """
-    this function will take in 1 artist url, and fetch all of the artist's albums.
-    then, it will prune each of those albums down and return an iterable of those albums.
+    fetches all of each artist's albums with each artist's url passed in as an iterable. 
+    returns a list of those album's data from the Spotify API.
     """
     albums = [] # try not to use extra space! maybe map instead or something
     for url in urls:
@@ -63,8 +67,8 @@ def add_album_id(tracks: Iterable[dict], album_id: str) -> None:
 
 def fetch_tracks(album_ids: Iterable[str]) -> list[dict]:
     """
-    this function will take in 1 album album_id, and fetch all of the album's songs.
-    then, it will prune each of those songs down and return an iterable of those songs.
+    takes in an iterable of album ids, and fetches every song for each of those albums from the Spotify API.
+    returns a list of each song's data.
     """
     tracks = [] # try not to use extra space! maybe map instead or something
     for id in album_ids:
@@ -93,6 +97,10 @@ def fetch_tracks(album_ids: Iterable[str]) -> list[dict]:
 
 # TRACK FEATURES -------
 def fetch_track_features(track_ids: Iterable[str]) -> list[dict]:
+    """
+    takes in an iterable of track ids and fetches each track's "track features" from the Spotify API. 
+    returns a list of those track features for each track.
+    """
     offset = 0
     track_features = []
     tracks = track_ids[0:100]
