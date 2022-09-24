@@ -1,7 +1,7 @@
 import spotipy
 import pandas as pd
 import json
-from typing import Iterable, Generator
+from typing import Iterable, Iterator
 from spotipy.oauth2 import SpotifyClientCredentials
 from dotenv import load_dotenv
 from artist_urls import URLS
@@ -17,10 +17,10 @@ spot = spotipy.Spotify(auth_manager=auth_manager)
 # REQUESTS ######################################
 
 # ARTISTS --------------
-def fetch_artists(urls: Iterable[str]) -> Generator[dict]:
+def fetch_artists(urls: Iterable[str]) -> Iterator[dict]:
     """
     makes a call to the Spotify API to retrieve each artist's data from the passed in iterable. 
-    returns a generator that returns each artist's data on each iteration. 
+    returns a iterator that returns each artist's data on each iteration. 
     """
     return (spot.artist(url) for url in urls)
 
