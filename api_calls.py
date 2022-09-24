@@ -1,7 +1,7 @@
 import spotipy
 import pandas as pd
 import json
-from typing import Iterable, Generator
+from typing import Iterable, Iterator
 from spotipy.oauth2 import SpotifyClientCredentials
 from dotenv import load_dotenv
 from artist_urls import URLS
@@ -17,10 +17,10 @@ spot = spotipy.Spotify(auth_manager=auth_manager)
 # REQUESTS ######################################
 
 # ARTISTS --------------
-def fetch_artists(urls: Iterable[str]) -> Generator[dict]:
+def fetch_artists(urls: Iterable[str]) -> Iterator[dict]:
     """
     makes a call to the Spotify API to retrieve each artist's data from the passed in iterable. 
-    returns a generator that returns each artist's data on each iteration. 
+    returns a iterator that returns each artist's data on each iteration. 
     """
     return (spot.artist(url) for url in urls)
 
@@ -38,7 +38,7 @@ def fetch_artists_albums(urls: Iterable[str]) -> list[dict]:
     fetches all of each artist's albums with each artist's url passed in as an iterable. 
     returns a list of those album's data from the Spotify API.
     """
-    albums = [] # try not to use extra space! maybe map instead or something
+    albums = []
     for url in urls:
         response = spot.artist_albums(url, limit=50, country="US")
         albums += response["items"]
@@ -62,7 +62,7 @@ def add_album_id(tracks: Iterable[dict], album_id: str) -> None:
     """
     mutates each of the given albums, adding an "album_id" key on it. 
     """
-    for track in tracks: # put the album_id on each track.
+    for track in tracks:
         track["album_id"] = album_id
 
 def fetch_tracks(album_ids: Iterable[str]) -> list[dict]:
@@ -70,7 +70,7 @@ def fetch_tracks(album_ids: Iterable[str]) -> list[dict]:
     takes in an iterable of album ids, and fetches every song for each of those albums from the Spotify API.
     returns a list of each song's data.
     """
-    tracks = [] # try not to use extra space! maybe map instead or something
+    tracks = []
     for id in album_ids:
         response = spot.album_tracks(id, limit=50, market="US")
         add_album_id(response["items"], id)
