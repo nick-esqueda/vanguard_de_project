@@ -1,7 +1,7 @@
 import spotipy
 import pandas as pd
 import json
-from typing import Iterable
+from typing import Iterable, Generator
 from spotipy.oauth2 import SpotifyClientCredentials
 from dotenv import load_dotenv
 from artist_urls import URLS
@@ -17,7 +17,7 @@ spot = spotipy.Spotify(auth_manager=auth_manager)
 # REQUESTS ######################################
 
 # ARTISTS --------------
-def fetch_artists(urls: list[str]) -> dict:
+def fetch_artists(urls: Iterable[str]) -> Generator[dict]:
     return (spot.artist(url) for url in urls)
 
 # artists = fetch_artists(URLS)
@@ -29,7 +29,7 @@ def fetch_artists(urls: list[str]) -> dict:
 
 
 # ALBUMS ---------------   
-def fetch_artists_albums(urls: list[str]) -> list[dict]:
+def fetch_artists_albums(urls: Iterable[str]) -> list[dict]:
     """
     this function will take in 1 artist url, and fetch all of the artist's albums.
     then, it will prune each of those albums down and return an iterable of those albums.
@@ -54,11 +54,14 @@ def fetch_artists_albums(urls: list[str]) -> list[dict]:
 
 
 # ALBUM TRACKS ---------
-def add_album_id(tracks, album_id):
+def add_album_id(tracks: Iterable[dict], album_id: str) -> None:
+    """
+    mutates each of the given albums, adding an "album_id" key on it. 
+    """
     for track in tracks: # put the album_id on each track.
         track["album_id"] = album_id
 
-def fetch_tracks(album_ids: list[str]) -> list[dict]:
+def fetch_tracks(album_ids: Iterable[str]) -> list[dict]:
     """
     this function will take in 1 album album_id, and fetch all of the album's songs.
     then, it will prune each of those songs down and return an iterable of those songs.
@@ -89,21 +92,21 @@ def fetch_tracks(album_ids: list[str]) -> list[dict]:
 
 
 # TRACK FEATURES -------
-def fetch_track_features(track_ids):
+def fetch_track_features(track_ids: Iterable[str]) -> list[dict]:
     offset = 0
     track_features = []
     tracks = track_ids[0:100]
-    while len(tracks) > 0: # change to "while track" and pass in an array for param?
-        response = spot.audio_features(tracks=tracks) # [{}, {}, {}]
+    while len(tracks) > 0:
+        response = spot.audio_features(tracks=tracks)
         track_features += response
         offset += 100
         tracks = track_ids[offset:offset + 100]
     return track_features
 
 
-tracks_df = pd.read_csv("data/tracks.csv")
-track_features = fetch_track_features(tracks_df["track_id"])
-pruned_track_features = prune_all(track_features, "track_features")
+# tracks_df = pd.read_csv("data/tracks.csv")
+# track_features = fetch_track_features(tracks_df["track_id"])
+# pruned_track_features = prune_all(track_features, "track_features")
 
-track_features_df = pd.DataFrame(pruned_track_features)
-track_features_df.to_csv("data/track_features.csv")
+# track_features_df = pd.DataFrame(pruned_track_features)
+# track_features_df.to_csv("data/track_features.csv")

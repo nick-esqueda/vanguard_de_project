@@ -1,10 +1,13 @@
-def prune_all(data: list[dict], d_type):
+from typing import Generator, Literal
+
+
+def prune_all(data: list[dict], d_type: Literal["artist", "album", "track", "track_features"]) -> Generator[dict]:
     # some data might come back with None in the response, so need to filter those out.
     # (track_features were doing this)
     return (prune(record, d_type) for record in data if record is not None)
     
 
-def prune(data, d_type): # album_id for tracks (need to get it from previously queried albums)
+def prune(data: dict, d_type: Literal["artist", "album", "track", "track_features"]):
     if d_type == "artist":
         return {
             "artist_id": data["id"],
