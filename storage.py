@@ -40,8 +40,7 @@ with conn:
     # TRACKS
     curs.execute("""
         CREATE TABLE IF NOT EXISTS tracks (
-            id INTEGER NOT NULL PRIMARY KEY,
-            track_id TEXT NOT NULL,
+            track_id TEXT NOT NULL PRIMARY KEY,
             song_name TEXT NOT NULL,
             external_url TEXT,
             duration_ms INTEGER NOT NULL,
