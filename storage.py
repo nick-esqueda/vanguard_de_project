@@ -9,6 +9,7 @@ with conn:
     # can you use the pandas index as the primary key?
     curs.execute("""
         CREATE TABLE IF NOT EXISTS artists (
+            id INTEGER NOT NULL PRIMARY KEY,
             artist_id TEXT NOT NULL UNIQUE,
             artist_name TEXT NOT NULL,
             external_url TEXT,
@@ -18,11 +19,16 @@ with conn:
             popularity INTEGER,
             type TEXT,
             artist_uri TEXT NOT NULL UNIQUE,
-            
-        )""")
+            PRIMARY KEY (id)
+        );""")
         
+    # albums are not unique, so you'll have multiple album_ids.
+    # this means that album_id cannot be the primary key.
+    # this also means that the tracks' foreign key can't connect to albums.
+    # does having a composite primary key fix this?
     curs.execute("""
         CREATE TABLE IF NOT EXISTS albums (
+            id INTEGER NOT NULL PRIMARY KEY,
             album_id TEXT NOT NULL UNIQUE,
             album_name TEXT NOT NULL,
             external_url TEXT,
@@ -33,11 +39,12 @@ with conn:
             album_group TEXT (do you need this or album_type?),
             album_uri TEXT NOT NULL,
             artist_id TEXT,
-            
-        )""")
+            FOREIGN KEY (artist_id) REFERENCES artists(artist_id)
+        );""")
     
     curs.execute("""
         CREATE TABLE IF NOT EXISTS tracks (
+            id INTEGER NOT NULL PRIMARY KEY,
             track_id TEXT NOT NULL,
             song_name TEXT NOT NULL,
             external_url TEXT,
@@ -47,11 +54,12 @@ with conn:
             type TEXT,
             song_uri TEXT NOT NULL,
             album_id TEXT NOT NULL,
-            
-        )""")
+            FOREIGN KEY (album_id) REFERENCES albums(album_id) !!! DUPLICATES
+        );""")
         
     curs.execute("""
         CREATE TABLE IF NOT EXISTS track_features (
+            id INTEGER NOT NULL PRIMARY KEY,
             track_id TEXT NOT NULL
             danceability REAL
             energy REAL
@@ -64,6 +72,6 @@ with conn:
             valence REAL
             song_uri TEXT NOT NULL
             
-        )""")
+        );""")
         
     
