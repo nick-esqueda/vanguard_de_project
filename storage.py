@@ -69,5 +69,8 @@ with conn:
             FOREIGN KEY (track_id) REFERENCES tracks(track_id)
         );""")
         
-    
+        
+# INSERTING DATA ################################
+
+        
 conn.close()
