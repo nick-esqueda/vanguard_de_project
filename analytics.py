@@ -8,11 +8,15 @@ curs = conn.cursor()
 with conn:
     curs.execute("""
         SELECT 
-            art.artist_name, art.followers, art.popularity,
-            alb.album_id, alb.album_name, alb.release_date
+            art.artist_name, alb.album_name,
+            t.song_name, t.duration_ms,
+            tf.danceability, tf.energy, tf.loudness
         FROM artists art
-        JOIN albums alb ON alb.artist_id = art.artist_id
-        LIMIT 10;
+        JOIN albums alb ON art.artist_id = alb.artist_id
+        JOIN tracks t ON t.album_id = alb.album_id
+        JOIN track_features tf ON tf.track_id = t.track_id
+        WHERE tf.loudness > -3
+        LIMIT 20;
     """)
     
     for r in curs.fetchall():
