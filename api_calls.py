@@ -1,7 +1,7 @@
 import spotipy
 import pandas as pd
 import json
-from typing import Iterable, Iterator, Literal
+from typing import Iterable, Iterator
 from spotipy.oauth2 import SpotifyClientCredentials
 from dotenv import load_dotenv
 from artist_urls import URLS
@@ -24,11 +24,11 @@ def fetch_artists(urls: Iterable[str]) -> Iterator[dict]:
     """
     return (spot.artist(url) for url in urls)
 
-# artists = fetch_artists(URLS)
-# pruned_artists = prune_all(artists, "artist")
+artists = fetch_artists(URLS)
+pruned_artists = prune_all(artists, "artist")
 
-# artists_df = pd.DataFrame(pruned_artists)
-# artists_df.to_csv("data/artists.csv")
+artists_df = pd.DataFrame(pruned_artists)
+artists_df.to_csv("data/artists.csv")
 
 
 
@@ -55,11 +55,11 @@ def fetch_artists_albums(urls: Iterable[str]) -> list[dict]:
             
     return albums
 
-# albums = fetch_artists_albums(URLS)
-# all_pruned_albums = prune_all(albums, "album")
+albums = fetch_artists_albums(URLS)
+all_pruned_albums = prune_all(albums, "album")
 
-# albums_df = pd.DataFrame(all_pruned_albums)
-# albums_df.to_csv("data/albums.csv") # send the albums DF to a .csv to temporarily cut down on queries during testing.
+albums_df = pd.DataFrame(all_pruned_albums)
+albums_df.to_csv("data/albums.csv") # send the albums DF to a .csv to temporarily cut down on queries during testing.
 
 
 
@@ -85,12 +85,12 @@ def fetch_tracks(album_ids: Iterable[str]) -> list[dict]:
     return tracks
     
     
-# albums_df = pd.read_csv("data/albums.csv")
-# tracks = fetch_tracks(albums_df["album_id"])
-# all_pruned_tracks = prune_all(tracks, "track")
+albums_df = pd.read_csv("data/albums.csv")
+tracks = fetch_tracks(albums_df["album_id"])
+all_pruned_tracks = prune_all(tracks, "track")
 
-# tracks_df = pd.DataFrame(all_pruned_tracks)
-# tracks_df.to_csv("data/tracks.csv")
+tracks_df = pd.DataFrame(all_pruned_tracks)
+tracks_df.to_csv("data/tracks.csv")
 
 
 
@@ -111,9 +111,9 @@ def fetch_track_features(track_ids: Iterable[str]) -> list[dict]:
     return track_features
 
 
-# tracks_df = pd.read_csv("data/tracks.csv")
-# track_features = fetch_track_features(tracks_df["track_id"])
-# pruned_track_features = prune_all(track_features, "track_features")
+tracks_df = pd.read_csv("data/tracks.csv")
+track_features = fetch_track_features(tracks_df["track_id"])
+pruned_track_features = prune_all(track_features, "track_features")
 
-# track_features_df = pd.DataFrame(pruned_track_features)
-# track_features_df.to_csv("data/track_features.csv")
+track_features_df = pd.DataFrame(pruned_track_features)
+track_features_df.to_csv("data/track_features.csv")
