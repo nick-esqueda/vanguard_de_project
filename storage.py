@@ -6,11 +6,10 @@ curs = conn.cursor()
 
 # CREATE TABLES #################################
 with conn:
-    # can you use the pandas index as the primary key?
+    # ARTISTS
     curs.execute("""
         CREATE TABLE IF NOT EXISTS artists (
-            id INTEGER NOT NULL PRIMARY KEY,
-            artist_id TEXT NOT NULL UNIQUE,
+            artist_id TEXT NOT NULL PRIMARY KEY,
             artist_name TEXT NOT NULL,
             external_url TEXT,
             genre TEXT,
@@ -18,30 +17,26 @@ with conn:
             followers INTEGER,
             popularity INTEGER,
             type TEXT,
-            artist_uri TEXT NOT NULL UNIQUE,
-            PRIMARY KEY (id)
+            artist_uri TEXT NOT NULL UNIQUE
         );""")
         
-    # albums are not unique, so you'll have multiple album_ids.
-    # this means that album_id cannot be the primary key.
-    # this also means that the tracks' foreign key can't connect to albums.
-    # does having a composite primary key fix this?
+    # ALBUMS
     curs.execute("""
         CREATE TABLE IF NOT EXISTS albums (
-            id INTEGER NOT NULL PRIMARY KEY,
-            album_id TEXT NOT NULL UNIQUE,
+            album_id TEXT NOT NULL PRIMARY KEY,
             album_name TEXT NOT NULL,
             external_url TEXT,
             image_url TEXT,
             release_date TEXT,
             total_tracks INTEGER NOT NULL,
             type TEXT,
-            album_group TEXT (do you need this or album_type?),
+            album_group TEXT,
             album_uri TEXT NOT NULL,
             artist_id TEXT,
-            FOREIGN KEY (artist_id) REFERENCES artists(artist_id)
+            FOREIGN KEY (album_id) REFERENCES artists(artist_id)
         );""")
     
+    # TRACKS
     curs.execute("""
         CREATE TABLE IF NOT EXISTS tracks (
             id INTEGER NOT NULL PRIMARY KEY,
@@ -54,24 +49,25 @@ with conn:
             type TEXT,
             song_uri TEXT NOT NULL,
             album_id TEXT NOT NULL,
-            FOREIGN KEY (album_id) REFERENCES albums(album_id) !!! DUPLICATES
+            FOREIGN KEY (album_id) REFERENCES albums(album_id)
         );""")
         
+    # TRACK FEATURES
     curs.execute("""
         CREATE TABLE IF NOT EXISTS track_features (
-            id INTEGER NOT NULL PRIMARY KEY,
-            track_id TEXT NOT NULL
-            danceability REAL
-            energy REAL
-            instrumentalness REAL
-            liveness REAL
-            loudness REAL
-            speechiness REAL
-            tempo REAL
-            type TEXT
-            valence REAL
-            song_uri TEXT NOT NULL
-            
+            track_id TEXT NOT NULL PRIMARY KEY,
+            danceability REAL,
+            energy REAL,
+            instrumentalness REAL,
+            liveness REAL,
+            loudness REAL,
+            speechiness REAL,
+            tempo REAL,
+            type TEXT,
+            valence REAL,
+            song_uri TEXT NOT NULL,
+            FOREIGN KEY (track_id) REFERENCES tracks(track_id)
         );""")
         
     
+conn.close()
