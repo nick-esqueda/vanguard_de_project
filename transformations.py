@@ -22,11 +22,18 @@ track_features.drop_duplicates(ignore_index=True, inplace=True)
 # remove the "appears_on" albums.
 albums_filt = albums["album_group"] != "appears_on"
 albums = albums[albums_filt]
+albums.sort_index(ignore_index=True, inplace=True)
 
 # remove all of the songs that aren't from the updated DataFrame of albums.
 tracks_filt = tracks["album_id"].isin(albums["album_id"])
 tracks = tracks[tracks_filt]
+tracks.sort_index(ignore_index=True, inplace=True)
 
 # grab all of the track_features that have a matching song in the updated tracks DataFrame.
 track_feat_filt = track_features["track_id"].isin(tracks["track_id"])
 track_features = track_features[track_feat_filt]
+track_features.sort_index(ignore_index=True, inplace=True)
+
+print(albums)
+print(tracks)
+print(track_features)
