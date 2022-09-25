@@ -1,4 +1,5 @@
 import sqlite3
+from transformations import artists, albums, tracks, track_features
 
 
 conn = sqlite3.connect("spotify.db")
@@ -71,6 +72,28 @@ with conn:
         
         
 # INSERTING DATA ################################
+artists.to_sql("artists", conn, if_exists="replace", index=False)
+albums.to_sql("albums", conn, if_exists="replace", index=False)
+tracks.to_sql("tracks", conn, if_exists="replace", index=False)
+track_features.to_sql("track_features", conn, if_exists="replace", index=False)
+
+with conn:
+    curs.execute("SELECT * FROM artists LIMIT 5")
+    test = curs.fetchall()
+    print(test)
+    
+    curs.execute("SELECT * FROM albums LIMIT 5")
+    test = curs.fetchall()
+    print(test)
+    
+    curs.execute("SELECT * FROM tracks LIMIT 5")
+    test = curs.fetchall()
+    print(test)
+    
+    curs.execute("SELECT * FROM track_features LIMIT 5")
+    test = curs.fetchall()
+    print(test)
+
 
         
 conn.close()
