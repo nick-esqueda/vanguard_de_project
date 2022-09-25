@@ -16,6 +16,7 @@ track_features.drop(columns="Unnamed: 0", inplace=True)
 
 
 # FIXING DUPLICATES
+albums.drop_duplicates(ignore_index=True, subset=["album_id"], inplace=True)
 tracks.drop_duplicates(ignore_index=True, inplace=True)
 track_features.drop_duplicates(ignore_index=True, inplace=True)
 
@@ -33,6 +34,7 @@ tracks.sort_index(ignore_index=True, inplace=True)
 track_feat_filt = track_features["track_id"].isin(tracks["track_id"])
 track_features = track_features[track_feat_filt]
 track_features.sort_index(ignore_index=True, inplace=True)
+
 
 print(albums)
 print(tracks)
