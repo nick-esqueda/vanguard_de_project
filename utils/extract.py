@@ -39,7 +39,6 @@ def prune(data: dict, d_type: Literal["artist", "album", "track", "track_feature
             "total_tracks": data["total_tracks"],
             "type": data["type"],
             "album_group": data["album_group"],
-            "album_type": data["album_type"],
             "album_uri": data["uri"],
             "artist_id": data["artist_id"]
         }
