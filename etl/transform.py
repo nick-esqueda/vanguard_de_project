@@ -47,6 +47,7 @@ def clean_track_features(track_features, tracks):
 
 #################################################
 def main():
+    # need to run extract.main() here.
     artists = clean_artists(artists)
     albums = clean_albums(albums)
     tracks = clean_tracks(tracks, albums)

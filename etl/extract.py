@@ -16,12 +16,17 @@ spot = spotipy.Spotify(auth_manager=auth_manager)
 def fetch_artists(urls: Iterable[str]) -> list[dict]:
     """
     makes a call to the Spotify API to retrieve each artist's data from the passed in iterable. 
-    returns a iterator that returns each artist's data on each iteration. 
+    returns a list that returns each artist's data on each iteration. 
     """
     return [spot.artist(url) for url in urls]
 
-def extract_artists(URLS):
-    artists = fetch_artists(URLS)
+def extract_artists(urls: Iterable[str]) -> list[dict]:
+    """
+    fetches the artists' data from the Spotify API based on the passed in URLs, 
+    and then prunes those JSON responses for the relevant fields.
+    returns a list of those pruned objects.
+    """
+    artists = fetch_artists(urls)
     pruned_artists = prune_all(artists, "artist")
     return pruned_artists
 
@@ -49,8 +54,13 @@ def fetch_artists_albums(urls: Iterable[str]) -> list[dict]:
             
     return albums
 
-def extract_artists_albums(URLS):
-    albums = fetch_artists_albums(URLS)
+def extract_artists_albums(urls: Iterable[str]) -> list[dict]:
+    """
+    fetches all of the artists' album data from the Spotify API based on the passed in URLs, 
+    and then prunes those JSON responses for the relevant fields.
+    returns a list of those pruned objects.
+    """
+    albums = fetch_artists_albums(urls)
     all_pruned_albums = prune_all(albums, "album")
     return all_pruned_albums
 
@@ -76,7 +86,12 @@ def fetch_albums_tracks(album_ids: Iterable[str]) -> list[dict]:
         
     return tracks
     
-def extract_albums_tracks(album_ids):
+def extract_albums_tracks(album_ids: Iterable[str]) -> list[dict]:
+    """
+    fetches each album's track data from the Spotify API based on the passed in URLs, 
+    and then prunes those JSON responses for the relevant fields.
+    returns a list of those pruned objects.
+    """
     tracks = fetch_albums_tracks(album_ids)
     all_pruned_tracks = prune_all(tracks, "track")
     return all_pruned_tracks
@@ -98,7 +113,12 @@ def fetch_track_features(track_ids: list[str]) -> list[dict]:
         tracks = track_ids[offset:offset + 100]
     return track_features
 
-def extract_track_features(track_ids):
+def extract_track_features(track_ids: list[str]) -> list[dict]:
+    """
+    fetches the tracks' "track_feature" data from the Spotify API based on the passed in URLs, 
+    and then prunes those JSON responses for the relevant fields.
+    returns a list of those pruned objects.
+    """
     track_features = fetch_track_features(track_ids)
     pruned_track_features = prune_all(track_features, "track_features")
     return pruned_track_features
