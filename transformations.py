@@ -16,7 +16,8 @@ track_features.drop(columns="Unnamed: 0", inplace=True)
 
 
 # FIXING DUPLICATES
-albums.drop_duplicates(ignore_index=True, subset=["album_id"], inplace=True)
+albums.drop_duplicates(ignore_index=True, subset=["album_id"], inplace=True) # for duplicates from collaborations.
+albums.drop_duplicates(ignore_index=True, subset=["album_name", "total_tracks", "artist_id"], inplace=True) # for duplicates of the same album, different "spotify version".
 tracks.drop_duplicates(ignore_index=True, inplace=True)
 track_features.drop_duplicates(ignore_index=True, inplace=True)
 
