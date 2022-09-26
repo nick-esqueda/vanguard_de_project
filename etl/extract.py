@@ -88,7 +88,7 @@ def fetch_albums_tracks(album_ids: Iterable[str]) -> list[dict]:
     
 def extract_albums_tracks(album_ids: Iterable[str]) -> list[dict]:
     """
-    fetches each album's track data from the Spotify API based on the passed in URLs, 
+    fetches each album's track data from the Spotify API based on the passed in album ids, 
     and then prunes those JSON responses for the relevant fields.
     returns a list of those pruned objects.
     """
@@ -115,7 +115,7 @@ def fetch_track_features(track_ids: list[str]) -> list[dict]:
 
 def extract_track_features(track_ids: list[str]) -> list[dict]:
     """
-    fetches the tracks' "track_feature" data from the Spotify API based on the passed in URLs, 
+    fetches the tracks' "track_feature" data from the Spotify API based on the passed in track ids, 
     and then prunes those JSON responses for the relevant fields.
     returns a list of those pruned objects.
     """

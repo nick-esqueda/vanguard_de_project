@@ -1,11 +1,13 @@
 import pandas as pd
+from extract import *
+from utils.artist_urls import ARTIST_URLS
 
 
-# READ IN DATA
-artists = pd.read_csv("data/artists.csv")
-albums = pd.read_csv("data/albums.csv")
-tracks = pd.read_csv("data/tracks.csv")
-track_features = pd.read_csv("data/track_features.csv")
+# # READ IN DATA
+# artists = pd.read_csv("data/artists.csv")
+# albums = pd.read_csv("data/albums.csv")
+# tracks = pd.read_csv("data/tracks.csv")
+# track_features = pd.read_csv("data/track_features.csv")
 
 
 def clean_artists(artists):
@@ -14,7 +16,7 @@ def clean_artists(artists):
 def clean_albums(albums):
     # for duplicates from collaborations:
     albums.drop_duplicates(ignore_index=True, subset=["album_id"], inplace=True) 
-    # for duplicates of the same album, different "spotify version":
+    # for duplicates of the same album, but different "spotify version":
     albums.drop_duplicates(ignore_index=True, subset=["album_name", "total_tracks", "artist_id"], inplace=True)
     
     # remove all "appears_on" albums.
@@ -47,7 +49,15 @@ def clean_track_features(track_features, tracks):
 
 #################################################
 def main():
-    # need to run extract.main() here.
+    # fetch all of the data first.
+    artists = extract_artists(ARTIST_URLS)
+    albums = extract_artists_albums(ARTIST_URLS)
+    album_ids = [album["album_id"] for album in albums]
+    tracks = extract_albums_tracks(album_ids)
+    track_ids = [track["track_id"] for track in tracks]
+    track_features = extract_track_features(track_ids)
+    
+    # clean the extracted data.
     artists = clean_artists(artists)
     albums = clean_albums(albums)
     tracks = clean_tracks(tracks, albums)
