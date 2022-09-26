@@ -4,8 +4,8 @@ import json
 from typing import Iterable, Iterator
 from spotipy.oauth2 import SpotifyClientCredentials
 from dotenv import load_dotenv
-from artist_urls import URLS
-from utils.extract import prune_all, add_id
+from utils.artist_urls import URLS
+from utils.pruning import prune_all, add_id
 load_dotenv()
 
 
