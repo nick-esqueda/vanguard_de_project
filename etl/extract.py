@@ -1,8 +1,7 @@
 import spotipy
-import json
 from spotipy.oauth2 import SpotifyClientCredentials
 from dotenv import load_dotenv
-from typing import Iterable, Iterator
+from typing import Iterable
 from utils.artist_urls import ARTIST_URLS
 from utils.io import send_to_csv
 from utils.pruning import prune_all, add_id
@@ -14,12 +13,12 @@ spot = spotipy.Spotify(auth_manager=auth_manager)
 
 
 # ARTISTS #######################################
-def fetch_artists(urls: Iterable[str]) -> Iterator[dict]:
+def fetch_artists(urls: Iterable[str]) -> list[dict]:
     """
     makes a call to the Spotify API to retrieve each artist's data from the passed in iterable. 
     returns a iterator that returns each artist's data on each iteration. 
     """
-    return (spot.artist(url) for url in urls)
+    return [spot.artist(url) for url in urls]
 
 def extract_artists(URLS):
     artists = fetch_artists(URLS)
@@ -84,7 +83,7 @@ def extract_albums_tracks(album_ids):
 
 
 # TRACK FEATURES ################################
-def fetch_track_features(track_ids: Iterable[str]) -> list[dict]:
+def fetch_track_features(track_ids: list[str]) -> list[dict]:
     """
     takes in an iterable of track ids and fetches each track's "track features" from the Spotify API. 
     returns a list of those track features for each track.
@@ -115,11 +114,11 @@ def main():
     albums = extract_artists_albums(ARTIST_URLS)
     send_to_csv(albums, "data/albums.csv")
     
-    album_ids = (album["album_id"] for album in albums)
+    album_ids = [album["album_id"] for album in albums]
     tracks = extract_albums_tracks(album_ids)
     send_to_csv(tracks, "data/tracks.csv")
     
-    track_ids = (track["track_id"] for track in tracks)
+    track_ids = [track["track_id"] for track in tracks]
     track_features = extract_track_features(track_ids)
     send_to_csv(track_features, "data/track_features.csv")
 
