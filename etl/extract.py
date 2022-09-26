@@ -3,7 +3,7 @@ import json
 from spotipy.oauth2 import SpotifyClientCredentials
 from dotenv import load_dotenv
 from typing import Iterable, Iterator
-from utils.artist_urls import URLS
+from utils.artist_urls import ARTIST_URLS
 from utils.io import send_to_csv
 from utils.pruning import prune_all, add_id
 load_dotenv()
@@ -21,7 +21,7 @@ def fetch_artists(urls: Iterable[str]) -> Iterator[dict]:
     """
     return (spot.artist(url) for url in urls)
 
-def extract_artists():
+def extract_artists(URLS):
     artists = fetch_artists(URLS)
     pruned_artists = prune_all(artists, "artist")
     return pruned_artists
@@ -50,14 +50,14 @@ def fetch_artists_albums(urls: Iterable[str]) -> list[dict]:
             
     return albums
 
-def extract_artists_albums():
+def extract_artists_albums(URLS):
     albums = fetch_artists_albums(URLS)
     all_pruned_albums = prune_all(albums, "album")
     return all_pruned_albums
 
 
 # ALBUM TRACKS ##################################
-def fetch_tracks(album_ids: Iterable[str]) -> list[dict]:
+def fetch_albums_tracks(album_ids: Iterable[str]) -> list[dict]:
     """
     takes in an iterable of album ids, and fetches every song for each of those albums from the Spotify API.
     returns a list of each song's data.
@@ -77,8 +77,8 @@ def fetch_tracks(album_ids: Iterable[str]) -> list[dict]:
         
     return tracks
     
-def extract_tracks(album_ids):
-    tracks = fetch_tracks(album_ids)
+def extract_albums_tracks(album_ids):
+    tracks = fetch_albums_tracks(album_ids)
     all_pruned_tracks = prune_all(tracks, "track")
     return all_pruned_tracks
 
@@ -109,18 +109,18 @@ def extract_track_features(track_ids):
 
 #################################################
 def main():
-    artists = extract_artists()
+    artists = extract_artists(ARTIST_URLS)
     send_to_csv(artists, "data/artists.csv")
     
-    albums = extract_artists_albums()
+    albums = extract_artists_albums(ARTIST_URLS)
     send_to_csv(albums, "data/albums.csv")
     
-    # pull album ids in here (from csv?)
-    tracks = extract_tracks() # need to pass in album ids here to get those album's tracks
+    album_ids = (album["album_id"] for album in albums)
+    tracks = extract_albums_tracks(album_ids)
     send_to_csv(tracks, "data/tracks.csv")
     
-    # pull track ids in here (from csv?)
-    track_features = extract_track_features()
+    track_ids = (track["track_id"] for track in tracks)
+    track_features = extract_track_features(track_ids)
     send_to_csv(track_features, "data/track_features.csv")
 
 
