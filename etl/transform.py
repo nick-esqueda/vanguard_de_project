@@ -3,11 +3,11 @@ from extract import *
 from utils.artist_urls import ARTIST_URLS
 
 
-def clean_artists(artists):
+def clean_artists(artists: pd.DataFrame) -> pd.DataFrame:
     artists.dropna(inplace=True)
     return artists
 
-def clean_albums(albums):
+def clean_albums(albums: pd.DataFrame) -> pd.DataFrame:
     albums.dropna(subset=["album_id", "album_name", "external_url", "album_uri", "artist_id"], inplace=True)
     
     # for duplicates from collaborations:
@@ -21,7 +21,7 @@ def clean_albums(albums):
     albums.sort_index(ignore_index=True, inplace=True)
     return albums
 
-def clean_tracks(tracks, albums):
+def clean_tracks(tracks: pd.DataFrame, albums: pd.DataFrame) -> pd.DataFrame:
     tracks.dropna(subset=["track_id", "song_name", "external_url", "song_uri", "album_id"], inplace=True)
     tracks.drop_duplicates(ignore_index=True, inplace=True)
     
@@ -32,7 +32,7 @@ def clean_tracks(tracks, albums):
     tracks.sort_index(ignore_index=True, inplace=True)
     return tracks
 
-def clean_track_features(track_features, tracks):
+def clean_track_features(track_features: pd.DataFrame, tracks: pd.DataFrame) -> pd.DataFrame:
     track_features.dropna(inplace=True)
     track_features.drop_duplicates(ignore_index=True, inplace=True)
     
@@ -67,9 +67,13 @@ def main():
     tracks = clean_tracks(pd.DataFrame(tracks), pd.DataFrame(albums))
     track_features = clean_track_features(pd.DataFrame(track_features), pd.DataFrame(tracks))
     
+    print("\nARTISTS:")
     print(artists)
+    print("\nALBUMS:")
     print(albums)
+    print("\nTRACKS:")
     print(tracks)
+    print("\nTRACK_FEATURES:")
     print(track_features)
 
 
