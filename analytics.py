@@ -54,7 +54,7 @@ with conn:
         WHERE rnk <= 3;
     """)
     
-    # ARTIST'S WORK OVERVIEW
+    # ARTIST OVERVIEW
     curs.execute("DROP VIEW IF EXISTS VW_artist_overview;")
     curs.execute("""
         CREATE VIEW VW_artist_overview
@@ -71,7 +71,28 @@ with conn:
         ORDER BY total_albums DESC, total_tracks DESC;
     """)
     
-    curs.execute("SELECT * FROM VW_artist_overview;")
+    # ARTIST STYLE OVERVIEW
+    curs.execute("DROP VIEW IF EXISTS VW_artist_style_overview;")
+    curs.execute("""
+        CREATE VIEW VW_artist_style_overview
+        AS
+        SELECT 
+            art.artist_name,
+            art.popularity,
+            art.genre,
+            ROUND(AVG(tf.danceability), 4) avg_danceability,
+            ROUND(AVG(tf.energy), 4) avg_energy,
+            CAST(AVG(tf.tempo) AS INTEGER) avg_tempo,
+            ROUND(AVG(tf.loudness), 2) avg_loudness
+        FROM artists art
+        JOIN albums alb ON alb.artist_id = art.artist_id
+        JOIN tracks t ON t.album_id = alb.album_id
+        JOIN track_features tf ON t.track_id = tf.track_id
+        GROUP BY 1, 2, 3
+        ORDER BY 1;
+    """)
+    
+    curs.execute("SELECT * FROM VW_artist_style_overview;")
     t = pd.DataFrame(curs.fetchall())
     print(t.head(50))
     
