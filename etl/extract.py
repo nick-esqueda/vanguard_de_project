@@ -3,7 +3,7 @@ from spotipy.oauth2 import SpotifyClientCredentials
 from dotenv import load_dotenv
 from typing import Iterable
 from utils.artist_urls import ARTIST_URLS
-from utils.io import send_to_csv
+from utils.io import write_to_csv
 from utils.pruning import prune_all, add_id
 load_dotenv()
 
@@ -109,18 +109,18 @@ def extract_track_features(track_ids):
 #################################################
 def main():
     artists = extract_artists(ARTIST_URLS)
-    send_to_csv(artists, "data/artists.csv")
+    write_to_csv(artists, "data/artists.csv")
     
     albums = extract_artists_albums(ARTIST_URLS)
-    send_to_csv(albums, "data/albums.csv")
+    write_to_csv(albums, "data/albums.csv")
     
     album_ids = [album["album_id"] for album in albums]
     tracks = extract_albums_tracks(album_ids)
-    send_to_csv(tracks, "data/tracks.csv")
+    write_to_csv(tracks, "data/tracks.csv")
     
     track_ids = [track["track_id"] for track in tracks]
     track_features = extract_track_features(track_ids)
-    send_to_csv(track_features, "data/track_features.csv")
+    write_to_csv(track_features, "data/track_features.csv")
 
 
 if __name__ == "__main__":

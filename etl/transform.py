@@ -40,3 +40,30 @@ track_features.sort_index(ignore_index=True, inplace=True)
 # print(albums)
 # print(tracks)
 # print(track_features)
+
+
+def clean_artists(data):
+    pass
+
+
+def clean_albums(data):
+    pass
+
+
+def clean_tracks(data):
+    pass
+
+
+def clean_track_features(data):
+    pass
+    
+
+
+
+
+def main():
+    pass # run the main method of extract.py to get all the data so that you can transform it.
+
+
+if __name__ == "__main__":
+    main()
