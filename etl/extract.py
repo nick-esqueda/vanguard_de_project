@@ -1,22 +1,19 @@
 import spotipy
-import pandas as pd
 import json
-from typing import Iterable, Iterator
 from spotipy.oauth2 import SpotifyClientCredentials
 from dotenv import load_dotenv
+from typing import Iterable, Iterator
 from utils.artist_urls import URLS
+from utils.io import send_to_csv
 from utils.pruning import prune_all, add_id
 load_dotenv()
 
 
-# API SETUP #####################################
 auth_manager = SpotifyClientCredentials()
 spot = spotipy.Spotify(auth_manager=auth_manager)
 
 
-# REQUESTS ######################################
-
-# ARTISTS --------------
+# ARTISTS #######################################
 def fetch_artists(urls: Iterable[str]) -> Iterator[dict]:
     """
     makes a call to the Spotify API to retrieve each artist's data from the passed in iterable. 
@@ -24,15 +21,13 @@ def fetch_artists(urls: Iterable[str]) -> Iterator[dict]:
     """
     return (spot.artist(url) for url in urls)
 
-artists = fetch_artists(URLS)
-pruned_artists = prune_all(artists, "artist")
-
-artists_df = pd.DataFrame(pruned_artists)
-artists_df.to_csv("data/artists.csv")
-
+def extract_artists():
+    artists = fetch_artists(URLS)
+    pruned_artists = prune_all(artists, "artist")
+    return pruned_artists
 
 
-# ALBUMS ---------------   
+# ALBUMS ########################################
 def fetch_artists_albums(urls: Iterable[str]) -> list[dict]:
     """
     fetches all of each artist's albums with each artist's url passed in as an iterable. 
@@ -55,15 +50,13 @@ def fetch_artists_albums(urls: Iterable[str]) -> list[dict]:
             
     return albums
 
-albums = fetch_artists_albums(URLS)
-all_pruned_albums = prune_all(albums, "album")
-
-albums_df = pd.DataFrame(all_pruned_albums)
-albums_df.to_csv("data/albums.csv") # send the albums DF to a .csv to temporarily cut down on queries during testing.
-
+def extract_artists_albums():
+    albums = fetch_artists_albums(URLS)
+    all_pruned_albums = prune_all(albums, "album")
+    return all_pruned_albums
 
 
-# ALBUM TRACKS ---------
+# ALBUM TRACKS ##################################
 def fetch_tracks(album_ids: Iterable[str]) -> list[dict]:
     """
     takes in an iterable of album ids, and fetches every song for each of those albums from the Spotify API.
@@ -84,17 +77,13 @@ def fetch_tracks(album_ids: Iterable[str]) -> list[dict]:
         
     return tracks
     
-    
-albums_df = pd.read_csv("data/albums.csv")
-tracks = fetch_tracks(albums_df["album_id"])
-all_pruned_tracks = prune_all(tracks, "track")
-
-tracks_df = pd.DataFrame(all_pruned_tracks)
-tracks_df.to_csv("data/tracks.csv")
+def extract_tracks(album_ids):
+    tracks = fetch_tracks(album_ids)
+    all_pruned_tracks = prune_all(tracks, "track")
+    return all_pruned_tracks
 
 
-
-# TRACK FEATURES -------
+# TRACK FEATURES ################################
 def fetch_track_features(track_ids: Iterable[str]) -> list[dict]:
     """
     takes in an iterable of track ids and fetches each track's "track features" from the Spotify API. 
@@ -110,10 +99,30 @@ def fetch_track_features(track_ids: Iterable[str]) -> list[dict]:
         tracks = track_ids[offset:offset + 100]
     return track_features
 
+def extract_track_features(track_ids):
+    track_features = fetch_track_features(track_ids)
+    pruned_track_features = prune_all(track_features, "track_features")
+    return pruned_track_features
 
-tracks_df = pd.read_csv("data/tracks.csv")
-track_features = fetch_track_features(tracks_df["track_id"])
-pruned_track_features = prune_all(track_features, "track_features")
 
-track_features_df = pd.DataFrame(pruned_track_features)
-track_features_df.to_csv("data/track_features.csv")
+
+
+#################################################
+def main():
+    artists = extract_artists()
+    send_to_csv(artists, "data/artists.csv")
+    
+    albums = extract_artists_albums()
+    send_to_csv(albums, "data/albums.csv")
+    
+    # pull album ids in here (from csv?)
+    tracks = extract_tracks() # need to pass in album ids here to get those album's tracks
+    send_to_csv(tracks, "data/tracks.csv")
+    
+    # pull track ids in here (from csv?)
+    track_features = extract_track_features()
+    send_to_csv(track_features, "data/track_features.csv")
+
+
+if __name__ == "__main__":
+    main()
