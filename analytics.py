@@ -54,8 +54,25 @@ with conn:
         WHERE rnk <= 3;
     """)
     
-    curs.execute("SELECT * FROM VW_artist_top_songs_by_tempo;")
+    # ARTIST'S WORK OVERVIEW
+    curs.execute("DROP VIEW IF EXISTS VW_artist_overview;")
+    curs.execute("""
+        CREATE VIEW VW_artist_overview
+        AS
+        SELECT 
+            art.artist_name,
+            art.followers,
+            art.genre,
+            COUNT(*) total_albums,
+            SUM(alb.total_tracks) total_tracks
+        FROM artists art
+        JOIN albums alb ON alb.artist_id = art.artist_id
+        GROUP BY 1, 2, 3
+        ORDER BY total_albums DESC, total_tracks DESC;
+    """)
+    
+    curs.execute("SELECT * FROM VW_artist_overview;")
     t = pd.DataFrame(curs.fetchall())
     print(t.head(50))
-        
-        
+    
+    
