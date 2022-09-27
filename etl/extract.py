@@ -1,3 +1,4 @@
+import json
 import pandas as pd
 import spotipy
 from spotipy.oauth2 import SpotifyClientCredentials
@@ -18,9 +19,9 @@ spot = spotipy.Spotify(auth_manager=auth_manager)
 def fetch_artists(urls: Iterable[str]) -> list[dict]:
     """
     makes a call to the Spotify API to retrieve each artist's data from the passed in iterable. 
-    returns a list that returns each artist's data on each iteration. 
+    returns a list of dictionaries with each artist's data. 
     """
-    return [spot.artist(url) for url in urls]
+    return spot.artists(urls)["artists"]
 
 def extract_artists(urls: Iterable[str]) -> list[dict]:
     """
@@ -42,19 +43,16 @@ def fetch_artists_albums(urls: Iterable[str]) -> list[dict]:
     """
     albums = []
     for url in urls:
-        id = url.split('/')[-1].split('?')[0]  
-        
         response = spot.artist_albums(url, limit=50, country="US")
-        add_id(response["items"], id, "artist_id")
-        albums += response["items"]
-        
-        offset = 0
+        temp_albums = response["items"]
         while response["next"]: # while there is a next page, request it, then add the new albums from that new page.
-            offset += 50
-            response = spot.artist_albums(url, limit=50, offset=offset, country="US")
-            add_id(response["items"], id, "artist_id")
-            albums += response["items"]
-            
+            response = spot.next(response)
+            temp_albums.extend(response["items"])
+        
+        # get and add the artist_id to each album, as it is not included in the API response.
+        id = url.split('/')[-1].split('?')[0] 
+        add_id(temp_albums, id, "artist_id")
+        albums.extend(temp_albums)
     return albums
 
 def extract_artists_albums(urls: Iterable[str]) -> list[dict]:
@@ -78,16 +76,14 @@ def fetch_albums_tracks(album_ids: Iterable[str]) -> list[dict]:
     tracks = []
     for id in album_ids:
         response = spot.album_tracks(id, limit=50, market="US")
-        add_id(response["items"], id, "album_id")
-        tracks += response["items"]
-        
-        offset = 0
+        temp_tracks = response["items"]
         while response["next"]: # while there is a next page, request it, then add the new tracks from that new page.
-            offset += 50
-            response = spot.album_tracks(id, limit=50, offset=offset, market="US")
-            add_id(response["items"], id, "album_id")
-            tracks += response["items"]
-        
+            response = spot.next(response)
+            temp_tracks.extend(response["items"])
+            
+        # add the album_id to each track, as it is not included in the API response.
+        add_id(temp_tracks, id, "album_id")
+        tracks.extend(temp_tracks)
     return tracks
     
 def extract_albums_tracks(album_ids: Iterable[str]) -> list[dict]:
@@ -113,7 +109,7 @@ def fetch_track_features(track_ids: list[str]) -> list[dict]:
     tracks = track_ids[0:100]
     while len(tracks) > 0:
         response = spot.audio_features(tracks=tracks)
-        track_features += response
+        track_features.extend(response)
         offset += 100
         tracks = track_ids[offset:offset + 100]
     return track_features
