@@ -1,4 +1,4 @@
-URLS = [
+ARTIST_URLS = [
     "https://open.spotify.com/artist/65C6Unk7nhg2aCnVuAPMo8?si=ASf5DfypTkC3fzuJa9AoKA", # Animals As Leaders
     "https://open.spotify.com/artist/6d24kC5fxHFOSEAmjQPPhc?si=dw_t0g69QveepoTdoon-ug", # Periphery
     "https://open.spotify.com/artist/23ytwhG1pzX6DIVWRWvW1r?si=1wZ3ak4tQqel-KIH6s1RwQ", # TesseracT

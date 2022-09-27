@@ -1,5 +1,5 @@
 import sqlite3
-from transformations import artists, albums, tracks, track_features
+from etl.transform import artists, albums, tracks, track_features
 
 
 conn = sqlite3.connect("spotify.db")

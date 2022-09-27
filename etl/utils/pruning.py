@@ -1,14 +1,14 @@
-from typing import Iterable, Iterator, Literal
+from typing import Iterable, Literal
 
 
-def prune_all(data: list[dict], d_type: Literal["artist", "album", "track", "track_features"]) -> Iterator[dict]:
+def prune_all(data: list[dict], d_type: Literal["artist", "album", "track", "track_features"]) -> list[dict]:
     """
     takes in a list of JSON responses (as dictionaries) and prunes out the relevant information for each of them, 
     returning an iterator that returns the pruned data on each iteration.
     a "d_type" must be specified to prune out the correct information.
     """
     # some data might come back with None in the response, so need to filter those out.
-    return (prune(record, d_type) for record in data if record is not None)
+    return [prune(record, d_type) for record in data if record is not None]
     
 
 def prune(data: dict, d_type: Literal["artist", "album", "track", "track_features"]) -> dict:
