@@ -2,16 +2,16 @@ import sqlite3
 
 
 class DB:
-    def __init__(self):
+    def __init__(self) -> None:
         self.conn = sqlite3.connect("etl/data/spotify.db")
         self.curs = self.conn.cursor()
         
-    def execute(self, query):
+    def execute(self, query: str) -> None:
         with self.conn:
             self.curs.execute(query)
             
-    def result(self):
+    def result(self) -> list[tuple]:
         return self.curs.fetchall()
         
-    def close(self): 
+    def close(self) -> None: 
         self.conn.close()

@@ -1,10 +1,13 @@
+import pandas as pd
 import transform
 from utils.db import DB
 
 
 # CREATE TABLES #################################
-def create_tables(db):
+def create_tables(db: DB) -> None:
+    print("Creating tables: artists, albums, tracks, and track_features...")
     # ARTISTS
+    db.execute("DROP TABLE IF EXISTS artists")
     db.execute("""
         CREATE TABLE IF NOT EXISTS artists (
             artist_id TEXT NOT NULL PRIMARY KEY,
@@ -19,6 +22,7 @@ def create_tables(db):
         );""")
         
     # ALBUMS
+    db.execute("DROP TABLE IF EXISTS albums")
     db.execute("""
         CREATE TABLE IF NOT EXISTS albums (
             album_id TEXT NOT NULL PRIMARY KEY,
@@ -35,6 +39,7 @@ def create_tables(db):
         );""")
     
     # TRACKS
+    db.execute("DROP TABLE IF EXISTS tracks")
     db.execute("""
         CREATE TABLE IF NOT EXISTS tracks (
             track_id TEXT NOT NULL PRIMARY KEY,
@@ -50,6 +55,7 @@ def create_tables(db):
         );""")
         
     # TRACK FEATURES
+    db.execute("DROP TABLE IF EXISTS track_features")
     db.execute("""
         CREATE TABLE IF NOT EXISTS track_features (
             track_id TEXT NOT NULL PRIMARY KEY,
@@ -68,8 +74,9 @@ def create_tables(db):
         
         
 # INSERTING DATA ################################
-def load_data(data, tablename: str, db):
+def load_data(data: pd.DataFrame, tablename: str, db: DB) -> None:
     data.to_sql(tablename, db.conn, if_exists="replace", index=False)
+    print(f"Finished loading data into {tablename}")
 
 def test(db):
     db.execute("SELECT * FROM artists LIMIT 5")
@@ -88,16 +95,16 @@ def test(db):
 # MAIN ###################################################################
 ##########################################################################
 def main():
+    artists, albums, tracks, track_features = transform.main()
+    
     db = DB()
     create_tables(db)
-    
-    artists, albums, tracks, track_features = transform.main()
     load_data(artists, "artists", db)
     load_data(albums, "albums", db)
     load_data(tracks, "tracks", db)
     load_data(track_features, "track_features", db)
     
-    test(db)
+    # test(db)
     
     db.close()
 
