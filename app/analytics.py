@@ -12,11 +12,11 @@ def create_views(db: DB) -> None:
     db.execute("DROP VIEW IF EXISTS VW_artist_overview;")
     db.execute("DROP VIEW IF EXISTS VW_artist_style_overview;")
     # (re)create the views in the database.
-    db.execute(VW_ARTIST_TOP_SONGS_BY_DURATION)
-    db.execute(VW_TOP_ARTISTS_BY_FOLLOWERS)
-    db.execute(VW_ARTIST_TOP_SONGS_BY_TEMPO)
-    db.execute(VW_ARTIST_OVERVIEW)
-    db.execute(VW_ARTIST_STYLE_OVERVIEW)
+    db.execute(V_ARTIST_TOP_SONGS_BY_DURATION)
+    db.execute(V_TOP_ARTISTS_BY_FOLLOWERS)
+    db.execute(V_ARTIST_TOP_SONGS_BY_TEMPO)
+    db.execute(V_ARTIST_OVERVIEW)
+    db.execute(V_ARTIST_STYLE_OVERVIEW)
     
 def test_prompt_views(db: DB) -> None:
     db.execute("SELECT * FROM VW_artist_top_songs_by_duration;")

@@ -25,7 +25,7 @@ def load_data(data: pd.DataFrame, tablename: str, db: DB) -> None:
     data.to_sql(tablename, db.conn, if_exists="replace", index=False)
     print(f"Finished loading data into {tablename}")
 
-def test(db: DB) -> None:
+def test_table_creation(db: DB) -> None:
     db.execute("SELECT * FROM artists LIMIT 5")
     print(db.result())
     
@@ -51,7 +51,7 @@ def main():
     load_data(tracks, "tracks", db)
     load_data(track_features, "track_features", db)
     
-    # test(db)
+    # test_table_creation(db)
     
     db.close()
 

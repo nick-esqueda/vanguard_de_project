@@ -1,5 +1,5 @@
-VW_ARTIST_TOP_SONGS_BY_DURATION = """
-    CREATE VIEW VW_artist_top_songs_by_duration
+V_ARTIST_TOP_SONGS_BY_DURATION = """
+    CREATE VIEW V_artist_top_songs_by_duration
     AS
     SELECT * FROM (
         SELECT
@@ -14,16 +14,16 @@ VW_ARTIST_TOP_SONGS_BY_DURATION = """
     WHERE rnk <= 3;
 """
 
-VW_TOP_ARTISTS_BY_FOLLOWERS = """
-    CREATE VIEW VW_top_artists_by_followers
+V_TOP_ARTISTS_BY_FOLLOWERS = """
+    CREATE VIEW V_top_artists_by_followers
     AS
     SELECT artist_name, followers, popularity, genre
     FROM artists
     ORDER BY followers DESC;
 """
 
-VW_ARTIST_TOP_SONGS_BY_TEMPO = """
-    CREATE VIEW VW_artist_top_songs_by_tempo
+V_ARTIST_TOP_SONGS_BY_TEMPO = """
+    CREATE VIEW V_artist_top_songs_by_tempo
     AS
     SELECT * FROM (
         SELECT
@@ -39,8 +39,8 @@ VW_ARTIST_TOP_SONGS_BY_TEMPO = """
     WHERE rnk <= 3;
 """
 
-VW_ARTIST_OVERVIEW = """
-    CREATE VIEW VW_artist_overview
+V_ARTIST_OVERVIEW = """
+    CREATE VIEW V_artist_overview
     AS
     SELECT 
         art.artist_name,
@@ -54,8 +54,8 @@ VW_ARTIST_OVERVIEW = """
     ORDER BY total_albums DESC, total_tracks DESC;
 """
 
-VW_ARTIST_STYLE_OVERVIEW = """
-    CREATE VIEW VW_artist_style_overview
+V_ARTIST_STYLE_OVERVIEW = """
+    CREATE VIEW V_artist_style_overview
     AS
     SELECT 
         art.artist_name,
