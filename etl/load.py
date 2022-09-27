@@ -2,7 +2,7 @@ import sqlite3
 import transform
 
 
-conn = sqlite3.connect("spotify.db")
+conn = sqlite3.connect("etl/data/spotify.db")
 curs = conn.cursor()
 
 # CREATE TABLES #################################
