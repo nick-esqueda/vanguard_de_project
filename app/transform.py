@@ -1,8 +1,8 @@
 import pandas as pd
 import extract
-from utils.artist_urls import ARTIST_URLS
 
 
+# TRANSFORMATIONS ###############################
 def clean_artists(artists: pd.DataFrame) -> pd.DataFrame:
     artists.dropna(inplace=True)
     return artists
@@ -42,10 +42,9 @@ def clean_track_features(track_features: pd.DataFrame, tracks: pd.DataFrame) -> 
     track_features.sort_index(ignore_index=True, inplace=True)
     return track_features
     
-
-
-
-#################################################
+    
+# MAIN ###################################################################
+##########################################################################
 def main():
     # # fetch all of the data first.
     # artists, albums, tracks, track_features = extract.main()
@@ -71,6 +70,7 @@ def main():
     # print("\nTRACK_FEATURES:")
     # print(track_features)
     
+    print("Done cleaning all data!")
     return artists, albums, tracks, track_features
 
 

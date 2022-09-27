@@ -1,6 +1,6 @@
 import pandas as pd
 import transform
-from utils.db import DB
+from utils import DB
 from utils.queries import *
 
 
@@ -50,9 +50,7 @@ def main():
     load_data(albums, "albums", db)
     load_data(tracks, "tracks", db)
     load_data(track_features, "track_features", db)
-    
     # test_table_creation(db)
-    
     db.close()
 
 

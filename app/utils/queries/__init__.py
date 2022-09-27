@@ -1,2 +1,2 @@
-from .create_tables import *
-from .create_views import *
+from .tables import *
+from .views import *
