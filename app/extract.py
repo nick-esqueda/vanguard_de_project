@@ -131,18 +131,18 @@ def extract_track_features(track_ids: list[str]) -> list[dict]:
 #################################################
 def main():
     artists = extract_artists(ARTIST_URLS)
-    write_to_csv(artists, "etl/data/artists.csv")
+    write_to_csv(artists, "data/artists.csv")
     
     albums = extract_artists_albums(ARTIST_URLS)
     albums = transform.clean_albums(pd.DataFrame(albums))
-    write_to_csv(albums, "etl/data/albums.csv")
+    write_to_csv(albums, "data/albums.csv")
     
     tracks = extract_albums_tracks(albums["album_id"])
     tracks = transform.clean_tracks(pd.DataFrame(tracks), albums)
-    write_to_csv(tracks, "etl/data/tracks.csv")
+    write_to_csv(tracks, "data/tracks.csv")
     
     track_features = extract_track_features(tracks["track_id"])
-    write_to_csv(track_features, "etl/data/track_features.csv")
+    write_to_csv(track_features, "data/track_features.csv")
     
     return artists, albums, tracks, track_features
 
