@@ -9,6 +9,9 @@ class DB:
     def execute(self, query):
         with self.conn:
             self.curs.execute(query)
+            
+    def result(self):
+        return self.curs.fetchall()
         
     def close(self): 
         self.conn.close()

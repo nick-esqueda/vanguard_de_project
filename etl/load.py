@@ -1,118 +1,106 @@
-import sqlite3
 import transform
+from utils.db import DB
 
-
-conn = sqlite3.connect("etl/data/spotify.db")
-curs = conn.cursor()
 
 # CREATE TABLES #################################
-def create_tables():
-    with conn:
-        # ARTISTS
-        curs.execute("""
-            CREATE TABLE IF NOT EXISTS artists (
-                artist_id TEXT NOT NULL PRIMARY KEY,
-                artist_name TEXT NOT NULL,
-                external_url TEXT,
-                genre TEXT,
-                image_url TEXT,
-                followers INTEGER,
-                popularity INTEGER,
-                type TEXT,
-                artist_uri TEXT NOT NULL UNIQUE
-            );""")
-            
-        # ALBUMS
-        curs.execute("""
-            CREATE TABLE IF NOT EXISTS albums (
-                album_id TEXT NOT NULL PRIMARY KEY,
-                album_name TEXT NOT NULL,
-                external_url TEXT,
-                image_url TEXT,
-                release_date TEXT,
-                total_tracks INTEGER NOT NULL,
-                type TEXT,
-                album_group TEXT,
-                album_uri TEXT NOT NULL,
-                artist_id TEXT,
-                FOREIGN KEY (album_id) REFERENCES artists(artist_id)
-            );""")
+def create_tables(db):
+    # ARTISTS
+    db.execute("""
+        CREATE TABLE IF NOT EXISTS artists (
+            artist_id TEXT NOT NULL PRIMARY KEY,
+            artist_name TEXT NOT NULL,
+            external_url TEXT,
+            genre TEXT,
+            image_url TEXT,
+            followers INTEGER,
+            popularity INTEGER,
+            type TEXT,
+            artist_uri TEXT NOT NULL UNIQUE
+        );""")
         
-        # TRACKS
-        curs.execute("""
-            CREATE TABLE IF NOT EXISTS tracks (
-                track_id TEXT NOT NULL PRIMARY KEY,
-                song_name TEXT NOT NULL,
-                external_url TEXT,
-                duration_ms INTEGER NOT NULL,
-                explicit INTEGER,
-                disc_number INTEGER,
-                type TEXT,
-                song_uri TEXT NOT NULL,
-                album_id TEXT NOT NULL,
-                FOREIGN KEY (album_id) REFERENCES albums(album_id)
-            );""")
-            
-        # TRACK FEATURES
-        curs.execute("""
-            CREATE TABLE IF NOT EXISTS track_features (
-                track_id TEXT NOT NULL PRIMARY KEY,
-                danceability REAL,
-                energy REAL,
-                instrumentalness REAL,
-                liveness REAL,
-                loudness REAL,
-                speechiness REAL,
-                tempo REAL,
-                type TEXT,
-                valence REAL,
-                song_uri TEXT NOT NULL,
-                FOREIGN KEY (track_id) REFERENCES tracks(track_id)
-            );""")
+    # ALBUMS
+    db.execute("""
+        CREATE TABLE IF NOT EXISTS albums (
+            album_id TEXT NOT NULL PRIMARY KEY,
+            album_name TEXT NOT NULL,
+            external_url TEXT,
+            image_url TEXT,
+            release_date TEXT,
+            total_tracks INTEGER NOT NULL,
+            type TEXT,
+            album_group TEXT,
+            album_uri TEXT NOT NULL,
+            artist_id TEXT,
+            FOREIGN KEY (album_id) REFERENCES artists(artist_id)
+        );""")
+    
+    # TRACKS
+    db.execute("""
+        CREATE TABLE IF NOT EXISTS tracks (
+            track_id TEXT NOT NULL PRIMARY KEY,
+            song_name TEXT NOT NULL,
+            external_url TEXT,
+            duration_ms INTEGER NOT NULL,
+            explicit INTEGER,
+            disc_number INTEGER,
+            type TEXT,
+            song_uri TEXT NOT NULL,
+            album_id TEXT NOT NULL,
+            FOREIGN KEY (album_id) REFERENCES albums(album_id)
+        );""")
+        
+    # TRACK FEATURES
+    db.execute("""
+        CREATE TABLE IF NOT EXISTS track_features (
+            track_id TEXT NOT NULL PRIMARY KEY,
+            danceability REAL,
+            energy REAL,
+            instrumentalness REAL,
+            liveness REAL,
+            loudness REAL,
+            speechiness REAL,
+            tempo REAL,
+            type TEXT,
+            valence REAL,
+            song_uri TEXT NOT NULL,
+            FOREIGN KEY (track_id) REFERENCES tracks(track_id)
+        );""")
         
         
 # INSERTING DATA ################################
-def load_data(data, tablename: str):
-    data.to_sql(tablename, conn, if_exists="replace", index=False)
+def load_data(data, tablename: str, db):
+    data.to_sql(tablename, db.conn, if_exists="replace", index=False)
 
-def test():
-    with conn:
-        curs.execute("SELECT * FROM artists LIMIT 5")
-        test = curs.fetchall()
-        print(test)
-        
-        curs.execute("SELECT * FROM albums LIMIT 5")
-        test = curs.fetchall()
-        print(test)
-        
-        curs.execute("SELECT * FROM tracks LIMIT 5")
-        test = curs.fetchall()
-        print(test)
-        
-        curs.execute("SELECT * FROM track_features LIMIT 5")
-        test = curs.fetchall()
-        print(test)
+def test(db):
+    db.execute("SELECT * FROM artists LIMIT 5")
+    print(db.result())
+    
+    db.execute("SELECT * FROM albums LIMIT 5")
+    print(db.result())
+    
+    db.execute("SELECT * FROM tracks LIMIT 5")
+    print(db.result())
+    
+    db.execute("SELECT * FROM track_features LIMIT 5")
+    print(db.result())
 
 
-
-
-#################################################
+# MAIN ###################################################################
+##########################################################################
 def main():
-    create_tables()
+    db = DB()
+    create_tables(db)
     
     artists, albums, tracks, track_features = transform.main()
-    load_data(artists, "artists")
-    load_data(albums, "albums")
-    load_data(tracks, "tracks")
-    load_data(track_features, "track_features")
+    load_data(artists, "artists", db)
+    load_data(albums, "albums", db)
+    load_data(tracks, "tracks", db)
+    load_data(track_features, "track_features", db)
     
-    test()
+    test(db)
     
-    conn.close()
+    db.close()
 
 
 if __name__ == "__main__":
     main()
-    
-    
-conn.close()
