@@ -72,8 +72,8 @@ def create_tables():
         
         
 # INSERTING DATA ################################
-def load_data(data):
-    data.to_sql("artists", conn, if_exists="replace", index=False)
+def load_data(data, tablename: str):
+    data.to_sql(tablename, conn, if_exists="replace", index=False)
 
 def test():
     with conn:
@@ -101,10 +101,10 @@ def main():
     create_tables()
     
     artists, albums, tracks, track_features = transform.main()
-    load_data(artists)
-    load_data(albums)
-    load_data(tracks)
-    load_data(track_features)
+    load_data(artists, "artists")
+    load_data(albums, "albums")
+    load_data(tracks, "tracks")
+    load_data(track_features, "track_features")
     
     test()
     

@@ -67,14 +67,14 @@ def main():
     tracks = clean_tracks(pd.DataFrame(tracks), pd.DataFrame(albums))
     track_features = clean_track_features(pd.DataFrame(track_features), pd.DataFrame(tracks))
     
-    print("\nARTISTS:")
-    print(artists)
-    print("\nALBUMS:")
-    print(albums)
-    print("\nTRACKS:")
-    print(tracks)
-    print("\nTRACK_FEATURES:")
-    print(track_features)
+    # print("\nARTISTS:")
+    # print(artists)
+    # print("\nALBUMS:")
+    # print(albums)
+    # print("\nTRACKS:")
+    # print(tracks)
+    # print("\nTRACK_FEATURES:")
+    # print(track_features)
     
     return artists, albums, tracks, track_features
 
