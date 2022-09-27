@@ -75,6 +75,8 @@ def main():
     print(tracks)
     print("\nTRACK_FEATURES:")
     print(track_features)
+    
+    return artists, albums, tracks, track_features
 
 
 if __name__ == "__main__":
