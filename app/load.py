@@ -1,76 +1,23 @@
 import pandas as pd
 import transform
 from utils.db import DB
+from utils.queries.create_tables import *
 
 
 # CREATE TABLES #################################
 def create_tables(db: DB) -> None:
     print("Creating tables: artists, albums, tracks, and track_features...")
-    # ARTISTS
-    db.execute("DROP TABLE IF EXISTS artists")
-    db.execute("""
-        CREATE TABLE artists (
-            artist_id TEXT NOT NULL PRIMARY KEY,
-            artist_name TEXT NOT NULL,
-            external_url TEXT,
-            genre TEXT,
-            image_url TEXT,
-            followers INTEGER,
-            popularity INTEGER,
-            type TEXT,
-            artist_uri TEXT NOT NULL UNIQUE
-        );""")
-        
-    # ALBUMS
-    db.execute("DROP TABLE IF EXISTS albums")
-    db.execute("""
-        CREATE TABLE albums (
-            album_id TEXT NOT NULL PRIMARY KEY,
-            album_name TEXT NOT NULL,
-            external_url TEXT,
-            image_url TEXT,
-            release_date TEXT,
-            total_tracks INTEGER NOT NULL,
-            type TEXT,
-            album_group TEXT,
-            album_uri TEXT NOT NULL,
-            artist_id TEXT,
-            FOREIGN KEY (album_id) REFERENCES artists(artist_id)
-        );""")
     
-    # TRACKS
+    # drop the tables if they had already been created. (this is to "start fresh" every time.)
+    db.execute("DROP TABLE IF EXISTS artists")
+    db.execute("DROP TABLE IF EXISTS albums")
     db.execute("DROP TABLE IF EXISTS tracks")
-    db.execute("""
-        CREATE TABLE tracks (
-            track_id TEXT NOT NULL PRIMARY KEY,
-            song_name TEXT NOT NULL,
-            external_url TEXT,
-            duration_ms INTEGER NOT NULL,
-            explicit INTEGER,
-            disc_number INTEGER,
-            type TEXT,
-            song_uri TEXT NOT NULL,
-            album_id TEXT NOT NULL,
-            FOREIGN KEY (album_id) REFERENCES albums(album_id)
-        );""")
-        
-    # TRACK FEATURES
     db.execute("DROP TABLE IF EXISTS track_features")
-    db.execute("""
-        CREATE TABLE track_features (
-            track_id TEXT NOT NULL PRIMARY KEY,
-            danceability REAL,
-            energy REAL,
-            instrumentalness REAL,
-            liveness REAL,
-            loudness REAL,
-            speechiness REAL,
-            tempo REAL,
-            type TEXT,
-            valence REAL,
-            song_uri TEXT NOT NULL,
-            FOREIGN KEY (track_id) REFERENCES tracks(track_id)
-        );""")
+    # (re)create the tables in the database.
+    db.execute(CREATE_ARTISTS)
+    db.execute(CREATE_ALBUMS)
+    db.execute(CREATE_TRACKS)
+    db.execute(CREATE_TRACK_FEATURES)
         
         
 # INSERTING DATA ################################
