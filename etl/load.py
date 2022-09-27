@@ -9,7 +9,7 @@ def create_tables(db: DB) -> None:
     # ARTISTS
     db.execute("DROP TABLE IF EXISTS artists")
     db.execute("""
-        CREATE TABLE IF NOT EXISTS artists (
+        CREATE TABLE artists (
             artist_id TEXT NOT NULL PRIMARY KEY,
             artist_name TEXT NOT NULL,
             external_url TEXT,
@@ -24,7 +24,7 @@ def create_tables(db: DB) -> None:
     # ALBUMS
     db.execute("DROP TABLE IF EXISTS albums")
     db.execute("""
-        CREATE TABLE IF NOT EXISTS albums (
+        CREATE TABLE albums (
             album_id TEXT NOT NULL PRIMARY KEY,
             album_name TEXT NOT NULL,
             external_url TEXT,
@@ -41,7 +41,7 @@ def create_tables(db: DB) -> None:
     # TRACKS
     db.execute("DROP TABLE IF EXISTS tracks")
     db.execute("""
-        CREATE TABLE IF NOT EXISTS tracks (
+        CREATE TABLE tracks (
             track_id TEXT NOT NULL PRIMARY KEY,
             song_name TEXT NOT NULL,
             external_url TEXT,
@@ -57,7 +57,7 @@ def create_tables(db: DB) -> None:
     # TRACK FEATURES
     db.execute("DROP TABLE IF EXISTS track_features")
     db.execute("""
-        CREATE TABLE IF NOT EXISTS track_features (
+        CREATE TABLE track_features (
             track_id TEXT NOT NULL PRIMARY KEY,
             danceability REAL,
             energy REAL,
