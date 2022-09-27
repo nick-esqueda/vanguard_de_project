@@ -89,9 +89,27 @@ def create_views(db: DB) -> None:
         ORDER BY 1;
     """)
     
+def test_prompt_views(db: DB) -> None:
+    db.execute("SELECT * FROM VW_artist_top_songs_by_duration;")
+    t = pd.DataFrame(db.result())
+    print(t.head(10))
+    
+    db.execute("SELECT * FROM VW_top_artists_by_followers;")
+    t = pd.DataFrame(db.result())
+    print(t.head(10))
+    
+    db.execute("SELECT * FROM VW_artist_top_songs_by_tempo;")
+    t = pd.DataFrame(db.result())
+    print(t.head(10))
+    
+def test_custom_views(db: DB) -> None:
+    db.execute("SELECT * FROM VW_artist_overview;")
+    t = pd.DataFrame(db.result())
+    print(t.head(10))
+    
     db.execute("SELECT * FROM VW_artist_style_overview;")
-    t = pd.DataFrame(db.fetchall())
-    print(t.head(50))
+    t = pd.DataFrame(db.result())
+    print(t.head(10))
     
     
 # MAIN ###################################################################
