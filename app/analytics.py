@@ -1,5 +1,5 @@
 import pandas as pd
-from etl.utils.db import DB
+from utils.db import DB
 
 
 # VIEWS #########################################
