@@ -1,7 +1,7 @@
 import pandas as pd
 import transform
 from utils.db import DB
-from utils.queries.create_tables import *
+from utils.queries import *
 
 
 # CREATE TABLES #################################
@@ -25,7 +25,7 @@ def load_data(data: pd.DataFrame, tablename: str, db: DB) -> None:
     data.to_sql(tablename, db.conn, if_exists="replace", index=False)
     print(f"Finished loading data into {tablename}")
 
-def test(db):
+def test(db: DB) -> None:
     db.execute("SELECT * FROM artists LIMIT 5")
     print(db.result())
     

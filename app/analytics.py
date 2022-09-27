@@ -1,6 +1,6 @@
 import pandas as pd
 from utils.db import DB
-from utils.queries.create_views import *
+from utils.queries import *
 
 
 # VIEWS #########################################

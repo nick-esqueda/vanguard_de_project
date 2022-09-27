@@ -51,10 +51,10 @@ def main():
     # artists, albums, tracks, track_features = extract.main()
     
     # OPTIONAL: use data from .csv instead of fetching everything again.
-    artists = pd.read_csv("data/artists.csv")
-    albums = pd.read_csv("data/albums.csv")
-    tracks = pd.read_csv("data/tracks.csv")
-    track_features = pd.read_csv("data/track_features.csv")
+    artists = pd.read_csv("app/data/artists.csv")
+    albums = pd.read_csv("app/data/albums.csv")
+    tracks = pd.read_csv("app/data/tracks.csv")
+    track_features = pd.read_csv("app/data/track_features.csv")
     
     # clean the extracted data.
     artists = clean_artists(pd.DataFrame(artists))
