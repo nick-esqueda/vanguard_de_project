@@ -1,3 +1,4 @@
+import pandas as pd
 import spotipy
 from spotipy.oauth2 import SpotifyClientCredentials
 from dotenv import load_dotenv
@@ -5,6 +6,7 @@ from typing import Iterable
 from utils.artist_urls import ARTIST_URLS
 from utils.io import write_to_csv
 from utils.pruning import prune_all, add_id
+import transform
 load_dotenv()
 
 
@@ -26,6 +28,7 @@ def extract_artists(urls: Iterable[str]) -> list[dict]:
     and then prunes those JSON responses for the relevant fields.
     returns a list of those pruned objects.
     """
+    print("Extracting artists...")
     artists = fetch_artists(urls)
     pruned_artists = prune_all(artists, "artist")
     return pruned_artists
@@ -60,6 +63,7 @@ def extract_artists_albums(urls: Iterable[str]) -> list[dict]:
     and then prunes those JSON responses for the relevant fields.
     returns a list of those pruned objects.
     """
+    print("Extracting albums...")
     albums = fetch_artists_albums(urls)
     all_pruned_albums = prune_all(albums, "album")
     return all_pruned_albums
@@ -92,6 +96,7 @@ def extract_albums_tracks(album_ids: Iterable[str]) -> list[dict]:
     and then prunes those JSON responses for the relevant fields.
     returns a list of those pruned objects.
     """
+    print("Extracting tracks...")
     tracks = fetch_albums_tracks(album_ids)
     all_pruned_tracks = prune_all(tracks, "track")
     return all_pruned_tracks
@@ -119,6 +124,7 @@ def extract_track_features(track_ids: list[str]) -> list[dict]:
     and then prunes those JSON responses for the relevant fields.
     returns a list of those pruned objects.
     """
+    print("Extracting track features...")
     track_features = fetch_track_features(track_ids)
     pruned_track_features = prune_all(track_features, "track_features")
     return pruned_track_features
@@ -132,14 +138,14 @@ def main():
     write_to_csv(artists, "data/artists.csv")
     
     albums = extract_artists_albums(ARTIST_URLS)
+    albums = transform.clean_albums(pd.DataFrame(albums))
     write_to_csv(albums, "data/albums.csv")
     
-    album_ids = [album["album_id"] for album in albums]
-    tracks = extract_albums_tracks(album_ids)
+    tracks = extract_albums_tracks(albums["album_id"])
+    tracks = transform.clean_tracks(pd.DataFrame(tracks), albums)
     write_to_csv(tracks, "data/tracks.csv")
     
-    track_ids = [track["track_id"] for track in tracks]
-    track_features = extract_track_features(track_ids)
+    track_features = extract_track_features(tracks["track_id"])
     write_to_csv(track_features, "data/track_features.csv")
 
 
