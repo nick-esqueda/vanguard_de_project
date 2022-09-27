@@ -1,15 +1,12 @@
-import sqlite3
 import pandas as pd
+from etl.utils.db import DB
 
-
-conn = sqlite3.connect("spotify.db")
-curs = conn.cursor()
 
 # VIEWS #########################################
-with conn:       
+def create_views(db: DB) -> None:
     # TOP SONGS BY ARTIST IN TERMS OF DURATION_MS
-    curs.execute("DROP VIEW IF EXISTS VW_artist_top_songs_by_duration;")
-    curs.execute("""
+    db.execute("DROP VIEW IF EXISTS VW_artist_top_songs_by_duration;")
+    db.execute("""
         CREATE VIEW VW_artist_top_songs_by_duration
         AS
         SELECT * FROM (
@@ -26,8 +23,8 @@ with conn:
     """)
     
     # TOP ARTISTS BY NUMBER OF FOLLOWERS
-    curs.execute("DROP VIEW IF EXISTS VW_top_artists_by_followers;")
-    curs.execute("""
+    db.execute("DROP VIEW IF EXISTS VW_top_artists_by_followers;")
+    db.execute("""
         CREATE VIEW VW_top_artists_by_followers
         AS
         SELECT artist_name, followers, popularity, genre
@@ -36,8 +33,8 @@ with conn:
     """)
     
     # TOP SONGS BY ARTIST IN TERMS OF TEMPO
-    curs.execute("DROP VIEW IF EXISTS VW_artist_top_songs_by_tempo;")
-    curs.execute("""
+    db.execute("DROP VIEW IF EXISTS VW_artist_top_songs_by_tempo;")
+    db.execute("""
         CREATE VIEW VW_artist_top_songs_by_tempo
         AS
         SELECT * FROM (
@@ -55,8 +52,8 @@ with conn:
     """)
     
     # ARTIST OVERVIEW
-    curs.execute("DROP VIEW IF EXISTS VW_artist_overview;")
-    curs.execute("""
+    db.execute("DROP VIEW IF EXISTS VW_artist_overview;")
+    db.execute("""
         CREATE VIEW VW_artist_overview
         AS
         SELECT 
@@ -72,8 +69,8 @@ with conn:
     """)
     
     # ARTIST STYLE OVERVIEW
-    curs.execute("DROP VIEW IF EXISTS VW_artist_style_overview;")
-    curs.execute("""
+    db.execute("DROP VIEW IF EXISTS VW_artist_style_overview;")
+    db.execute("""
         CREATE VIEW VW_artist_style_overview
         AS
         SELECT 
@@ -92,8 +89,17 @@ with conn:
         ORDER BY 1;
     """)
     
-    curs.execute("SELECT * FROM VW_artist_style_overview;")
-    t = pd.DataFrame(curs.fetchall())
+    db.execute("SELECT * FROM VW_artist_style_overview;")
+    t = pd.DataFrame(db.fetchall())
     print(t.head(50))
     
     
+# MAIN ###################################################################
+##########################################################################
+def main():
+    db = DB()
+    create_views(db)
+
+
+if __name__ == "__main__":
+    main()
