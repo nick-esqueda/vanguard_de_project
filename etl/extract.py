@@ -1,3 +1,4 @@
+import json
 import pandas as pd
 import spotipy
 from spotipy.oauth2 import SpotifyClientCredentials
@@ -18,9 +19,9 @@ spot = spotipy.Spotify(auth_manager=auth_manager)
 def fetch_artists(urls: Iterable[str]) -> list[dict]:
     """
     makes a call to the Spotify API to retrieve each artist's data from the passed in iterable. 
-    returns a list that returns each artist's data on each iteration. 
+    returns a list of dictionaries with each artist's data. 
     """
-    return [spot.artist(url) for url in urls]
+    return spot.artists(urls)["artists"]
 
 def extract_artists(urls: Iterable[str]) -> list[dict]:
     """
