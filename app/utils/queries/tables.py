@@ -1,3 +1,6 @@
+# this file is to store all table creation queries to keep code more concise.
+
+
 CREATE_ARTISTS = """
     CREATE TABLE artists (
         artist_id TEXT NOT NULL PRIMARY KEY,

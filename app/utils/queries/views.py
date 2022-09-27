@@ -1,3 +1,6 @@
+# this file is to store all view creation queries to keep code more concise.
+
+
 V_ARTIST_TOP_SONGS_BY_DURATION = """
     CREATE VIEW V_artist_top_songs_by_duration
     AS
@@ -11,7 +14,7 @@ V_ARTIST_TOP_SONGS_BY_DURATION = """
         FROM artists art
         JOIN albums alb ON alb.artist_id = art.artist_id
         JOIN tracks t ON t.album_id = alb.album_id) subq
-    WHERE rnk <= 3;
+    WHERE rnk <= 10;
 """
 
 V_TOP_ARTISTS_BY_FOLLOWERS = """
