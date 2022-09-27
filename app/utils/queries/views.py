@@ -9,7 +9,8 @@ V_ARTIST_TOP_SONGS_BY_DURATION = """
             art.artist_name,
             art.followers,
             t.song_name,
-            t.duration_ms,
+            ROUND((CAST(t.duration_ms AS REAL) / 1000) / 60, 2)
+                AS duration_mins,
             RANK() OVER(PARTITION BY art.artist_name ORDER BY t.duration_ms DESC) rnk 
         FROM artists art
         JOIN albums alb ON alb.artist_id = art.artist_id
