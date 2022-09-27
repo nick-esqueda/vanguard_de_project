@@ -143,6 +143,8 @@ def main():
     
     track_features = extract_track_features(tracks["track_id"])
     write_to_csv(track_features, "data/track_features.csv")
+    
+    return artists, albums, tracks, track_features
 
 
 if __name__ == "__main__":

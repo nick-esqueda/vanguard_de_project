@@ -1,5 +1,5 @@
 import pandas as pd
-from extract import *
+import extract
 from utils.artist_urls import ARTIST_URLS
 
 
@@ -47,19 +47,14 @@ def clean_track_features(track_features: pd.DataFrame, tracks: pd.DataFrame) -> 
 
 #################################################
 def main():
-    # # fetch all of the data first.
-    # artists = extract_artists(ARTIST_URLS)
-    # albums = extract_artists_albums(ARTIST_URLS)
-    # album_ids = [album["album_id"] for album in albums]
-    # tracks = extract_albums_tracks(album_ids)
-    # track_ids = [track["track_id"] for track in tracks]
-    # track_features = extract_track_features(track_ids)
+    # fetch all of the data first.
+    artists, albums, tracks, track_features = extract.main()
     
-    # OPTIONAL: use data from .csv instead of fetching everything again.
-    artists = pd.read_csv("data/artists.csv")
-    albums = pd.read_csv("data/albums.csv")
-    tracks = pd.read_csv("data/tracks.csv")
-    track_features = pd.read_csv("data/track_features.csv")
+    # # OPTIONAL: use data from .csv instead of fetching everything again.
+    # artists = pd.read_csv("data/artists.csv")
+    # albums = pd.read_csv("data/albums.csv")
+    # tracks = pd.read_csv("data/tracks.csv")
+    # track_features = pd.read_csv("data/track_features.csv")
     
     # clean the extracted data.
     artists = clean_artists(pd.DataFrame(artists))
@@ -67,14 +62,14 @@ def main():
     tracks = clean_tracks(pd.DataFrame(tracks), pd.DataFrame(albums))
     track_features = clean_track_features(pd.DataFrame(track_features), pd.DataFrame(tracks))
     
-    # print("\nARTISTS:")
-    # print(artists)
-    # print("\nALBUMS:")
-    # print(albums)
-    # print("\nTRACKS:")
-    # print(tracks)
-    # print("\nTRACK_FEATURES:")
-    # print(track_features)
+    print("\nARTISTS:")
+    print(artists)
+    print("\nALBUMS:")
+    print(albums)
+    print("\nTRACKS:")
+    print(tracks)
+    print("\nTRACK_FEATURES:")
+    print(track_features)
     
     return artists, albums, tracks, track_features
 
