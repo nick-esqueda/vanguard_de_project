@@ -59,8 +59,8 @@ def test_custom_views(db: DB) -> None:
 def main():
     db = DB()
     create_views(db)
-    # test_prompt_views(db)
-    test_custom_views(db)
+    test_prompt_views(db)
+    # test_custom_views(db)
 
 
 if __name__ == "__main__":
