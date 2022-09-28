@@ -65,6 +65,8 @@ def clean_tracks(tracks: DF_OR_LIST, albums: DF_OR_LIST, artists: DF_OR_LIST) ->
 def clean_track_features(track_features: DF_OR_LIST, tracks: DF_OR_LIST) -> pd.DataFrame:
     if type(track_features) is list:
         track_features = pd.DataFrame(track_features)
+    if type(tracks) is list:
+        tracks = pd.DataFrame(tracks)
     
     track_features.dropna(inplace=True)
     track_features.drop_duplicates(ignore_index=True, inplace=True)
@@ -89,11 +91,11 @@ def print_transformations(artists, albums, tracks, track_features):
 # MAIN ###################################################################
 ##########################################################################
 def main():
-    # fetch all of the data first.
-    artists, albums, tracks, track_features = extract.main()
+    # # fetch all of the data first.
+    # artists, albums, tracks, track_features = extract.main()
     
-    # # OPTIONAL: use data from .csv instead of extracting everything again.
-    # artists, albums, tracks, track_features = read_all_from_csv()
+    # OPTIONAL: use data from .csv instead of extracting everything again.
+    artists, albums, tracks, track_features = read_all_from_csv()
     
     # clean the extracted data.
     artists = clean_artists(artists)
