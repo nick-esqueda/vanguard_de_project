@@ -49,6 +49,7 @@ V_ARTIST_OVERVIEW = """
     SELECT 
         art.artist_name,
         art.followers,
+        art.popularity,
         art.genre,
         COUNT(*) total_albums,
         SUM(alb.total_tracks) total_tracks
@@ -96,4 +97,34 @@ V_GENRE_FEATURES = """
     JOIN track_features tf ON tf.track_id = tr.track_id
     GROUP BY 1
     ORDER BY 2 DESC, 3 DESC;
+"""
+
+V_GENRE_RELEASE_PATTERNS = """
+    CREATE VIEW V_genre_release_patterns
+    AS
+    SELECT
+        genre, 
+        avg_popularity,
+        ROUND((CAST(total_singles AS REAL) / (total_albums + total_singles)) * 100, 2)
+            AS percentage_of_singles,
+        ROUND((COALESCE(avg_album_track_duration, 0.0) / 1000) / 60, 2)
+            AS avg_album_track_duration_mins,
+        ROUND((COALESCE(avg_single_track_duration, 0.0) / 1000) / 60, 2)
+            AS avg_single_track_duration_mins
+    FROM (SELECT 
+              art.genre,
+              CAST(AVG(art.popularity) AS INTEGER) avg_popularity,
+              SUM(CASE WHEN alb.album_group = 'album' THEN 1 ELSE 0 END)
+                  AS total_albums,
+              SUM(CASE WHEN alb.album_group = 'single' THEN 1 ELSE 0 END)
+                  AS total_singles,
+              AVG(CASE WHEN alb.album_group = 'album' THEN tr.duration_ms ELSE NULL END) 
+                  AS avg_album_track_duration,
+              AVG(CASE WHEN alb.album_group = 'single' THEN tr.duration_ms ELSE NULL END) 
+                  AS avg_single_track_duration
+          FROM artists art
+          JOIN albums alb ON alb.artist_id = art.artist_id
+          JOIN tracks tr ON tr.album_id = alb.album_id
+          GROUP BY 1) subq
+    ORDER BY 3;
 """
