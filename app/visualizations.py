@@ -44,6 +44,13 @@ def loudness_vs_danceability(db):
     plt.savefig("images/loudness-vs-danceability.png", bbox_inches='tight', pad_inches=.6)
 
 
+def make_axes(ax, data1, data2, title, ylabel):
+    ax.bar("heavy electronic", data1, color="#1DB954")
+    ax.bar("metal", data2, color="#FFFFFF", alpha=.9)
+    ax.set_title(title, fontname="monospace", backgroundcolor="#191414", color="#FFFFFF")
+    ax.set_ylabel(ylabel, fontname="monospace")
+    ax.grid(color="#FFFFFF", linestyle="--", alpha=.3)
+
 def genre_style_comparison(db):
     # GET DATA
     db.execute("SELECT * FROM V_genre_features")
@@ -67,13 +74,15 @@ def genre_style_comparison(db):
     # PLOT DATA
     fig, (ax1, ax2, ax3, ax4) = plt.subplots(1, 4, figsize=(10, 6))
     fig.suptitle('genre style comparisons', fontsize=18, fontname="monospace", y=1.01, backgroundcolor="#FFFFFF", color="#191414")
-    fig.text(0.5, -0.02, 'genre', ha='center', fontsize=14, fontname="monospace",)
+    fig.text(0.5, -0.02, 'genre', ha='center', fontsize=14, fontname="monospace")
 
-    ax1.bar("heavy electronic", avg_danceability_elec, color="#1DB954")
-    ax1.bar("metal", avg_danceability_metal, color="#FFFFFF", alpha=.9)
-    ax1.set_title("danceability", fontname="monospace", backgroundcolor="#191414", color="#FFFFFF")
-    ax1.set_ylabel("avg danceability score", fontname="monospace")
-    ax1.grid(color="#FFFFFF", linestyle="--", alpha=.3)
+    # ax1.bar("heavy electronic", avg_danceability_elec, color="#1DB954") # if statement for color and alpha setting
+    # ax1.bar("metal", avg_danceability_metal, color="#FFFFFF", alpha=.9)
+    # ax1.set_title("danceability", fontname="monospace", backgroundcolor="#191414", color="#FFFFFF")
+    # ax1.set_ylabel("avg danceability score", fontname="monospace")
+    # ax1.grid(color="#FFFFFF", linestyle="--", alpha=.3)
+    
+    make_axes(ax1, avg_danceability_elec, avg_danceability_metal, "danceability", "avg danceability score")
 
     ax2.bar("heavy electronic", avg_loudness_elec, color="#1DB954")
     ax2.bar("metal", avg_loudness_metal, color="#FFFFFF", alpha=.9)
@@ -147,10 +156,10 @@ def subgenre_style_comparison(db):
 def main():
     db = DB()
     plt.style.use("dark_background")
-    energy_vs_loudness_tempo(db)
-    loudness_vs_danceability(db)
+    # energy_vs_loudness_tempo(db)
+    # loudness_vs_danceability(db)
     genre_style_comparison(db)
-    subgenre_style_comparison(db)
+    # subgenre_style_comparison(db)
 
 
 if __name__ == "__main__":
