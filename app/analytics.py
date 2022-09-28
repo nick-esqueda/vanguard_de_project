@@ -24,13 +24,13 @@ def create_views(db: DB) -> None:
     print("Views have been successfully created!")
     
 def test_prompt_views(db: DB) -> None:
-    db.execute("SELECT * FROM V_artist_top_songs_by_duration;")
-    t = pd.DataFrame(db.result())
-    print(t.head(50))
+    # db.execute("SELECT * FROM V_artist_top_songs_by_duration;")
+    # t = pd.DataFrame(db.result())
+    # print(t.head(50))
     
-    db.execute("SELECT * FROM V_top_artists_by_followers;")
-    t = pd.DataFrame(db.result())
-    print(t)
+    # db.execute("SELECT * FROM V_top_artists_by_followers;")
+    # t = pd.DataFrame(db.result())
+    # print(t)
     
     db.execute("SELECT * FROM V_artist_top_songs_by_tempo;")
     t = pd.DataFrame(db.result())
