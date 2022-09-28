@@ -2,7 +2,6 @@
 
 
 V_ARTIST_TOP_SONGS_BY_DURATION = """
-
     CREATE VIEW V_artist_top_songs_by_duration
     AS
     WITH rankings AS (

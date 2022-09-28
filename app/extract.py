@@ -1,5 +1,5 @@
-import json
-import pandas as pd
+# import json
+# import pandas as pd
 import spotipy
 from spotipy.oauth2 import SpotifyClientCredentials
 from dotenv import load_dotenv
@@ -130,14 +130,15 @@ def extract_track_features(track_ids: list[str]) -> list[dict]:
 ##########################################################################
 def main():
     artists = extract_artists(ARTIST_URLS)
+    tracks = transform.clean_artists(artists)
     write_to_csv(artists, "data/artists.csv")
     
     albums = extract_artists_albums(ARTIST_URLS)
-    albums = transform.clean_albums(pd.DataFrame(albums))
+    albums = transform.clean_albums(albums)
     write_to_csv(albums, "data/albums.csv")
     
     tracks = extract_albums_tracks(albums["album_id"])
-    tracks = transform.clean_tracks(pd.DataFrame(tracks), albums)
+    tracks = transform.clean_tracks(tracks, albums, artists)
     write_to_csv(tracks, "data/tracks.csv")
     
     track_features = extract_track_features(tracks["track_id"])
