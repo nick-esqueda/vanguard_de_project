@@ -58,8 +58,8 @@ V_ARTIST_OVERVIEW = """
     ORDER BY total_albums DESC, total_tracks DESC;
 """
 
-V_ARTIST_STYLE_OVERVIEW = """
-    CREATE VIEW V_artist_style_overview
+V_POPULAR_ARTIST_FEATURES = """
+    CREATE VIEW V_popular_artist_features
     AS
     SELECT 
         art.artist_name,
@@ -67,12 +67,33 @@ V_ARTIST_STYLE_OVERVIEW = """
         art.genre,
         ROUND(AVG(tf.danceability), 4) avg_danceability,
         ROUND(AVG(tf.energy), 4) avg_energy,
-        CAST(AVG(tf.tempo) AS INTEGER) avg_tempo,
+        CAST(CAST(AVG(tf.tempo) AS INTEGER) AS TEXT) || ' BPM' AS avg_tempo,
         ROUND(AVG(tf.loudness), 2) avg_loudness
     FROM artists art
     JOIN albums alb ON alb.artist_id = art.artist_id
     JOIN tracks t ON t.album_id = alb.album_id
     JOIN track_features tf ON t.track_id = tf.track_id
     GROUP BY 1, 2, 3
-    ORDER BY 1;
+    ORDER BY 2 DESC;
+"""
+
+V_GENRE_FEATURES = """
+    CREATE VIEW V_genre_features
+    AS
+    SELECT
+        art.genre,
+        AVG(tf.danceability) danceability,
+        AVG(tf.energy) energy,
+        AVG(tf.instrumentalness) instrumentalness,
+        AVG(tf.liveness) liveness,
+        AVG(tf.loudness) loudness,
+        AVG(tf.speechiness) speechiness,
+        AVG(tf.tempo) tempo,
+        AVG(tf.valence) valence
+    FROM artists art
+    JOIN albums alb ON alb.artist_id = art.artist_id
+    JOIN tracks tr ON tr.album_id = alb.album_id
+    JOIN track_features tf ON tf.track_id = tr.track_id
+    GROUP BY 1
+    ORDER BY 2 DESC, 3 DESC;
 """
