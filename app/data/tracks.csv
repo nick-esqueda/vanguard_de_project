@@ -82,12 +82,6 @@ track_id,song_name,external_url,duration_ms,explicit,disc_number,type,song_uri,a
 4UnHhV70A2nwlmtpmNZqaf,Point to Point,https://open.spotify.com/track/4UnHhV70A2nwlmtpmNZqaf,104173,False,10,track,spotify:track:4UnHhV70A2nwlmtpmNZqaf,1BRtQtljRJIxroJXI20K39
 1xRloL4YOvq7HatNJOh5pk,Modern Meat,https://open.spotify.com/track/1xRloL4YOvq7HatNJOh5pk,126520,False,11,track,spotify:track:1xRloL4YOvq7HatNJOh5pk,1BRtQtljRJIxroJXI20K39
 6XnjQ9NtfWjfnQjbwjDz4V,Song of Solomon,https://open.spotify.com/track/6XnjQ9NtfWjfnQjbwjDz4V,256586,False,12,track,spotify:track:6XnjQ9NtfWjfnQjbwjDz4V,1BRtQtljRJIxroJXI20K39
-6QD6PReeaIZ5iZXVEntcKE,Gordian Naught,https://open.spotify.com/track/6QD6PReeaIZ5iZXVEntcKE,288586,False,1,track,spotify:track:6QD6PReeaIZ5iZXVEntcKE,4NZVjgBQQw9iscGkydO5J2
-37jURwcKbPTtXm83uv869E,The Problem of Other Minds,https://open.spotify.com/track/37jURwcKbPTtXm83uv869E,152840,False,2,track,spotify:track:37jURwcKbPTtXm83uv869E,4NZVjgBQQw9iscGkydO5J2
-5BizG2v5hd43dCSk6Y8l9i,Monomyth,https://open.spotify.com/track/5BizG2v5hd43dCSk6Y8l9i,206511,False,3,track,spotify:track:5BizG2v5hd43dCSk6Y8l9i,4NZVjgBQQw9iscGkydO5J2
-2r7FNt9OKoMxqHvMakXWOj,The Problem of Other Minds,https://open.spotify.com/track/2r7FNt9OKoMxqHvMakXWOj,152840,False,1,track,spotify:track:2r7FNt9OKoMxqHvMakXWOj,6eORPuiaqSBDXcFGW626kj
-3Irv1S6X9W7FeQlQvyRt0y,Monomyth,https://open.spotify.com/track/3Irv1S6X9W7FeQlQvyRt0y,206511,False,2,track,spotify:track:3Irv1S6X9W7FeQlQvyRt0y,6eORPuiaqSBDXcFGW626kj
-0WiLaIOpXOqfyMfCEuKUJ5,Monomyth,https://open.spotify.com/track/0WiLaIOpXOqfyMfCEuKUJ5,206511,False,1,track,spotify:track:0WiLaIOpXOqfyMfCEuKUJ5,4QpUgATVSx1YGHvq8nDwsl
 4i3fHA0aGUKUZEbJ5b3RqE,Wave of Babies,https://open.spotify.com/track/4i3fHA0aGUKUZEbJ5b3RqE,329813,False,1,track,spotify:track:4i3fHA0aGUKUZEbJ5b3RqE,5E0bpYwRSYtQ04j91pIOGz
 741DrOmeWphVKdoph4LtME,Reptile (Live in London),https://open.spotify.com/track/741DrOmeWphVKdoph4LtME,1096000,True,1,track,spotify:track:741DrOmeWphVKdoph4LtME,1seFtbJIzwuUMR2wczMx2w
 2UG11CGTkGRZm2JON8wP1x,Chvrch Bvrner (Live in London),https://open.spotify.com/track/2UG11CGTkGRZm2JON8wP1x,226000,False,2,track,spotify:track:2UG11CGTkGRZm2JON8wP1x,1seFtbJIzwuUMR2wczMx2w
@@ -178,10 +172,7 @@ track_id,song_name,external_url,duration_ms,explicit,disc_number,type,song_uri,a
 0DnMGIZcLzv3IvvU1RR9gx,Ow My Feelings,https://open.spotify.com/track/0DnMGIZcLzv3IvvU1RR9gx,366580,False,10,track,spotify:track:0DnMGIZcLzv3IvvU1RR9gx,5g2wuopyi9BfhFwztSWFKU
 5VQymjM48L2PD26oPED9kB,Zyglrox,https://open.spotify.com/track/5VQymjM48L2PD26oPED9kB,306322,False,11,track,spotify:track:5VQymjM48L2PD26oPED9kB,5g2wuopyi9BfhFwztSWFKU
 2I1yznfyfj5JDhVYL5XVs7,Racecar,https://open.spotify.com/track/2I1yznfyfj5JDhVYL5XVs7,921500,False,12,track,spotify:track:2I1yznfyfj5JDhVYL5XVs7,5g2wuopyi9BfhFwztSWFKU
-0APPJD7W2FA0BUYT0iEOi3,Marigold (Live in London),https://open.spotify.com/track/0APPJD7W2FA0BUYT0iEOi3,378000,False,1,track,spotify:track:0APPJD7W2FA0BUYT0iEOi3,3PPs9NaF56yC0q71L8bwsS
 4cUv1bEkIyyBd4R8XJfyJw,Digital,https://open.spotify.com/track/4cUv1bEkIyyBd4R8XJfyJw,236400,False,1,track,spotify:track:4cUv1bEkIyyBd4R8XJfyJw,7loQMnFWQzr9zjsTgYcuNO
-4ZR4lzxdxzAP5JMeV4Y305,Garden in the Bones,https://open.spotify.com/track/4ZR4lzxdxzAP5JMeV4Y305,356506,False,1,track,spotify:track:4ZR4lzxdxzAP5JMeV4Y305,7rxl7rKX5FDnQTcBGB6B85
-3kG1zXluK26mRS9lekJxLh,Blood Eagle,https://open.spotify.com/track/3kG1zXluK26mRS9lekJxLh,358120,False,1,track,spotify:track:3kG1zXluK26mRS9lekJxLh,1euRsvATvZ9jfeH7PE3f4c
 6Tl1OGHOJtGDwL0zGMYmgc,Of Matter - P O R T A L S,https://open.spotify.com/track/6Tl1OGHOJtGDwL0zGMYmgc,894459,False,1,track,spotify:track:6Tl1OGHOJtGDwL0zGMYmgc,2hF7dY29EsfBvXe65PYPBd
 1SldxgxQY8qqcdkqKMfnug,King - P O R T A L S,https://open.spotify.com/track/1SldxgxQY8qqcdkqKMfnug,345323,False,2,track,spotify:track:1SldxgxQY8qqcdkqKMfnug,2hF7dY29EsfBvXe65PYPBd
 3DLHwnWz3y7nxLQf023k7c,"Concealing Fate Parts 1, 2 & 3 - P O R T A L S",https://open.spotify.com/track/3DLHwnWz3y7nxLQf023k7c,1103560,False,3,track,spotify:track:3DLHwnWz3y7nxLQf023k7c,2hF7dY29EsfBvXe65PYPBd
@@ -298,31 +289,10 @@ track_id,song_name,external_url,duration_ms,explicit,disc_number,type,song_uri,a
 4pOfS2numgh9ARPBxeef9c,Sunrise,https://open.spotify.com/track/4pOfS2numgh9ARPBxeef9c,237347,False,9,track,spotify:track:4pOfS2numgh9ARPBxeef9c,2ITnxVw9jw2I5uMlWGM2Jm
 48wq76JfkPRJ1D6BVQtCZZ,April,https://open.spotify.com/track/48wq76JfkPRJ1D6BVQtCZZ,288933,False,10,track,spotify:track:48wq76JfkPRJ1D6BVQtCZZ,2ITnxVw9jw2I5uMlWGM2Jm
 2tBd67cpkdg8jpr8bWI8fT,Eden,https://open.spotify.com/track/2tBd67cpkdg8jpr8bWI8fT,543450,False,11,track,spotify:track:2tBd67cpkdg8jpr8bWI8fT,2ITnxVw9jw2I5uMlWGM2Jm
-3RiQdvYLt3TzvhWeimeYZm,Tourniquet - P O R T A L S,https://open.spotify.com/track/3RiQdvYLt3TzvhWeimeYZm,278049,False,1,track,spotify:track:3RiQdvYLt3TzvhWeimeYZm,6BUIIJ0aSTci53pJ3So8Wx
-7eCCV6HnCIa0yEB38BHdIl,Nocturne - P O R T A L S,https://open.spotify.com/track/7eCCV6HnCIa0yEB38BHdIl,257216,False,1,track,spotify:track:7eCCV6HnCIa0yEB38BHdIl,4e7tG4SlI0bcB7poSlgGYk
-1PxIeufTTNHJ5v8Mq2Tz3N,King,https://open.spotify.com/track/1PxIeufTTNHJ5v8Mq2Tz3N,416000,False,1,track,spotify:track:1PxIeufTTNHJ5v8Mq2Tz3N,3APcadcD3Nri14ejDXtG1W
-0W5ZC40k9XeZTTV5gxREcK,Luminary,https://open.spotify.com/track/0W5ZC40k9XeZTTV5gxREcK,192948,False,1,track,spotify:track:0W5ZC40k9XeZTTV5gxREcK,37BvojQkG0JsRnEHDkowfA
 6fD3zlHnqvsryn8fYbJJuS,Smile - Single Version,https://open.spotify.com/track/6fD3zlHnqvsryn8fYbJJuS,206526,False,1,track,spotify:track:6fD3zlHnqvsryn8fYbJJuS,2RJFIGZutX4qXqo5uph4RN
-3ce8aOmxuWT5kgrDE3cKBx,Survival (Errai),https://open.spotify.com/track/3ce8aOmxuWT5kgrDE3cKBx,242666,False,1,track,spotify:track:3ce8aOmxuWT5kgrDE3cKBx,0Cl2zUhDbWF58wNVF0UUum
-5isDY3WY40sw0nQikHnFtS,Cages (Errai),https://open.spotify.com/track/5isDY3WY40sw0nQikHnFtS,251625,False,2,track,spotify:track:5isDY3WY40sw0nQikHnFtS,0Cl2zUhDbWF58wNVF0UUum
-2wSnMWKCrmj9Zy9Q3K58iP,Tourniquet (Errai),https://open.spotify.com/track/2wSnMWKCrmj9Zy9Q3K58iP,383481,False,3,track,spotify:track:2wSnMWKCrmj9Zy9Q3K58iP,0Cl2zUhDbWF58wNVF0UUum
-4iy1EfhChrxvtUW0JiAVv5,Seven Names (Errai),https://open.spotify.com/track/4iy1EfhChrxvtUW0JiAVv5,261304,False,4,track,spotify:track:4iy1EfhChrxvtUW0JiAVv5,0Cl2zUhDbWF58wNVF0UUum
-25GT3SO6v6ftoVwKltyRyW,Survival (Errai),https://open.spotify.com/track/25GT3SO6v6ftoVwKltyRyW,242666,False,1,track,spotify:track:25GT3SO6v6ftoVwKltyRyW,2qs3d9er3hGg9DSPnvTYKf
-5UlJ4IQ8rtWctVnlmXUaOP,Survival,https://open.spotify.com/track/5UlJ4IQ8rtWctVnlmXUaOP,265038,False,1,track,spotify:track:5UlJ4IQ8rtWctVnlmXUaOP,6yoaMAtZdVTBB7BtGUZDrw
-1uk9H9j9KXQHY7S9BPOxU6,Messenger,https://open.spotify.com/track/1uk9H9j9KXQHY7S9BPOxU6,214669,False,1,track,spotify:track:1uk9H9j9KXQHY7S9BPOxU6,3wmgRXU7RroNVrkxbTjzVg
-2VqirXyWH9r2ezmK2JMHpy,Perfection - Acoustic,https://open.spotify.com/track/2VqirXyWH9r2ezmK2JMHpy,227000,False,1,track,spotify:track:2VqirXyWH9r2ezmK2JMHpy,320pOzZ4xDqHlGKAGAyXP5
-3JHcQcnT1vicmV6rKUYyyv,April - Acoustic,https://open.spotify.com/track/3JHcQcnT1vicmV6rKUYyyv,272625,False,2,track,spotify:track:3JHcQcnT1vicmV6rKUYyyv,320pOzZ4xDqHlGKAGAyXP5
-4zQ8DqLOPeJgTfl5yutjgZ,Origin - Acoustic,https://open.spotify.com/track/4zQ8DqLOPeJgTfl5yutjgZ,295880,False,3,track,spotify:track:4zQ8DqLOPeJgTfl5yutjgZ,320pOzZ4xDqHlGKAGAyXP5
-2rcpfDQDD3N9vUGOeJiLDx,Dream Brother,https://open.spotify.com/track/2rcpfDQDD3N9vUGOeJiLDx,319081,False,4,track,spotify:track:2rcpfDQDD3N9vUGOeJiLDx,320pOzZ4xDqHlGKAGAyXP5
-5VTij3CoWiuo9VqHIYmPBK,Eden 2.0,https://open.spotify.com/track/5VTij3CoWiuo9VqHIYmPBK,269000,False,5,track,spotify:track:5VTij3CoWiuo9VqHIYmPBK,320pOzZ4xDqHlGKAGAyXP5
 49NQLIUiGWdKP2gJv5tj0R,Nascent,https://open.spotify.com/track/49NQLIUiGWdKP2gJv5tj0R,249306,False,1,track,spotify:track:49NQLIUiGWdKP2gJv5tj0R,2rlqzPY2DVXcRwV33jQ9Du
-5m0H6F8ajEkqc2sLE1dO9Q,Nascent (Instrumental),https://open.spotify.com/track/5m0H6F8ajEkqc2sLE1dO9Q,250081,False,2,track,spotify:track:5m0H6F8ajEkqc2sLE1dO9Q,2rlqzPY2DVXcRwV33jQ9Du
 1HlrKlJUx5HvTeXJ7BxDFI,"Acceptance - Concealing Fate, Pt. 1",https://open.spotify.com/track/1HlrKlJUx5HvTeXJ7BxDFI,513559,False,1,track,spotify:track:1HlrKlJUx5HvTeXJ7BxDFI,4EtmqSm42IfVUti8yupDBV
 5uVZMVn5vXXR1CFftvXLTU,"Deception - Concealing Fate, Pt. 2",https://open.spotify.com/track/5uVZMVn5vXXR1CFftvXLTU,322866,False,2,track,spotify:track:5uVZMVn5vXXR1CFftvXLTU,4EtmqSm42IfVUti8yupDBV
-0EHRE8kNOg8IGQZemiOxaY,"The Impossible - Concealing Fate, Pt. 3",https://open.spotify.com/track/0EHRE8kNOg8IGQZemiOxaY,290800,False,3,track,spotify:track:0EHRE8kNOg8IGQZemiOxaY,4EtmqSm42IfVUti8yupDBV
-4SJfRu0FlTrihtrcumbfSc,"Perfection - Concealing Fate, Pt. 4",https://open.spotify.com/track/4SJfRu0FlTrihtrcumbfSc,158280,False,4,track,spotify:track:4SJfRu0FlTrihtrcumbfSc,4EtmqSm42IfVUti8yupDBV
-45EwlmlJCVpAqrVAW0msRW,"Epiphany - Concealing Fate, Pt. 5",https://open.spotify.com/track/45EwlmlJCVpAqrVAW0msRW,89240,False,5,track,spotify:track:45EwlmlJCVpAqrVAW0msRW,4EtmqSm42IfVUti8yupDBV
-4u3xoPWKbYzahlShRgyle6,"Origin - Concealing Fate, Pt. 6",https://open.spotify.com/track/4u3xoPWKbYzahlShRgyle6,284440,False,6,track,spotify:track:4u3xoPWKbYzahlShRgyle6,4EtmqSm42IfVUti8yupDBV
 1C3yWKJB1qcjBg4H7B7IHT,Introduction: Staos - forte,https://open.spotify.com/track/1C3yWKJB1qcjBg4H7B7IHT,158409,False,1,track,spotify:track:1C3yWKJB1qcjBg4H7B7IHT,3QyypMtY24TJgtseyPalFu
 7nnOyNid7ftcvM33hjw79R,Längstmedån - forte,https://open.spotify.com/track/7nnOyNid7ftcvM33hjw79R,189816,False,2,track,spotify:track:7nnOyNid7ftcvM33hjw79R,3QyypMtY24TJgtseyPalFu
 3GhGod9Ve38wYypwe7HXaa,Dimman - forte,https://open.spotify.com/track/3GhGod9Ve38wYypwe7HXaa,241964,False,3,track,spotify:track:3GhGod9Ve38wYypwe7HXaa,3QyypMtY24TJgtseyPalFu
@@ -399,9 +369,6 @@ track_id,song_name,external_url,duration_ms,explicit,disc_number,type,song_uri,a
 31T2rssvbmQqudhIupR8TE,Nojja,https://open.spotify.com/track/31T2rssvbmQqudhIupR8TE,102146,False,11,track,spotify:track:31T2rssvbmQqudhIupR8TE,4zk80gG709IPpyLHreXA5I
 2VG2Dwc0hOv0tOoqeOSYy9,Deceit,https://open.spotify.com/track/2VG2Dwc0hOv0tOoqeOSYy9,309200,False,12,track,spotify:track:2VG2Dwc0hOv0tOoqeOSYy9,4zk80gG709IPpyLHreXA5I
 5gvImPfQ8lob5Be4tlq2xr,The Lone Deranger,https://open.spotify.com/track/5gvImPfQ8lob5Be4tlq2xr,447040,False,13,track,spotify:track:5gvImPfQ8lob5Be4tlq2xr,4zk80gG709IPpyLHreXA5I
-3JkngcpInYH1pC37MubshJ,penny royal poison,https://open.spotify.com/track/3JkngcpInYH1pC37MubshJ,189138,False,1,track,spotify:track:3JkngcpInYH1pC37MubshJ,6vN7gFRSTozXhZ7RNrk1NO
-3oX7uAQuDsEVet21RVNwJu,toxin,https://open.spotify.com/track/3oX7uAQuDsEVet21RVNwJu,174609,False,1,track,spotify:track:3oX7uAQuDsEVet21RVNwJu,2eBX0Vx1Yc0x7IkvCNrPX0
-5HCxJj2i3lXKmTuo6zfllP,kaos2,https://open.spotify.com/track/5HCxJj2i3lXKmTuo6zfllP,241400,False,2,track,spotify:track:5HCxJj2i3lXKmTuo6zfllP,2eBX0Vx1Yc0x7IkvCNrPX0
 6toTCp04FTs33PbZMBRACk,när de du älskar kommer tillbaka från de döda - single version,https://open.spotify.com/track/6toTCp04FTs33PbZMBRACk,246189,False,1,track,spotify:track:6toTCp04FTs33PbZMBRACk,2mpcskPiGwaPMLIHkxCSit
 0yXmmWU1UD6KFzajCIpcmr,den helige anden,https://open.spotify.com/track/0yXmmWU1UD6KFzajCIpcmr,325911,False,1,track,spotify:track:0yXmmWU1UD6KFzajCIpcmr,449inBTPq4ioyjguC5h25n
 433KtOM9Ko6leODHh3wDTr,Magician,https://open.spotify.com/track/433KtOM9Ko6leODHh3wDTr,218506,False,1,track,spotify:track:433KtOM9Ko6leODHh3wDTr,4TLl1j6ojm8pTMRucMVVqT
@@ -445,13 +412,6 @@ track_id,song_name,external_url,duration_ms,explicit,disc_number,type,song_uri,a
 6n6qRSg27rRdQIJxWETzrG,Limbo,https://open.spotify.com/track/6n6qRSg27rRdQIJxWETzrG,139862,False,8,track,spotify:track:6n6qRSg27rRdQIJxWETzrG,1ItAS5PdZ6kmFxeKXMB6aT
 6FzQBI5NNoYfuf23KlgPm9,Plenitude,https://open.spotify.com/track/6FzQBI5NNoYfuf23KlgPm9,436954,False,9,track,spotify:track:6FzQBI5NNoYfuf23KlgPm9,1ItAS5PdZ6kmFxeKXMB6aT
 3dwBsZj7Z4V9pYE7ElhVKl,Finale,https://open.spotify.com/track/3dwBsZj7Z4V9pYE7ElhVKl,485645,False,10,track,spotify:track:3dwBsZj7Z4V9pYE7ElhVKl,1ItAS5PdZ6kmFxeKXMB6aT
-7iaXMaMFTVNlPRDcCv9dcb,Everyman,https://open.spotify.com/track/7iaXMaMFTVNlPRDcCv9dcb,316253,False,1,track,spotify:track:7iaXMaMFTVNlPRDcCv9dcb,6wS3ZtW7Bdn57HS54HqiMt
-7dIQUxgtTigDjTYDGOgV4F,Creator,https://open.spotify.com/track/7dIQUxgtTigDjTYDGOgV4F,343746,False,1,track,spotify:track:7dIQUxgtTigDjTYDGOgV4F,7GliJYS45UKlrguDeCCse5
-7CksXPQKwNtjd54To8O4Zi,Outlaw,https://open.spotify.com/track/7CksXPQKwNtjd54To8O4Zi,375626,False,1,track,spotify:track:7CksXPQKwNtjd54To8O4Zi,5CJ1Pou4xWdg5URxJsBoRm
-6wviLxwR04XGjTRH8LkJ3R,Innocent,https://open.spotify.com/track/6wviLxwR04XGjTRH8LkJ3R,339506,False,1,track,spotify:track:6wviLxwR04XGjTRH8LkJ3R,2bleSQYUwyI2O785GsosnE
-46psGUzF48LYpoBQOKMpNO,Succube,https://open.spotify.com/track/46psGUzF48LYpoBQOKMpNO,330133,False,1,track,spotify:track:46psGUzF48LYpoBQOKMpNO,0cmoc7cn3kbat6f752ONru
-46nFPnqITlEAqF7g2hxI4s,Crystal Teeth,https://open.spotify.com/track/46nFPnqITlEAqF7g2hxI4s,220880,False,1,track,spotify:track:46nFPnqITlEAqF7g2hxI4s,47FBrQ1WxSP6CSaBq2olFE
-5yb3fxIw1YHIWj1fz5qkaX,Incube,https://open.spotify.com/track/5yb3fxIw1YHIWj1fz5qkaX,452160,False,1,track,spotify:track:5yb3fxIw1YHIWj1fz5qkaX,1zy2OJcFNJ0X1iyygGFlHE
 6AkUaYmKQMW7EhzqPqYB5n,Broken Cog,https://open.spotify.com/track/6AkUaYmKQMW7EhzqPqYB5n,335146,True,1,track,spotify:track:6AkUaYmKQMW7EhzqPqYB5n,6EgEo5csYA7HqasanrvwWk
 6SOW1rdiCnxY64Fp89DluQ,The Abysmal Eye,https://open.spotify.com/track/6SOW1rdiCnxY64Fp89DluQ,295786,False,2,track,spotify:track:6SOW1rdiCnxY64Fp89DluQ,6EgEo5csYA7HqasanrvwWk
 6SwK8186p1TC6QcAwSTGMR,Light The Shortening Fuse,https://open.spotify.com/track/6SwK8186p1TC6QcAwSTGMR,268207,False,3,track,spotify:track:6SwK8186p1TC6QcAwSTGMR,6EgEo5csYA7HqasanrvwWk
@@ -622,23 +582,8 @@ track_id,song_name,external_url,duration_ms,explicit,disc_number,type,song_uri,a
 0EnA6HvtXpTCZNrfOM3Pvs,Ritual,https://open.spotify.com/track/0EnA6HvtXpTCZNrfOM3Pvs,377293,True,3,track,spotify:track:0EnA6HvtXpTCZNrfOM3Pvs,124WRZyGF6Hb5KqbLO3rLo
 4In7iZNlplbEBI17TtEDGV,Gods Of Rapture,https://open.spotify.com/track/4In7iZNlplbEBI17TtEDGV,310666,False,4,track,spotify:track:4In7iZNlplbEBI17TtEDGV,124WRZyGF6Hb5KqbLO3rLo
 78XsctM7naGLLZCrnKCnkv,Aztec Two-Step,https://open.spotify.com/track/78XsctM7naGLLZCrnKCnkv,644266,False,5,track,spotify:track:78XsctM7naGLLZCrnKCnkv,124WRZyGF6Hb5KqbLO3rLo
-6haPL5fAuRJ25u2E9PQyQx,I Am That Thirst,https://open.spotify.com/track/6haPL5fAuRJ25u2E9PQyQx,280141,False,1,track,spotify:track:6haPL5fAuRJ25u2E9PQyQx,7hw65PGHpBFnDcZRdT3VBr
-4UFpR9JKj5XIZuwOu6pdro,Light The Shortening Fuse,https://open.spotify.com/track/4UFpR9JKj5XIZuwOu6pdro,268207,False,1,track,spotify:track:4UFpR9JKj5XIZuwOu6pdro,50UUnWSbhJ2KMdV7ukscIe
-7Iogi1NuInEAxMBOreCB3b,The Abysmal Eye,https://open.spotify.com/track/7Iogi1NuInEAxMBOreCB3b,295786,False,1,track,spotify:track:7Iogi1NuInEAxMBOreCB3b,0TEywpRjtQ68lwnUO0uHSa
-0GwiNKydF7MUbHcgiDwoGb,Vanished - Demo,https://open.spotify.com/track/0GwiNKydF7MUbHcgiDwoGb,334066,False,1,track,spotify:track:0GwiNKydF7MUbHcgiDwoGb,24kPULrD6zhQJzYKECFQ10
-21DM2v1Lri7nsMNoA8kIcM,Suffer In Truth - Demo,https://open.spotify.com/track/21DM2v1Lri7nsMNoA8kIcM,266693,False,2,track,spotify:track:21DM2v1Lri7nsMNoA8kIcM,24kPULrD6zhQJzYKECFQ10
-3kMRbZXRYEEtPbs5LwG8og,Inside What´s Within Behind - Demo,https://open.spotify.com/track/3kMRbZXRYEEtPbs5LwG8og,250800,False,3,track,spotify:track:3kMRbZXRYEEtPbs5LwG8og,24kPULrD6zhQJzYKECFQ10
-0PqNEEFdlBVFGogkfDzKrw,Gods Of Rapture - Live,https://open.spotify.com/track/0PqNEEFdlBVFGogkfDzKrw,293773,False,4,track,spotify:track:0PqNEEFdlBVFGogkfDzKrw,24kPULrD6zhQJzYKECFQ10
-3uoj2LOPHkg7RxMd8aqtqV,Sane (Demo Version),https://open.spotify.com/track/3uoj2LOPHkg7RxMd8aqtqV,247600,False,1,track,spotify:track:3uoj2LOPHkg7RxMd8aqtqV,43RnhNybpcAHzpGzwCk3As
 5odWIWHs53TgtjFGXSmhAt,Future Breed Machine (Live),https://open.spotify.com/track/5odWIWHs53TgtjFGXSmhAt,348682,False,2,track,spotify:track:5odWIWHs53TgtjFGXSmhAt,43RnhNybpcAHzpGzwCk3As
-451PcYUyI2DxejAzFshCqD,Future Breed Machine (Mayhem Version),https://open.spotify.com/track/451PcYUyI2DxejAzFshCqD,492573,False,3,track,spotify:track:451PcYUyI2DxejAzFshCqD,43RnhNybpcAHzpGzwCk3As
-0d45YxJbndKqjFrkud9HTf,Futile Bread Machine (Campfire Version),https://open.spotify.com/track/0d45YxJbndKqjFrkud9HTf,210466,False,4,track,spotify:track:0d45YxJbndKqjFrkud9HTf,43RnhNybpcAHzpGzwCk3As
-5poQWjfwINLmexdFmx77Bz,Future Breed Machine (Quant´s Quantastical O La La),https://open.spotify.com/track/5poQWjfwINLmexdFmx77Bz,451466,False,5,track,spotify:track:5poQWjfwINLmexdFmx77Bz,43RnhNybpcAHzpGzwCk3As
-00extEYVLM2CVUYCt9SdUO,Future Breed Machine (Friend´s Stealth Remix),https://open.spotify.com/track/00extEYVLM2CVUYCt9SdUO,408626,False,6,track,spotify:track:00extEYVLM2CVUYCt9SdUO,43RnhNybpcAHzpGzwCk3As
 6mnLcQF5GYlFycGu2htkvb,I (21 Minute Track),https://open.spotify.com/track/6mnLcQF5GYlFycGu2htkvb,1260013,False,1,track,spotify:track:6mnLcQF5GYlFycGu2htkvb,1RUmW02aR9SjIKRY6cFJ5S
-1kRWADmKv7GpmaAgPxB2xz,Cadaverous Mastication (2001),https://open.spotify.com/track/1kRWADmKv7GpmaAgPxB2xz,469266,False,1,track,spotify:track:1kRWADmKv7GpmaAgPxB2xz,5GZZYKUMoWSEuZ78Do4htg
-2kLRIJhyvNUYeT3pMVYtzT,Sovereigns Morbidity,https://open.spotify.com/track/2kLRIJhyvNUYeT3pMVYtzT,268733,False,2,track,spotify:track:2kLRIJhyvNUYeT3pMVYtzT,5GZZYKUMoWSEuZ78Do4htg
-2jXg6uzqMtqxMH8VPew8Rn,Debt Of Nature,https://open.spotify.com/track/2jXg6uzqMtqxMH8VPew8Rn,438240,False,3,track,spotify:track:2jXg6uzqMtqxMH8VPew8Rn,5GZZYKUMoWSEuZ78Do4htg
 5iPuyK4PjYTM7qngxxxPRI,I'll Tell You Someday,https://open.spotify.com/track/5iPuyK4PjYTM7qngxxxPRI,249773,False,1,track,spotify:track:5iPuyK4PjYTM7qngxxxPRI,36vhZCfOCcpgEk7tXWBUdZ
 0KN1IVwDxMs4MDZF5RRGtQ,Papelillo,https://open.spotify.com/track/0KN1IVwDxMs4MDZF5RRGtQ,251013,False,2,track,spotify:track:0KN1IVwDxMs4MDZF5RRGtQ,36vhZCfOCcpgEk7tXWBUdZ
 3Zk9LqexNFYB15YFB2vshS,Perfume,https://open.spotify.com/track/3Zk9LqexNFYB15YFB2vshS,246373,False,3,track,spotify:track:3Zk9LqexNFYB15YFB2vshS,36vhZCfOCcpgEk7tXWBUdZ
@@ -770,12 +715,6 @@ track_id,song_name,external_url,duration_ms,explicit,disc_number,type,song_uri,a
 08j52WiODVueMt498JbRzv,Brace Legs,https://open.spotify.com/track/08j52WiODVueMt498JbRzv,150013,False,6,track,spotify:track:08j52WiODVueMt498JbRzv,6wlDEHUPWhFiYpTg8T2bzr
 4UcpHaUU0lHcNKEnhZH4Fu,Bow Down,https://open.spotify.com/track/4UcpHaUU0lHcNKEnhZH4Fu,123880,False,7,track,spotify:track:4UcpHaUU0lHcNKEnhZH4Fu,6wlDEHUPWhFiYpTg8T2bzr
 6yTyhwxW0dus1LT9gIzUqI,The Takeover,https://open.spotify.com/track/6yTyhwxW0dus1LT9gIzUqI,183120,False,8,track,spotify:track:6yTyhwxW0dus1LT9gIzUqI,6wlDEHUPWhFiYpTg8T2bzr
-3fGfCGSbdwtl9Fl3LvGrMv,Angel or Alien,https://open.spotify.com/track/3fGfCGSbdwtl9Fl3LvGrMv,267649,False,1,track,spotify:track:3fGfCGSbdwtl9Fl3LvGrMv,4T1IN6gXL3ZJl2yussmG3r
-6My7F2ejNKczzrmgrt3g4t,White Nile,https://open.spotify.com/track/6My7F2ejNKczzrmgrt3g4t,229042,False,2,track,spotify:track:6My7F2ejNKczzrmgrt3g4t,4T1IN6gXL3ZJl2yussmG3r
-52cwidOKr1iSZU20Jqx4wB,White Nile,https://open.spotify.com/track/52cwidOKr1iSZU20Jqx4wB,229042,False,1,track,spotify:track:52cwidOKr1iSZU20Jqx4wB,0GAeqCTzESd8aqYJ20NQ3R
-7pBax6M2fDPYU0lkjyrKnT,The Accursed,https://open.spotify.com/track/7pBax6M2fDPYU0lkjyrKnT,206750,True,1,track,spotify:track:7pBax6M2fDPYU0lkjyrKnT,2StkXzPwzAKavLijMSWIZ9
-0FxpKseyPDDlsWu3AXyFxs,Silence the Echo,https://open.spotify.com/track/0FxpKseyPDDlsWu3AXyFxs,270800,False,2,track,spotify:track:0FxpKseyPDDlsWu3AXyFxs,2StkXzPwzAKavLijMSWIZ9
-1zKe9EFD0OaxJsea7zO14E,Silence the Echo,https://open.spotify.com/track/1zKe9EFD0OaxJsea7zO14E,270800,False,1,track,spotify:track:1zKe9EFD0OaxJsea7zO14E,4cfREfsd23uCWGykUOcPhY
 4sIPJ0x9xEabKrsGxDP2kb,Behold The Crown,https://open.spotify.com/track/4sIPJ0x9xEabKrsGxDP2kb,274314,False,1,track,spotify:track:4sIPJ0x9xEabKrsGxDP2kb,5TYkzohGue5TQbhIk2T8xH
 3Ks0l9pRwBoobHURPrTNPs,"Exit, Exist",https://open.spotify.com/track/3Ks0l9pRwBoobHURPrTNPs,234834,False,2,track,spotify:track:3Ks0l9pRwBoobHURPrTNPs,5TYkzohGue5TQbhIk2T8xH
 6OyFED2JFZZ0MDTVNhFAjR,11/26,https://open.spotify.com/track/6OyFED2JFZZ0MDTVNhFAjR,308371,False,3,track,spotify:track:6OyFED2JFZZ0MDTVNhFAjR,5TYkzohGue5TQbhIk2T8xH
@@ -977,18 +916,14 @@ track_id,song_name,external_url,duration_ms,explicit,disc_number,type,song_uri,a
 0wR8oEUyDZjyTcxhmtEXju,Nights on Fire,https://open.spotify.com/track/0wR8oEUyDZjyTcxhmtEXju,238800,False,16,track,spotify:track:0wR8oEUyDZjyTcxhmtEXju,6dB09CJ2l65Gvnf89Yfmka
 7ztFTiaEtc1TF5AV9909Bb,Teardrop,https://open.spotify.com/track/7ztFTiaEtc1TF5AV9909Bb,265500,False,1,track,spotify:track:7ztFTiaEtc1TF5AV9909Bb,3CNLbkYxHTAHaryZmy8oCo
 1UJeLGFBvPxOxe0WTftc99,Everybody's dead! - Virtual Riot Version,https://open.spotify.com/track/1UJeLGFBvPxOxe0WTftc99,210750,True,1,track,spotify:track:1UJeLGFBvPxOxe0WTftc99,2EW0TpMFj9PkgTmNeR29pd
-32pZlOICHiI4tLU0NJZz6R,How Do I Know,https://open.spotify.com/track/32pZlOICHiI4tLU0NJZz6R,211764,False,1,track,spotify:track:32pZlOICHiI4tLU0NJZz6R,5ZlyjpkxhQianGst7MDfgi
 0se8mCFDYQohVqP6cFoToK,Don't Need You,https://open.spotify.com/track/0se8mCFDYQohVqP6cFoToK,197793,False,1,track,spotify:track:0se8mCFDYQohVqP6cFoToK,76yfAYufLuG6wYQRRnJTx5
 00G9JbHRx6G6QVn0DYFpgu,Neon Angel (feat. Leah Culver),https://open.spotify.com/track/00G9JbHRx6G6QVn0DYFpgu,284800,False,1,track,spotify:track:00G9JbHRx6G6QVn0DYFpgu,4sGO26ZSpLfo3yZv0mwJ8w
-7xiOCdvjjZ1t4NZk3SjEwN,CHROMA,https://open.spotify.com/track/7xiOCdvjjZ1t4NZk3SjEwN,273724,True,1,track,spotify:track:7xiOCdvjjZ1t4NZk3SjEwN,6r3pmW6cdtmzg7eikOKS15
-45PEs9rgK7Q4gcxwOsPM4o,This Could Be Us,https://open.spotify.com/track/45PEs9rgK7Q4gcxwOsPM4o,308400,False,1,track,spotify:track:45PEs9rgK7Q4gcxwOsPM4o,3LDO3EsSED9KNkt8ycUAHH
 529HDmnccW2tj6ElRiMNjJ,Show Up VIP,https://open.spotify.com/track/529HDmnccW2tj6ElRiMNjJ,238400,False,1,track,spotify:track:529HDmnccW2tj6ElRiMNjJ,2vpROOh4oHlqKeW1mtwJaV
 4EO6YgVt7X0PVYbHMlFqAw,Weeble Wobble VIP,https://open.spotify.com/track/4EO6YgVt7X0PVYbHMlFqAw,172800,False,2,track,spotify:track:4EO6YgVt7X0PVYbHMlFqAw,2vpROOh4oHlqKeW1mtwJaV
 4EoqYVnyo51eObLx8WsS7R,Basement Dwellers VIP,https://open.spotify.com/track/4EoqYVnyo51eObLx8WsS7R,224000,False,3,track,spotify:track:4EoqYVnyo51eObLx8WsS7R,2vpROOh4oHlqKeW1mtwJaV
 6t2vKKAM3MDBT6FCojNFH4,Rivals (Virtual Riot VIP),https://open.spotify.com/track/6t2vKKAM3MDBT6FCojNFH4,150400,False,4,track,spotify:track:6t2vKKAM3MDBT6FCojNFH4,2vpROOh4oHlqKeW1mtwJaV
 3ue2oEa1Lz8QevSpVoDKPg,Gang Shit - ECRAZE Remix,https://open.spotify.com/track/3ue2oEa1Lz8QevSpVoDKPg,148800,False,1,track,spotify:track:3ue2oEa1Lz8QevSpVoDKPg,6BTXGeFVhUwS6l3l4sEaIO
 6DZfhX79ChUvUGNQc0caWn,Heavy Bass Design Vol. 2 [Sample Pack Demo],https://open.spotify.com/track/6DZfhX79ChUvUGNQc0caWn,113600,False,1,track,spotify:track:6DZfhX79ChUvUGNQc0caWn,3APgmbgkjQgZtYpXO5pYHG
-50ajnEucwfTCrkOFu21ZgB,Dream Logic,https://open.spotify.com/track/50ajnEucwfTCrkOFu21ZgB,243707,False,1,track,spotify:track:50ajnEucwfTCrkOFu21ZgB,0ozV7qw2cFkQFJfErVsgCZ
 0s0xVFwi5V3LSQugmJ9b77,Kingdoms & Castles - Still Kids Remix,https://open.spotify.com/track/0s0xVFwi5V3LSQugmJ9b77,200470,False,1,track,spotify:track:0s0xVFwi5V3LSQugmJ9b77,15cPwzCLc7WYOOGOylOpFk
 7eAsZXcKoXG2u4ONQslUb1,Pray For Riddim VIP,https://open.spotify.com/track/7eAsZXcKoXG2u4ONQslUb1,188800,False,1,track,spotify:track:7eAsZXcKoXG2u4ONQslUb1,0CkRaGI51AX9ILAgzfaVGg
 1N0k3jzMiHB8hUd6z5zDLY,Wompum VIP,https://open.spotify.com/track/1N0k3jzMiHB8hUd6z5zDLY,153600,False,2,track,spotify:track:1N0k3jzMiHB8hUd6z5zDLY,0CkRaGI51AX9ILAgzfaVGg
@@ -1038,7 +973,6 @@ track_id,song_name,external_url,duration_ms,explicit,disc_number,type,song_uri,a
 6ZlRvUrtiR0sB6kJXozMby,In My Head - Who Came After Remix,https://open.spotify.com/track/6ZlRvUrtiR0sB6kJXozMby,271482,False,2,track,spotify:track:6ZlRvUrtiR0sB6kJXozMby,1nxMXTairpORF1vJR1pQQv
 0ZLt9szik3pB1xl3YktUqB,In My Head - Katdrop Remix,https://open.spotify.com/track/0ZLt9szik3pB1xl3YktUqB,230250,False,3,track,spotify:track:0ZLt9szik3pB1xl3YktUqB,1nxMXTairpORF1vJR1pQQv
 3qf1rGa01dLsSYr0sgSXFe,In My Head - VIP Mix,https://open.spotify.com/track/3qf1rGa01dLsSYr0sgSXFe,248709,False,4,track,spotify:track:3qf1rGa01dLsSYr0sgSXFe,1nxMXTairpORF1vJR1pQQv
-5W9Ol3NWOt5jXd08TQOggT,In My Head - VIP Mix,https://open.spotify.com/track/5W9Ol3NWOt5jXd08TQOggT,248709,False,1,track,spotify:track:5W9Ol3NWOt5jXd08TQOggT,3juc2cXd9qbE6WmX2QT7KY
 3bCl4QxdXOC1zFG2M1KTIP,Init,https://open.spotify.com/track/3bCl4QxdXOC1zFG2M1KTIP,326413,False,1,track,spotify:track:3bCl4QxdXOC1zFG2M1KTIP,4FFsnRXJxmzdceIiL1VBa3
 1xUwNMCF7LcVDZ0Mu1XvDR,Throwback,https://open.spotify.com/track/1xUwNMCF7LcVDZ0Mu1XvDR,241548,False,2,track,spotify:track:1xUwNMCF7LcVDZ0Mu1XvDR,4FFsnRXJxmzdceIiL1VBa3
 0UHAJOUMvgTznDEuVrWf7I,With You,https://open.spotify.com/track/0UHAJOUMvgTznDEuVrWf7I,327619,False,3,track,spotify:track:0UHAJOUMvgTznDEuVrWf7I,4FFsnRXJxmzdceIiL1VBa3
@@ -1122,9 +1056,6 @@ track_id,song_name,external_url,duration_ms,explicit,disc_number,type,song_uri,a
 3jYkJiR1A3Wim8gLuhxEWP,Closure,https://open.spotify.com/track/3jYkJiR1A3Wim8gLuhxEWP,229363,False,3,track,spotify:track:3jYkJiR1A3Wim8gLuhxEWP,4kUAEYzsp6KsZ0ul71m8g3
 7q0c9PsObLhpytQMutgcBp,Tick Tock,https://open.spotify.com/track/7q0c9PsObLhpytQMutgcBp,220095,False,4,track,spotify:track:7q0c9PsObLhpytQMutgcBp,4kUAEYzsp6KsZ0ul71m8g3
 717NZBgyTeZMNYBXI8bCY4,Imagineer,https://open.spotify.com/track/717NZBgyTeZMNYBXI8bCY4,211200,False,5,track,spotify:track:717NZBgyTeZMNYBXI8bCY4,4kUAEYzsp6KsZ0ul71m8g3
-2oWISx2lEhKYeaWVmIoGJY,Closure,https://open.spotify.com/track/2oWISx2lEhKYeaWVmIoGJY,229363,False,1,track,spotify:track:2oWISx2lEhKYeaWVmIoGJY,1geXCIrZKR3CqUiIhzoSq9
-208pNiAVE5sFwtUoQuKu5f,Electric Lady,https://open.spotify.com/track/208pNiAVE5sFwtUoQuKu5f,200800,False,1,track,spotify:track:208pNiAVE5sFwtUoQuKu5f,6bUqpDk7hOlF1XlbAgDBvk
-4gay1a6nUrfOJbKukLZlue,Imagineer,https://open.spotify.com/track/4gay1a6nUrfOJbKukLZlue,211200,False,1,track,spotify:track:4gay1a6nUrfOJbKukLZlue,148r4TCvqPDwkZUvgUiYsn
 2pzujCwroe8FXGywwzDcjg,Killer Robots,https://open.spotify.com/track/2pzujCwroe8FXGywwzDcjg,237600,False,1,track,spotify:track:2pzujCwroe8FXGywwzDcjg,5sitkZVCWb84BaoN7jIAoU
 7oI6mvnOWqTKtZQOylrHH7,Barely Alive Trap Sounds Vol. 1 [Sample Pack Demo],https://open.spotify.com/track/7oI6mvnOWqTKtZQOylrHH7,243200,False,1,track,spotify:track:7oI6mvnOWqTKtZQOylrHH7,6zRieiym3c5bat2uHa411y
 1fdtn7sz0pRf4kxyFSexRi,Fusion Core,https://open.spotify.com/track/1fdtn7sz0pRf4kxyFSexRi,153931,False,1,track,spotify:track:1fdtn7sz0pRf4kxyFSexRi,49AleV6VK4RNQd6hCDRJc5
@@ -1140,12 +1071,7 @@ track_id,song_name,external_url,duration_ms,explicit,disc_number,type,song_uri,a
 3wYhbqwPlx3AIWXuAgF1B4,Bloodshed,https://open.spotify.com/track/3wYhbqwPlx3AIWXuAgF1B4,168000,False,1,track,spotify:track:3wYhbqwPlx3AIWXuAgF1B4,2XyeMToJqpHKqduDfwWsDC
 0gPTaNvJJ1XnEMZy3Rf6f4,Can't Hold Back,https://open.spotify.com/track/0gPTaNvJJ1XnEMZy3Rf6f4,206896,False,1,track,spotify:track:0gPTaNvJJ1XnEMZy3Rf6f4,2Af1qkMaGqr5yfvhEYCdu5
 3FmxwuHaTFLGNhHIpffcBW,Crankin,https://open.spotify.com/track/3FmxwuHaTFLGNhHIpffcBW,222923,False,1,track,spotify:track:3FmxwuHaTFLGNhHIpffcBW,1wLgRRGFJ8c6DoTQhmKrgP
-37gv8d0DVqXqHbgV2mDyvl,Arsonist,https://open.spotify.com/track/37gv8d0DVqXqHbgV2mDyvl,160000,False,1,track,spotify:track:37gv8d0DVqXqHbgV2mDyvl,6W9dGkpcXKPNYeIcjCMayF
-0N8SETeCskjH3ueNT0jhv3,Bloodshed,https://open.spotify.com/track/0N8SETeCskjH3ueNT0jhv3,168000,False,2,track,spotify:track:0N8SETeCskjH3ueNT0jhv3,6W9dGkpcXKPNYeIcjCMayF
 7zpr2MCoc4RCLdKOH4x0iP,Weed Haha,https://open.spotify.com/track/7zpr2MCoc4RCLdKOH4x0iP,206400,False,3,track,spotify:track:7zpr2MCoc4RCLdKOH4x0iP,6W9dGkpcXKPNYeIcjCMayF
-2o6GtYuXHHA0eT012ELWJy,Can't Hold Back,https://open.spotify.com/track/2o6GtYuXHHA0eT012ELWJy,206896,False,4,track,spotify:track:2o6GtYuXHHA0eT012ELWJy,6W9dGkpcXKPNYeIcjCMayF
-0KZ3Ui4R3fTdTB5losAnbR,Crankin,https://open.spotify.com/track/0KZ3Ui4R3fTdTB5losAnbR,222923,False,5,track,spotify:track:0KZ3Ui4R3fTdTB5losAnbR,6W9dGkpcXKPNYeIcjCMayF
-4P1PRYw8o8PAcH4a7gpK85,Weed Haha,https://open.spotify.com/track/4P1PRYw8o8PAcH4a7gpK85,206400,False,1,track,spotify:track:4P1PRYw8o8PAcH4a7gpK85,7LOzYrla2V10RXpbx01NAp
 6sevrJJhfykYWlXPnPs6tI,Wompum - Macky Gee Remix,https://open.spotify.com/track/6sevrJJhfykYWlXPnPs6tI,177428,False,1,track,spotify:track:6sevrJJhfykYWlXPnPs6tI,28S0oFY9RnGDoV0lZIqZfL
 3P595yIbIseIe7RUKhronh,Warrior - The Prototypes Remix,https://open.spotify.com/track/3P595yIbIseIe7RUKhronh,217931,False,1,track,spotify:track:3P595yIbIseIe7RUKhronh,72Nu2JPhEQVW37yYuKFmqU
 7dFlym6ncWdS22IkKDtVmJ,Bubzstep,https://open.spotify.com/track/7dFlym6ncWdS22IkKDtVmJ,219200,False,1,track,spotify:track:7dFlym6ncWdS22IkKDtVmJ,03iEcITBoXbOgV7wGRuAHs
@@ -1155,32 +1081,19 @@ track_id,song_name,external_url,duration_ms,explicit,disc_number,type,song_uri,a
 6O0CKovnhI1ZT83wBpMBMl,Rock The Beat,https://open.spotify.com/track/6O0CKovnhI1ZT83wBpMBMl,203200,False,4,track,spotify:track:6O0CKovnhI1ZT83wBpMBMl,3tWzBHcN82k99vsY5lscHG
 1Z5BN6rGogokAeV4M59egR,Break Em Down,https://open.spotify.com/track/1Z5BN6rGogokAeV4M59egR,224182,False,5,track,spotify:track:1Z5BN6rGogokAeV4M59egR,3tWzBHcN82k99vsY5lscHG
 1XGBeEMpQe1zeurz8js5BE,My Favorite Star,https://open.spotify.com/track/1XGBeEMpQe1zeurz8js5BE,266400,False,6,track,spotify:track:1XGBeEMpQe1zeurz8js5BE,3tWzBHcN82k99vsY5lscHG
-1lQpUcC6tXU6yzC53AltNs,Our Own Way,https://open.spotify.com/track/1lQpUcC6tXU6yzC53AltNs,201600,False,1,track,spotify:track:1lQpUcC6tXU6yzC53AltNs,6j7Kunb4VjTQdJTPxwQNhT
 7l9bGVHuYHBD8cZkMQvpFT,Bring That Back,https://open.spotify.com/track/7l9bGVHuYHBD8cZkMQvpFT,150400,False,1,track,spotify:track:7l9bGVHuYHBD8cZkMQvpFT,2JP1vjm6YX1HzETa3oYFnQ
 6b6Rg5gUXjN55ieGxWh3CO,Mmm Good,https://open.spotify.com/track/6b6Rg5gUXjN55ieGxWh3CO,134400,False,1,track,spotify:track:6b6Rg5gUXjN55ieGxWh3CO,51vUQ1CyxvVuiVj0lNgico
 1N8I1OrDneA8XiUIPydxDg,Odyssey - MVRDA Remix,https://open.spotify.com/track/1N8I1OrDneA8XiUIPydxDg,323204,False,1,track,spotify:track:1N8I1OrDneA8XiUIPydxDg,1eNQDa7V0izD0XZ3DE7Lml
 3vuxNgCGG6lPPzeFfTGBBu,Know About Me Ft. Virus Syndicate,https://open.spotify.com/track/3vuxNgCGG6lPPzeFfTGBBu,167600,False,1,track,spotify:track:3vuxNgCGG6lPPzeFfTGBBu,0lo3MUDmUY7xefkLbYnrRf
-1FV55IDO3fpLT6k7yahZMA,Bounce Wit Me,https://open.spotify.com/track/1FV55IDO3fpLT6k7yahZMA,167200,False,1,track,spotify:track:1FV55IDO3fpLT6k7yahZMA,5AGL7J4POGkY9zs7Q59xvK
-2cTOfwonK5aglqeWy1r95s,Xenomorph,https://open.spotify.com/track/2cTOfwonK5aglqeWy1r95s,148000,False,1,track,spotify:track:2cTOfwonK5aglqeWy1r95s,7uEbO4Zmva6hHvpma7HN1P
-28ekxkI6LJhCQCwCygJkDY,Wompum,https://open.spotify.com/track/28ekxkI6LJhCQCwCygJkDY,194400,False,1,track,spotify:track:28ekxkI6LJhCQCwCygJkDY,628AEdMkEG8ux2FDzNumMD
-1oXcYa8UIqYJGWs6bX5PTI,Devil's Tower,https://open.spotify.com/track/1oXcYa8UIqYJGWs6bX5PTI,176718,False,1,track,spotify:track:1oXcYa8UIqYJGWs6bX5PTI,3dr21sO8Uwn0EqA3VjKIOC
-4y9NwlfJBJz6whKyYdOB9d,War Of The Worlds,https://open.spotify.com/track/4y9NwlfJBJz6whKyYdOB9d,154400,False,1,track,spotify:track:4y9NwlfJBJz6whKyYdOB9d,0cFFARAGfKX2YnkkKJCnm5
-2byUQErNMPNuJpfWMYKm4g,Shutdown,https://open.spotify.com/track/2byUQErNMPNuJpfWMYKm4g,200192,False,1,track,spotify:track:2byUQErNMPNuJpfWMYKm4g,6szuL3GZlRMZiz4BgSJ5Cu
-3YxXOa36fkDOz9t6kVTcRD,Over Ft. Nah Mean,https://open.spotify.com/track/3YxXOa36fkDOz9t6kVTcRD,254000,False,1,track,spotify:track:3YxXOa36fkDOz9t6kVTcRD,7a3ojzkFx1EVUtQ0LhCsjo
-6YdVPQWXXDAOikVIviPODP,Warrior Ft. Mad Hed City,https://open.spotify.com/track/6YdVPQWXXDAOikVIviPODP,184317,False,1,track,spotify:track:6YdVPQWXXDAOikVIviPODP,2xHp4JMVWhyVKjfaWLDOgE
-633mVYzQUeI50PZlOVsd4J,Buddy Ft. Yves Paquet,https://open.spotify.com/track/633mVYzQUeI50PZlOVsd4J,154351,False,1,track,spotify:track:633mVYzQUeI50PZlOVsd4J,36DnERfRLFJPCaU8MOB0m6
 4dJ2Y4W6D3Z6QCfv50shW3,New Coupe : Ride Out Ft. Iamsu!,https://open.spotify.com/track/4dJ2Y4W6D3Z6QCfv50shW3,185122,False,1,track,spotify:track:4dJ2Y4W6D3Z6QCfv50shW3,3u3DYt28l99Pu4AOK2uVWG
 7iSv1dmhrcUzONiOhgn0VG,Deeper In Love Ft. Great Good Fine Ok,https://open.spotify.com/track/7iSv1dmhrcUzONiOhgn0VG,200000,False,1,track,spotify:track:7iSv1dmhrcUzONiOhgn0VG,79hpe5W86nLI0UnkuJDHq5
-62iQOnLm7oPdpPlFCEvLoZ,Odyssey,https://open.spotify.com/track/62iQOnLm7oPdpPlFCEvLoZ,157200,False,1,track,spotify:track:62iQOnLm7oPdpPlFCEvLoZ,2fj9Ll3adY6AydBYLlesFC
 3hchBgl44lyEhIZ8XiKunX,Bang Your Head (Feat. Virus Syndicate) - INFEKT Remix,https://open.spotify.com/track/3hchBgl44lyEhIZ8XiKunX,233611,False,1,track,spotify:track:3hchBgl44lyEhIZ8XiKunX,3kR3e1oleFUNweSqUR4XJJ
 2oeafkXNyP9QfMmEjr6F2w,Bang Your Head ft. Virus Syndicate,https://open.spotify.com/track/2oeafkXNyP9QfMmEjr6F2w,226400,False,1,track,spotify:track:2oeafkXNyP9QfMmEjr6F2w,1UDWT5F8qynbkkLvD05wpY
 3qxxCWSAchEjv83QvJuThS,Prepare To Die,https://open.spotify.com/track/3qxxCWSAchEjv83QvJuThS,207630,False,1,track,spotify:track:3qxxCWSAchEjv83QvJuThS,1OPgPYBtuutIERgkKerxIN
-4tjlR0JNJLQkfhg9JlHv1O,Bad Thang Ft. Splitbreed,https://open.spotify.com/track/4tjlR0JNJLQkfhg9JlHv1O,275200,False,1,track,spotify:track:4tjlR0JNJLQkfhg9JlHv1O,75ChGwhQh3eLL6R9Qd0pF8
 4ewW63LrxZ6GOuLNsBICrv,Bad Thang Ft. Splitbreed - Bandlez Remix,https://open.spotify.com/track/4ewW63LrxZ6GOuLNsBICrv,198400,False,2,track,spotify:track:4ewW63LrxZ6GOuLNsBICrv,75ChGwhQh3eLL6R9Qd0pF8
 4aOfGPo1ZLOTZzKmJg7KIH,Fake U Out,https://open.spotify.com/track/4aOfGPo1ZLOTZzKmJg7KIH,164717,False,1,track,spotify:track:4aOfGPo1ZLOTZzKmJg7KIH,4vtFBSEJYjXlpFh9ynNA0Q
 5Nz2BnJroLw1HPDeynxWGx,Send It,https://open.spotify.com/track/5Nz2BnJroLw1HPDeynxWGx,156800,False,1,track,spotify:track:5Nz2BnJroLw1HPDeynxWGx,3KSoyR2MM79PN5TqRXoBte
 78GBUcl1bJJ7Y6RAQgCc55,Kaos,https://open.spotify.com/track/78GBUcl1bJJ7Y6RAQgCc55,200000,False,1,track,spotify:track:78GBUcl1bJJ7Y6RAQgCc55,3Bb6q6vWoCsuSdl5ftAq5l
-0ewUHpeoPlmZXnMGRdc2Yc,Kaos,https://open.spotify.com/track/0ewUHpeoPlmZXnMGRdc2Yc,200000,False,1,track,spotify:track:0ewUHpeoPlmZXnMGRdc2Yc,4KjPr5mMdTkBUyzhTIZxdC
 2LcO0c1FVlTFvR5Ru1d6CM,Deep In The Night - Barely Alive Remix,https://open.spotify.com/track/2LcO0c1FVlTFvR5Ru1d6CM,222000,False,1,track,spotify:track:2LcO0c1FVlTFvR5Ru1d6CM,4z8M13LQDMgedDtKvziLw2
 4mcQixxyeJDpfZzwfKcYeK,CA$H,https://open.spotify.com/track/4mcQixxyeJDpfZzwfKcYeK,225600,False,1,track,spotify:track:4mcQixxyeJDpfZzwfKcYeK,30HYQF0Fd72ArRDNZo7df0
 3zqmc4Pxh5WR6u6eqa4n3w,Elastic Nightmare,https://open.spotify.com/track/3zqmc4Pxh5WR6u6eqa4n3w,181600,False,2,track,spotify:track:3zqmc4Pxh5WR6u6eqa4n3w,30HYQF0Fd72ArRDNZo7df0
@@ -1214,7 +1127,6 @@ track_id,song_name,external_url,duration_ms,explicit,disc_number,type,song_uri,a
 46aa0zePaayCBQvWxkBAwE,Cyber Bully,https://open.spotify.com/track/46aa0zePaayCBQvWxkBAwE,279428,True,1,track,spotify:track:46aa0zePaayCBQvWxkBAwE,4RuDbhjzfxsNRqSCjTTN9U
 5qpRqk7vrh15exWFn86BCf,Rifle Blow Kiss,https://open.spotify.com/track/5qpRqk7vrh15exWFn86BCf,314181,False,2,track,spotify:track:5qpRqk7vrh15exWFn86BCf,4RuDbhjzfxsNRqSCjTTN9U
 3g7KIamCswvjjBofaCIk4x,Candy Kids,https://open.spotify.com/track/3g7KIamCswvjjBofaCIk4x,329142,True,3,track,spotify:track:3g7KIamCswvjjBofaCIk4x,4RuDbhjzfxsNRqSCjTTN9U
-2dV3GZHMHKh3qmYfstY6lx,Cyber Bully - The Frim Remix,https://open.spotify.com/track/2dV3GZHMHKh3qmYfstY6lx,240000,True,4,track,spotify:track:2dV3GZHMHKh3qmYfstY6lx,4RuDbhjzfxsNRqSCjTTN9U
 2fS5VCGQ3CAYT1ySpRylSR,Chasing Ghosts,https://open.spotify.com/track/2fS5VCGQ3CAYT1ySpRylSR,333257,False,1,track,spotify:track:2fS5VCGQ3CAYT1ySpRylSR,5VfzEDQY0BgiQzMFUIbtJ0
 4jOv3ajpc7lqbpxQxCDvOA,Dial Up,https://open.spotify.com/track/4jOv3ajpc7lqbpxQxCDvOA,247500,False,2,track,spotify:track:4jOv3ajpc7lqbpxQxCDvOA,5VfzEDQY0BgiQzMFUIbtJ0
 0CKHwjN6Zw2EMr18dMYMdQ,Keyboard Killer,https://open.spotify.com/track/0CKHwjN6Zw2EMr18dMYMdQ,303428,False,3,track,spotify:track:0CKHwjN6Zw2EMr18dMYMdQ,5VfzEDQY0BgiQzMFUIbtJ0
@@ -1271,7 +1183,6 @@ track_id,song_name,external_url,duration_ms,explicit,disc_number,type,song_uri,a
 1s7oKuT7720tOM0JSshbMv,A B Y S S,https://open.spotify.com/track/1s7oKuT7720tOM0JSshbMv,212893,False,1,track,spotify:track:1s7oKuT7720tOM0JSshbMv,353UtuPDEl2a8dLHlc8Oiz
 1YLw83IPqWywp4Pn1ZloFg,Origin,https://open.spotify.com/track/1YLw83IPqWywp4Pn1ZloFg,199047,False,1,track,spotify:track:1YLw83IPqWywp4Pn1ZloFg,0t83WCpJuvSlLt22kZn7pD
 5LKWZElD7M7bK1uXqVFll9,Voidless,https://open.spotify.com/track/5LKWZElD7M7bK1uXqVFll9,251586,False,1,track,spotify:track:5LKWZElD7M7bK1uXqVFll9,0z4Lf5H9b7rsInFDtN40T6
-0X4qq0H9KW3RxHudQp3p5u,Extraterrestrial,https://open.spotify.com/track/0X4qq0H9KW3RxHudQp3p5u,208000,False,1,track,spotify:track:0X4qq0H9KW3RxHudQp3p5u,0heJMDrcX0jhRJVLTKZtoD
 14YKyEoYdQZsnTvTMHPtFi,Little Doubts (feat. Aviella) - TYNAN Remix,https://open.spotify.com/track/14YKyEoYdQZsnTvTMHPtFi,254014,False,1,track,spotify:track:14YKyEoYdQZsnTvTMHPtFi,5hKHptOQwdR6qpYvNSTQ4X
 6n0yG8jDd6J0kRv9xkVWhq,Dead Wrong,https://open.spotify.com/track/6n0yG8jDd6J0kRv9xkVWhq,190243,False,1,track,spotify:track:6n0yG8jDd6J0kRv9xkVWhq,4ycVanwjHqBFmxjZAvWCnM
 4W4uzbbXq5uRUUkqoMRR5o,Stigmata,https://open.spotify.com/track/4W4uzbbXq5uRUUkqoMRR5o,233913,False,2,track,spotify:track:4W4uzbbXq5uRUUkqoMRR5o,4ycVanwjHqBFmxjZAvWCnM
@@ -1315,7 +1226,6 @@ track_id,song_name,external_url,duration_ms,explicit,disc_number,type,song_uri,a
 2m5Yn6rgbrysEWJVzhPZUd,Claim The Night - Birthdayy Partyy Remix,https://open.spotify.com/track/2m5Yn6rgbrysEWJVzhPZUd,247374,False,3,track,spotify:track:2m5Yn6rgbrysEWJVzhPZUd,1lf2hIVBov7wfrzDW3xQtF
 1hkD1QL6JdiAQzYdLXynCr,Claim The Night - IVES' IRIS Remix,https://open.spotify.com/track/1hkD1QL6JdiAQzYdLXynCr,260449,False,4,track,spotify:track:1hkD1QL6JdiAQzYdLXynCr,1lf2hIVBov7wfrzDW3xQtF
 53Ab0jyNUN4L6ASNmPzQLN,Claim The Night - TRVCY Remix,https://open.spotify.com/track/53Ab0jyNUN4L6ASNmPzQLN,258206,False,5,track,spotify:track:53Ab0jyNUN4L6ASNmPzQLN,1lf2hIVBov7wfrzDW3xQtF
-1F8THtReZBghzm3huNGMUp,Claim The Night - Bainbridge Remix,https://open.spotify.com/track/1F8THtReZBghzm3huNGMUp,230068,False,1,track,spotify:track:1F8THtReZBghzm3huNGMUp,4jydQVIvIQaG5wN6bCiz6Q
 6mXEIIqt7CzXI8qqHCix4F,Motion,https://open.spotify.com/track/6mXEIIqt7CzXI8qqHCix4F,219944,False,1,track,spotify:track:6mXEIIqt7CzXI8qqHCix4F,4aADSVPpiBp5wSXdbkAhuC
 3LwAgW9Gp1SLpbFeekFFM6,Claim The Night,https://open.spotify.com/track/3LwAgW9Gp1SLpbFeekFFM6,231724,False,1,track,spotify:track:3LwAgW9Gp1SLpbFeekFFM6,3HjcuwvySKxPZL8pyfKm2m
 2YdgfFvQCfKvRRzmtv4OcF,Sum Buddy,https://open.spotify.com/track/2YdgfFvQCfKvRRzmtv4OcF,212800,False,1,track,spotify:track:2YdgfFvQCfKvRRzmtv4OcF,5cC8emsuBsju4KJsDnw0pS
@@ -1455,16 +1365,10 @@ track_id,song_name,external_url,duration_ms,explicit,disc_number,type,song_uri,a
 1sNCyCw3qeUcKdxt5h5l0M,Champagne,https://open.spotify.com/track/1sNCyCw3qeUcKdxt5h5l0M,231637,False,3,track,spotify:track:1sNCyCw3qeUcKdxt5h5l0M,1O6y7iUoCdvFovtS8wkR12
 1FkfP0mPMk7TDVM4ZVS9sW,Hotel Trash,https://open.spotify.com/track/1FkfP0mPMk7TDVM4ZVS9sW,237357,False,4,track,spotify:track:1FkfP0mPMk7TDVM4ZVS9sW,1O6y7iUoCdvFovtS8wkR12
 0atI7F661yUVyultidkdEE,Detox,https://open.spotify.com/track/0atI7F661yUVyultidkdEE,206778,False,5,track,spotify:track:0atI7F661yUVyultidkdEE,1O6y7iUoCdvFovtS8wkR12
-1wQt2mDHxFcYST8PTCdhgJ,Tipsy,https://open.spotify.com/track/1wQt2mDHxFcYST8PTCdhgJ,236824,False,1,track,spotify:track:1wQt2mDHxFcYST8PTCdhgJ,1dCXNp2dAwyr7xFs8NV9ig
-61dZsEDxL77ujN7AZKUAFV,No Sleep,https://open.spotify.com/track/61dZsEDxL77ujN7AZKUAFV,249608,False,2,track,spotify:track:61dZsEDxL77ujN7AZKUAFV,1dCXNp2dAwyr7xFs8NV9ig
-2zqBYEoDIy26pcRSsRZzVd,Champagne,https://open.spotify.com/track/2zqBYEoDIy26pcRSsRZzVd,231637,False,3,track,spotify:track:2zqBYEoDIy26pcRSsRZzVd,1dCXNp2dAwyr7xFs8NV9ig
-14t8v23CoRt11YgZGUCjiG,Hotel Trash,https://open.spotify.com/track/14t8v23CoRt11YgZGUCjiG,237357,False,4,track,spotify:track:14t8v23CoRt11YgZGUCjiG,1dCXNp2dAwyr7xFs8NV9ig
-0vjfhUdMLNDGiQ0ZFaNzGY,Detox,https://open.spotify.com/track/0vjfhUdMLNDGiQ0ZFaNzGY,206778,False,5,track,spotify:track:0vjfhUdMLNDGiQ0ZFaNzGY,1dCXNp2dAwyr7xFs8NV9ig
 7t2IBdZgwWAtzlWLxG4TT3,SKURT - VIP,https://open.spotify.com/track/7t2IBdZgwWAtzlWLxG4TT3,211212,False,1,track,spotify:track:7t2IBdZgwWAtzlWLxG4TT3,2HyLL2fnRRrMd0de8hVJjC
 7recRRl7BLQkETf7VniKWq,SKURT - not sorry & Des McMahon Remix,https://open.spotify.com/track/7recRRl7BLQkETf7VniKWq,292758,False,2,track,spotify:track:7recRRl7BLQkETf7VniKWq,2HyLL2fnRRrMd0de8hVJjC
 00bn7T0ElZ2bUKCJX6fRJF,SKURT - A Boy & A Girl Remix,https://open.spotify.com/track/00bn7T0ElZ2bUKCJX6fRJF,267000,False,3,track,spotify:track:00bn7T0ElZ2bUKCJX6fRJF,2HyLL2fnRRrMd0de8hVJjC
 7etFQ3DfVit6O7b4oYBG01,Jump Kick,https://open.spotify.com/track/7etFQ3DfVit6O7b4oYBG01,237075,False,1,track,spotify:track:7etFQ3DfVit6O7b4oYBG01,7wiekgTiyrjcAf9kJAcYjX
-0TVOW4QY6vgUO8S1IyMfYn,Jump Kick,https://open.spotify.com/track/0TVOW4QY6vgUO8S1IyMfYn,237075,False,1,track,spotify:track:0TVOW4QY6vgUO8S1IyMfYn,0hoAXTz8kqlekfguWOVmlg
 20rfEfEipokYSfz84PXKKf,Telekinetic (Wild Boyz! Remix),https://open.spotify.com/track/20rfEfEipokYSfz84PXKKf,217600,True,1,track,spotify:track:20rfEfEipokYSfz84PXKKf,3EbjjUNj764W4y4nXVv468
 7fjoS2I25h4Mv1hQzdv2NC,Flooded,https://open.spotify.com/track/7fjoS2I25h4Mv1hQzdv2NC,241005,False,1,track,spotify:track:7fjoS2I25h4Mv1hQzdv2NC,7FpyG5cjjlUIN3HlKQKbnZ
 4aYWUD7PtbngVAJo1fPoUa,Final Warning,https://open.spotify.com/track/4aYWUD7PtbngVAJo1fPoUa,212858,False,1,track,spotify:track:4aYWUD7PtbngVAJo1fPoUa,40shTlvnpe7ckVF3eFoKfh
@@ -1568,7 +1472,6 @@ track_id,song_name,external_url,duration_ms,explicit,disc_number,type,song_uri,a
 4bH7A3XPBESfEzeh85wS0a,Dim Q,https://open.spotify.com/track/4bH7A3XPBESfEzeh85wS0a,123404,False,3,track,spotify:track:4bH7A3XPBESfEzeh85wS0a,07y3NuodIPscXhZ3iXVKgR
 6oONQp6eECa7qMbYsy4TIc,Rude Boi,https://open.spotify.com/track/6oONQp6eECa7qMbYsy4TIc,161910,True,4,track,spotify:track:6oONQp6eECa7qMbYsy4TIc,07y3NuodIPscXhZ3iXVKgR
 6WC4MsYNtOCHs5Z7Zavwrk,Subterfuge,https://open.spotify.com/track/6WC4MsYNtOCHs5Z7Zavwrk,230040,False,5,track,spotify:track:6WC4MsYNtOCHs5Z7Zavwrk,07y3NuodIPscXhZ3iXVKgR
-1yNd26q6GkNRcpfBeeWJ0g,Ketamine,https://open.spotify.com/track/1yNd26q6GkNRcpfBeeWJ0g,186684,True,1,track,spotify:track:1yNd26q6GkNRcpfBeeWJ0g,4f0P4E1O2rgiYNfkcsPFbn
 21lLamB5MLf4ciNLengwuQ,PUSHNPULL,https://open.spotify.com/track/21lLamB5MLf4ciNLengwuQ,153716,False,1,track,spotify:track:21lLamB5MLf4ciNLengwuQ,6SMTTcNrQNA9hlRjFL79Rp
 1Dn7e55CdDh0PlK5toHB1d,Baked,https://open.spotify.com/track/1Dn7e55CdDh0PlK5toHB1d,224548,False,1,track,spotify:track:1Dn7e55CdDh0PlK5toHB1d,1MVRLecZCmKG57FYiktKpQ
 6lovjXdWi2U2mWDnxpQUvP,Second Baked,https://open.spotify.com/track/6lovjXdWi2U2mWDnxpQUvP,289053,False,2,track,spotify:track:6lovjXdWi2U2mWDnxpQUvP,1MVRLecZCmKG57FYiktKpQ
@@ -1591,7 +1494,6 @@ track_id,song_name,external_url,duration_ms,explicit,disc_number,type,song_uri,a
 6JmG9fBWY5zAjzyECR7m9C,Default Mode,https://open.spotify.com/track/6JmG9fBWY5zAjzyECR7m9C,198620,False,2,track,spotify:track:6JmG9fBWY5zAjzyECR7m9C,3n1X8xQEV2D3aPprdQO9ab
 1TwrfCc93JjAr04dXnNyLQ,Safety First,https://open.spotify.com/track/1TwrfCc93JjAr04dXnNyLQ,167172,False,3,track,spotify:track:1TwrfCc93JjAr04dXnNyLQ,3n1X8xQEV2D3aPprdQO9ab
 0CooUdoRLt8q9VQvbFJj0a,Reload,https://open.spotify.com/track/0CooUdoRLt8q9VQvbFJj0a,240000,False,4,track,spotify:track:0CooUdoRLt8q9VQvbFJj0a,3n1X8xQEV2D3aPprdQO9ab
-03IGBJygnQYpSDTT1djazw,Safety First,https://open.spotify.com/track/03IGBJygnQYpSDTT1djazw,167172,False,1,track,spotify:track:03IGBJygnQYpSDTT1djazw,5McGw3TMpcSMJXxojU5AOm
 0EimUHp8wm6RZBaNJu0eXS,MASTER PITCH,https://open.spotify.com/track/0EimUHp8wm6RZBaNJu0eXS,180620,False,1,track,spotify:track:0EimUHp8wm6RZBaNJu0eXS,2eSD3r5uutJ4rNsc0Xmfdc
 4Tq2MgD7K37d75oP5TmDwb,Task Failed,https://open.spotify.com/track/4Tq2MgD7K37d75oP5TmDwb,180620,False,1,track,spotify:track:4Tq2MgD7K37d75oP5TmDwb,0gxh6JzmimvxgTD46ItahW
 06vAczsL1bjH0gE124dvMU,Press Play to Die Instantly,https://open.spotify.com/track/06vAczsL1bjH0gE124dvMU,217655,False,1,track,spotify:track:06vAczsL1bjH0gE124dvMU,0eGdBDHlFgVG1SCNQIfJgc
@@ -1602,7 +1504,6 @@ track_id,song_name,external_url,duration_ms,explicit,disc_number,type,song_uri,a
 3YbwPLbhDJ8My4YghVl9B8,The Pit,https://open.spotify.com/track/3YbwPLbhDJ8My4YghVl9B8,168827,False,2,track,spotify:track:3YbwPLbhDJ8My4YghVl9B8,3Pa5KvY1ZDGjda2n950Td5
 1yKmd0iPMeJVMCHh0t5SPv,Printer Jam,https://open.spotify.com/track/1yKmd0iPMeJVMCHh0t5SPv,180428,True,3,track,spotify:track:1yKmd0iPMeJVMCHh0t5SPv,3Pa5KvY1ZDGjda2n950Td5
 5kSYxXqWlyyl0Ygvel08xv,Genesis,https://open.spotify.com/track/5kSYxXqWlyyl0Ygvel08xv,198620,False,4,track,spotify:track:5kSYxXqWlyyl0Ygvel08xv,3Pa5KvY1ZDGjda2n950Td5
-24QCCkcxv8ZOwVxPSPEf1m,The Pit,https://open.spotify.com/track/24QCCkcxv8ZOwVxPSPEf1m,168827,False,1,track,spotify:track:24QCCkcxv8ZOwVxPSPEf1m,4HwxT6dNCWnhU0oDFhIQKF
 2AXobIFYQKGUAK9mR0K9v1,Kill Confirmed,https://open.spotify.com/track/2AXobIFYQKGUAK9mR0K9v1,204800,True,1,track,spotify:track:2AXobIFYQKGUAK9mR0K9v1,5sPLI17db6ppgdQe6t0AIB
 67bLpJ2766XqCe6n0GS8DD,Bluetooth,https://open.spotify.com/track/67bLpJ2766XqCe6n0GS8DD,180413,False,1,track,spotify:track:67bLpJ2766XqCe6n0GS8DD,2vyjjmCuRZqzcGILYEj4SQ
 0o6x1IPmoclD5VMaxuQR95,Executable,https://open.spotify.com/track/0o6x1IPmoclD5VMaxuQR95,196137,False,1,track,spotify:track:0o6x1IPmoclD5VMaxuQR95,3CYIaow84Qgwi7GFX2Crhz

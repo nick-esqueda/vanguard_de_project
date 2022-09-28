@@ -2,8 +2,10 @@ import pandas as pd
 from typing import Union
 
 
-def write_to_csv(data: Union[list[dict], pd.DataFrame], filepath: str) -> None:
-    if type(data) is not pd.DataFrame:
+DF_OR_LIST = Union[pd.DataFrame, list[dict]]
+
+def write_to_csv(data: DF_OR_LIST, filepath: str) -> None:
+    if type(data) is list:
         data = pd.DataFrame(data)
     data.to_csv(filepath, index=False)
     print(f"    Done writing data to {filepath}")
