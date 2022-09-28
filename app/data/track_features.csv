@@ -1051,7 +1051,7 @@ track_id,danceability,energy,instrumentalness,liveness,loudness,speechiness,temp
 0rVwjLAKQtGCgu09VhiJ8I,0.734,0.948,0.00313,0.186,-3.16,0.102,132.048,audio_features,0.277,spotify:track:0rVwjLAKQtGCgu09VhiJ8I
 0QVGRkwMH5MCT6vOEBPJMM,0.472,0.955,0.000361,0.356,-0.572,0.461,139.548,audio_features,0.484,spotify:track:0QVGRkwMH5MCT6vOEBPJMM
 0nqXM0ZVIrJSVEyISPHfbN,0.533,0.945,0.913,0.106,-2.626,0.191,173.945,audio_features,0.765,spotify:track:0nqXM0ZVIrJSVEyISPHfbN
-7Edbz6bVNsVkrHBIXSfgX2,0.499,0.79,0.0052,0.0802,-5.187,0.0763,133.515,audio_features,0.614,spotify:track:7Edbz6bVNsVkrHBIXSfgX2
+3alejg4OSo235KI6X0YVZJ,0.499,0.79,0.0052,0.0802,-5.187,0.0763,133.515,audio_features,0.614,spotify:track:3alejg4OSo235KI6X0YVZJ
 3pXmEIRFqRBmJUUWT6j1ol,0.569,0.96,0.00135,0.0734,-4.513,0.296,75.016,audio_features,0.0413,spotify:track:3pXmEIRFqRBmJUUWT6j1ol
 366M54f242VD6rSnKfoHhS,0.56,0.955,0.0592,0.283,-4.67,0.377,150.034,audio_features,0.197,spotify:track:366M54f242VD6rSnKfoHhS
 6CPHLtLHWYdSxEuQcihigi,0.726,0.97,4.84e-05,0.0774,-4.188,0.258,149.977,audio_features,0.393,spotify:track:6CPHLtLHWYdSxEuQcihigi
@@ -1257,12 +1257,12 @@ track_id,danceability,energy,instrumentalness,liveness,loudness,speechiness,temp
 5iXnDpczRvMLg8FYDQtc1B,0.75,0.889,0.0168,0.356,-4.968,0.0866,125.053,audio_features,0.386,spotify:track:5iXnDpczRvMLg8FYDQtc1B
 5p1zQuE7HX6lflI5bTqR0o,0.422,0.977,0.102,0.306,-2.598,0.175,150.158,audio_features,0.197,spotify:track:5p1zQuE7HX6lflI5bTqR0o
 162VYgs5ug2QRQMSR3ci6K,0.676,0.843,0.441,0.0828,-3.263,0.0687,145.074,audio_features,0.0376,spotify:track:162VYgs5ug2QRQMSR3ci6K
-5iC8ImdzDuL4ThLuWJZevG,0.471,0.701,0.105,0.0682,-3.154,0.161,150.065,audio_features,0.175,spotify:track:5iC8ImdzDuL4ThLuWJZevG
-5FmeFaecW78PngzFZgTBBK,0.798,0.494,0.259,0.762,-1.981,0.474,82.504,audio_features,0.694,spotify:track:5FmeFaecW78PngzFZgTBBK
-3rxq7CbUdWRHGVQvj4ll3c,0.674,0.821,0.0907,0.823,-3.423,0.0953,155.102,audio_features,0.662,spotify:track:3rxq7CbUdWRHGVQvj4ll3c
-64jN4J3gB6NqNjdgr3gBzX,0.909,0.77,0.456,0.0762,-4.316,0.33,120.114,audio_features,0.411,spotify:track:64jN4J3gB6NqNjdgr3gBzX
-6RLhS056PArQCWMl8yQhON,0.687,0.934,0.756,0.137,-0.496,0.119,150.026,audio_features,0.505,spotify:track:6RLhS056PArQCWMl8yQhON
-57HieM7d3ao5R3kNvDgRq2,0.653,0.88,0.295,0.359,-1.673,0.114,154.971,audio_features,0.476,spotify:track:57HieM7d3ao5R3kNvDgRq2
+7LiHvXMjagrGQVMriLXktA,0.474,0.7,0.102,0.0682,-3.154,0.162,150.073,audio_features,0.173,spotify:track:7LiHvXMjagrGQVMriLXktA
+1L2MrvQkVKXrz4N87kK4cR,0.798,0.494,0.26,0.762,-1.981,0.476,82.504,audio_features,0.697,spotify:track:1L2MrvQkVKXrz4N87kK4cR
+5OJLSy01fNes7OSUjpdnGT,0.674,0.821,0.0881,0.823,-3.424,0.0952,155.109,audio_features,0.662,spotify:track:5OJLSy01fNes7OSUjpdnGT
+35E70i7yisnhCxm9mXVYMW,0.91,0.77,0.453,0.0762,-4.316,0.33,120.109,audio_features,0.411,spotify:track:35E70i7yisnhCxm9mXVYMW
+3gXCCFlO02OE0zIFghVMvU,0.687,0.934,0.762,0.137,-0.496,0.119,150.025,audio_features,0.508,spotify:track:3gXCCFlO02OE0zIFghVMvU
+76CRdRhHZTOS7w0tScxHlO,0.653,0.88,0.301,0.359,-1.673,0.114,154.971,audio_features,0.476,spotify:track:76CRdRhHZTOS7w0tScxHlO
 3gxQcoMn5azQ19Dr2I6H5t,0.671,0.736,0.167,0.769,-2.983,0.289,139.84,audio_features,0.52,spotify:track:3gxQcoMn5azQ19Dr2I6H5t
 6uymiV8dJU9PScOlUaRohp,0.499,0.953,0.376,0.334,-3.16,0.18,150.152,audio_features,0.43,spotify:track:6uymiV8dJU9PScOlUaRohp
 2cBsbCErzzNh2AlsPeja9W,0.881,0.89,0.347,0.632,-1.278,0.281,150.007,audio_features,0.367,spotify:track:2cBsbCErzzNh2AlsPeja9W
