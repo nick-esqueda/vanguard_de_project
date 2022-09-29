@@ -1,7 +1,7 @@
 import pandas as pd
 from typing import Union
 from utils import read_all_from_csv
-import extract
+# import extract
 
 
 DF_OR_LIST = Union[pd.DataFrame, list[dict]]

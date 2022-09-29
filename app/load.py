@@ -28,13 +28,10 @@ def load_data(data: pd.DataFrame, tablename: str, db: DB) -> None:
 def test_table_creation(db: DB) -> None:
     db.execute("SELECT * FROM artists LIMIT 5")
     print(db.result())
-    
     db.execute("SELECT * FROM albums LIMIT 5")
     print(db.result())
-    
     db.execute("SELECT * FROM tracks LIMIT 5")
     print(db.result())
-    
     db.execute("SELECT * FROM track_features LIMIT 5")
     print(db.result())
 

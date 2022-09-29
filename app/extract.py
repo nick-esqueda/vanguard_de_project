@@ -130,7 +130,6 @@ def extract_track_features(track_ids: list[str]) -> list[dict]:
 ##########################################################################
 def main():
     artists = extract_artists(ARTIST_URLS)
-    tracks = transform.clean_artists(artists)
     write_to_csv(artists, "data/artists.csv")
     
     albums = extract_artists_albums(ARTIST_URLS)
