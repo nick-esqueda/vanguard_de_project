@@ -64,3 +64,18 @@ After a certain set of data has been received and pruned, it is immediately clea
 Cutting down on unnecessary queries allows the program to avoid wasting time waiting for the API request to finish. This is why both the ingestion and transformation phases will be executed "at the same time".
 
 ## Storage
+The storage phase, starting off from the call to `load_all()` in `\__main__.py`, simply takes all of the cleaned and transformed data and stores it inside of the SQLite database file, located in `app/data/spotify.db`. 
+
+To dive deeper, first, a connection needs to be made to the SQLite database. The `DB` class from `app/utils/db.py` serves this purpose, and an instance of that class is then used to run SQL statements against the database to create these tables:
+
+* `artists` 
+* `albums` 
+* `tracks` 
+* `track_features`
+
+The `create_tables()` function inside of `load.py` runs that SQL.
+
+Then, the `load_data()` function is used to insert the cleaned and transformed data into those newly created tables, using the same `DB` instance.
+
+## Analytics / Visualization
+
