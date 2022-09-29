@@ -5,7 +5,7 @@ This is my submission for Vanguard's Data Engineering Apprenticeship take home p
 ## Important:
 
 If you would like to see all of the git commit and branch history, please stop by the original version of this repo! This fork was created to submit the project after completion, but all of the git history exists in my personal repo here:
-> [Nick Esqueda - Vanguard DE Project](`https://github.com/nick-esqueda/vanguard_de_project`)
+> [Nick Esqueda - Vanguard DE Project](https://github.com/nick-esqueda/vanguard_de_project)
 
 ## About Me:
 
