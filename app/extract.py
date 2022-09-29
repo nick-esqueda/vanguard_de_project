@@ -1,45 +1,33 @@
-# import json
-# import pandas as pd
 import spotipy
 from spotipy.oauth2 import SpotifyClientCredentials
+from pandas import DataFrame
 from dotenv import load_dotenv
-from typing import Iterable
-from utils import ARTIST_URLS
-from utils import write_to_csv
-from utils import prune_all, add_id
-import transform
+from typing import Iterable, Union
+from .utils import prune_all, add_id
 load_dotenv()
 
 
 auth_manager = SpotifyClientCredentials()
 spot = spotipy.Spotify(auth_manager=auth_manager)
-
+DF_OR_LIST = Union[DataFrame, list[dict]]
 
 # ARTISTS #######################################
-def fetch_artists(urls: Iterable[str]) -> list[dict]:
-    """
-    makes a call to the Spotify API to retrieve each artist's data from the passed in iterable. 
-    returns a list of dictionaries with each artist's data. 
-    """
-    return spot.artists(urls)["artists"]
-
 def extract_artists(urls: Iterable[str]) -> list[dict]:
     """
-    fetches the artists' data from the Spotify API based on the passed in URLs, 
-    and then prunes those JSON responses for the relevant fields.
+    fetches the artists' data from the Spotify API based on the passed in URLs,
+    and then prunes those JSON responses for the relevant fields.\n
     returns a list of those pruned objects.
     """
-    print("Extracting artists...")
-    artists = fetch_artists(urls)
+    artists = spot.artists(urls)["artists"]
     pruned_artists = prune_all(artists, "artist")
     return pruned_artists
 
-
 # ALBUMS ########################################
-def fetch_artists_albums(urls: Iterable[str]) -> list[dict]:
+def extract_artists_albums(urls: Iterable[str]) -> list[dict]:
     """
-    fetches all of each artist's albums with each artist's url passed in as an iterable. 
-    returns a list of those album's data from the Spotify API.
+    fetches all of the artists' album data from the Spotify API based on the passed in URLs, 
+    and then prunes those JSON responses for the relevant fields.\n
+    returns a list of those pruned objects.
     """
     albums = []
     for url in urls:
@@ -53,25 +41,16 @@ def fetch_artists_albums(urls: Iterable[str]) -> list[dict]:
         id = url.split('/')[-1].split('?')[0] 
         add_id(temp_albums, id, "artist_id")
         albums.extend(temp_albums)
-    return albums
-
-def extract_artists_albums(urls: Iterable[str]) -> list[dict]:
-    """
-    fetches all of the artists' album data from the Spotify API based on the passed in URLs, 
-    and then prunes those JSON responses for the relevant fields.
-    returns a list of those pruned objects.
-    """
-    print("Extracting albums...")
-    albums = fetch_artists_albums(urls)
+    
     all_pruned_albums = prune_all(albums, "album")
     return all_pruned_albums
 
-
 # ALBUM TRACKS ##################################
-def fetch_albums_tracks(album_ids: Iterable[str]) -> list[dict]:
+def extract_albums_tracks(album_ids: Iterable[str]) -> list[dict]:
     """
-    takes in an iterable of album ids, and fetches every song for each of those albums from the Spotify API.
-    returns a list of each song's data.
+    fetches each album's track data from the Spotify API based on the passed in album ids, 
+    and then prunes those JSON responses for the relevant fields.\n
+    returns a list of those pruned objects.
     """
     tracks = []
     for id in album_ids:
@@ -84,25 +63,16 @@ def fetch_albums_tracks(album_ids: Iterable[str]) -> list[dict]:
         # add the album_id to each track, as it is not included in the API response.
         add_id(temp_tracks, id, "album_id")
         tracks.extend(temp_tracks)
-    return tracks
-    
-def extract_albums_tracks(album_ids: Iterable[str]) -> list[dict]:
-    """
-    fetches each album's track data from the Spotify API based on the passed in album ids, 
-    and then prunes those JSON responses for the relevant fields.
-    returns a list of those pruned objects.
-    """
-    print("Extracting tracks...")
-    tracks = fetch_albums_tracks(album_ids)
+        
     all_pruned_tracks = prune_all(tracks, "track")
     return all_pruned_tracks
 
-
 # TRACK FEATURES ################################
-def fetch_track_features(track_ids: list[str]) -> list[dict]:
+def extract_track_features(track_ids: DF_OR_LIST) -> list[dict]:
     """
-    takes in an iterable of track ids and fetches each track's "track features" from the Spotify API. 
-    returns a list of those track features for each track.
+    fetches the tracks' "track_feature" data from the Spotify API based on the passed in track ids, 
+    and then prunes those JSON responses for the relevant fields.\n
+    returns a list of those pruned objects.
     """
     offset = 0
     track_features = []
@@ -112,40 +82,6 @@ def fetch_track_features(track_ids: list[str]) -> list[dict]:
         track_features.extend(response)
         offset += 100
         tracks = track_ids[offset:offset + 100]
-    return track_features
-
-def extract_track_features(track_ids: list[str]) -> list[dict]:
-    """
-    fetches the tracks' "track_feature" data from the Spotify API based on the passed in track ids, 
-    and then prunes those JSON responses for the relevant fields.
-    returns a list of those pruned objects.
-    """
-    print("Extracting track features...")
-    track_features = fetch_track_features(track_ids)
+        
     pruned_track_features = prune_all(track_features, "track_features")
     return pruned_track_features
-
-
-# MAIN ###################################################################
-##########################################################################
-def main():
-    artists = extract_artists(ARTIST_URLS)
-    tracks = transform.clean_artists(artists)
-    write_to_csv(artists, "data/artists.csv")
-    
-    albums = extract_artists_albums(ARTIST_URLS)
-    albums = transform.clean_albums(albums)
-    write_to_csv(albums, "data/albums.csv")
-    
-    tracks = extract_albums_tracks(albums["album_id"])
-    tracks = transform.clean_tracks(tracks, albums, artists)
-    write_to_csv(tracks, "data/tracks.csv")
-    
-    track_features = extract_track_features(tracks["track_id"])
-    write_to_csv(track_features, "data/track_features.csv")
-    
-    return artists, albums, tracks, track_features
-
-
-if __name__ == "__main__":
-    main()

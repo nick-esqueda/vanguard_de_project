@@ -1,7 +1,5 @@
 import pandas as pd
 from typing import Union
-from utils import read_all_from_csv
-import extract
 
 
 DF_OR_LIST = Union[pd.DataFrame, list[dict]]
@@ -86,28 +84,3 @@ def print_transformations(artists, albums, tracks, track_features):
     print(tracks)
     print("\nTRACK_FEATURES:")
     print(track_features)
-    
-    
-# MAIN ###################################################################
-##########################################################################
-def main():
-    # # fetch all of the data first.
-    # artists, albums, tracks, track_features = extract.main()
-    
-    # OPTIONAL: use data from .csv instead of extracting everything again.
-    artists, albums, tracks, track_features = read_all_from_csv()
-    
-    # clean the extracted data.
-    artists = clean_artists(artists)
-    albums = clean_albums(albums)
-    tracks = clean_tracks(tracks, albums, artists)
-    track_features = clean_track_features(track_features, tracks)
-    
-    # print_transformations(artists, albums, tracks, track_features)
-    
-    print("Done cleaning all data!")
-    return artists, albums, tracks, track_features
-
-
-if __name__ == "__main__":
-    main()

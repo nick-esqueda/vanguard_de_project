@@ -1,6 +1,6 @@
 import pandas as pd
-from utils import DB
-from utils.queries import *
+from app.utils import DB
+from app.utils.queries import *
 
 
 # VIEWS #########################################
@@ -21,17 +21,14 @@ def create_views(db: DB) -> None:
     db.execute(V_POPULAR_ARTIST_FEATURES)
     db.execute(V_GENRE_FEATURES)
     db.execute(V_GENRE_RELEASE_PATTERNS)
-    print("Views have been successfully created!")
     
 def test_prompt_views(db: DB) -> None:
     # db.execute("SELECT * FROM V_artist_top_songs_by_duration;")
     # t = pd.DataFrame(db.result())
     # print(t.head(50))
-    
     # db.execute("SELECT * FROM V_top_artists_by_followers;")
     # t = pd.DataFrame(db.result())
     # print(t)
-    
     db.execute("SELECT * FROM V_artist_top_songs_by_tempo;")
     t = pd.DataFrame(db.result())
     print(t.head(50))
@@ -40,28 +37,12 @@ def test_custom_views(db: DB) -> None:
     # db.execute("SELECT * FROM V_artist_overview;")
     # t = pd.DataFrame(db.result())
     # print(t)
-    
     # db.execute("SELECT * FROM V_popular_artist_features;")
     # t = pd.DataFrame(db.result())
     # print(t)
-    
     # db.execute("SELECT * FROM V_genre_features;")
     # t = pd.DataFrame(db.result())
     # print(t)
-    
     db.execute("SELECT * FROM V_genre_release_patterns;")
     t = pd.DataFrame(db.result())
     print(t)
-    
-    
-# MAIN ###################################################################
-##########################################################################
-def main():
-    db = DB()
-    create_views(db)
-    # test_prompt_views(db)
-    test_custom_views(db)
-
-
-if __name__ == "__main__":
-    main()

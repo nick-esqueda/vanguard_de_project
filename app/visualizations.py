@@ -1,7 +1,8 @@
-from matplotlib import pyplot as plt
 import pandas as pd
-from utils import DB
+from matplotlib import pyplot as plt
 
+
+plt.style.use("dark_background")
 
 # CREATE PLOTS ##################################
 def energy_vs_loudness_tempo(db):
@@ -14,7 +15,7 @@ def energy_vs_loudness_tempo(db):
     make_energy_axes(ax2, df, "tempo", "tempo (bpm)")
 
     plt.tight_layout()
-    plt.savefig("images/energy-vs-loudness-tempo.png", bbox_inches='tight', pad_inches=.8)
+    plt.savefig("app/images/energy-vs-loudness-tempo.png", bbox_inches='tight', pad_inches=.8)
 
 def loudness_vs_danceability(db):
     db.execute("SELECT * FROM track_features")
@@ -32,7 +33,7 @@ def loudness_vs_danceability(db):
     plt.grid(color="#FFFFFF", linestyle="--", alpha=.3)
 
     plt.tight_layout()
-    plt.savefig("images/loudness-vs-danceability.png", bbox_inches='tight', pad_inches=.6)
+    plt.savefig("app/images/loudness-vs-danceability.png", bbox_inches='tight', pad_inches=.6)
 
 def genre_style_comparison(db):
     # GET DATA
@@ -60,7 +61,7 @@ def genre_style_comparison(db):
     make_genres_axes(ax4, avg_tempo_elec, avg_tempo_metal, "tempo", "avg tempo (bpm)")
 
     plt.tight_layout()
-    plt.savefig("images/genre-style-comparison.png", bbox_inches='tight', pad_inches=.8)
+    plt.savefig("app/images/genre-style-comparison.png", bbox_inches='tight', pad_inches=.8)
 
 def subgenre_style_comparison(db):
     # GET DATA
@@ -83,13 +84,13 @@ def subgenre_style_comparison(db):
 
     plt.figlegend(["metal", "heavy electronic"], loc='lower center', bbox_to_anchor=(0.5, -0.1))
     plt.tight_layout()
-    plt.savefig("images/sub-genre-style-comparison.png", bbox_inches='tight', pad_inches=.6)
+    plt.savefig("app/images/sub-genre-style-comparison.png", bbox_inches='tight', pad_inches=.6)
     
 
 # HELPERS #######################################
 def make_energy_axes(ax, df, metric, ylabel):
     ax.scatter(df["energy"], df[metric], c="#FFFFFF" if metric == "tempo" else "#1DB954")
-    ax.set_title(f"energy level vs. {metric}", fontname="monospace", fontsize=16, backgroundcolor="#191414")
+    ax.set_title(f"energy level vs. {metric}", fontname="monospace", fontsize=18, backgroundcolor="#FFFFFF", color="black")
     ax.set_ylabel(ylabel, fontname="monospace")
     ax.grid(color="#FFFFFF", linestyle='--', alpha=.3)
 
@@ -107,17 +108,3 @@ def makes_subgenres_axes(ax, df, filt1, filt2, metric, xlabel):
     ax.set_xlabel(xlabel, fontname="monospace")
     ax.grid(color="#FFFFFF", linestyle="--", alpha=.3)
     
-    
-# MAIN ###################################################################
-##########################################################################
-def main():
-    db = DB()
-    plt.style.use("dark_background")
-    energy_vs_loudness_tempo(db)
-    loudness_vs_danceability(db)
-    genre_style_comparison(db)
-    subgenre_style_comparison(db)
-
-
-if __name__ == "__main__":
-    main()
