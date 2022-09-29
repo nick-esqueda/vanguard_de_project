@@ -141,10 +141,12 @@ That's it! The program has been completed and you know have some real data to lo
 
 Any testing/queries against the database may be done inside of `app/__main__.py` at the bottom of the `run()` function. Comment in the following lines:
 
-``` # db.execute("SELECT * FROM V_genre_features")
-    # print(db.result())```
+```python
+# db.execute("SELECT * FROM V_genre_features")
+# print(db.result())
+```
     
-and then enter your own query inside `db.execute()".
+and then enter your own SQL query inside `db.execute()`.
 
 # Conclusion
 
