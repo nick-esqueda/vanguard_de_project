@@ -11,17 +11,17 @@ def energy_vs_loudness_tempo(db):
     fig, (ax1, ax2) = plt.subplots(2, 1, figsize=(10, 6))
 
     ax1.scatter(df["energy"], df["loudness"], c="#FFFFFF")
-    ax1.set_title("energy level vs. loudness", fontname="monospace", backgroundcolor="#191414")
+    ax1.set_title("energy level vs. loudness", fontname="monospace", fontsize=16, backgroundcolor="#191414")
     ax1.set_ylabel("loudness (lufs)", fontname="monospace")
     ax1.grid(color="#FFFFFF", linestyle='--', alpha=.3)
 
     ax2.scatter(df["energy"], df["tempo"], c="#1DB954")
-    ax2.set_title("energy level vs. tempo", fontname="monospace", backgroundcolor="#191414")
+    ax2.set_title("energy level vs. tempo", fontname="monospace", fontsize=16, backgroundcolor="#191414")
     ax2.set_xlabel("energy level", fontname="monospace")
     ax2.set_ylabel("tempo (bpm)", fontname="monospace")
     ax2.grid(color="#FFFFFF", linestyle='--', alpha=.3)
 
-    fig.tight_layout()
+    plt.tight_layout()
     plt.savefig("images/energy-vs-loudness-tempo.png", bbox_inches='tight', pad_inches=.8)
 
 
@@ -44,7 +44,7 @@ def loudness_vs_danceability(db):
     plt.savefig("images/loudness-vs-danceability.png", bbox_inches='tight', pad_inches=.6)
 
 
-def make_axes(ax, data1, data2, title, ylabel):
+def make_axes_genres(ax, data1, data2, title, ylabel):
     ax.bar("heavy electronic", data1, color="#1DB954")
     ax.bar("metal", data2, color="#FFFFFF", alpha=.9)
     ax.set_title(title, fontname="monospace", backgroundcolor="#191414", color="#FFFFFF")
@@ -76,37 +76,23 @@ def genre_style_comparison(db):
     fig.suptitle('genre style comparisons', fontsize=18, fontname="monospace", y=1.01, backgroundcolor="#FFFFFF", color="#191414")
     fig.text(0.5, -0.02, 'genre', ha='center', fontsize=14, fontname="monospace")
 
-    # ax1.bar("heavy electronic", avg_danceability_elec, color="#1DB954") # if statement for color and alpha setting
-    # ax1.bar("metal", avg_danceability_metal, color="#FFFFFF", alpha=.9)
-    # ax1.set_title("danceability", fontname="monospace", backgroundcolor="#191414", color="#FFFFFF")
-    # ax1.set_ylabel("avg danceability score", fontname="monospace")
-    # ax1.grid(color="#FFFFFF", linestyle="--", alpha=.3)
-    
-    make_axes(ax1, avg_danceability_elec, avg_danceability_metal, "danceability", "avg danceability score")
-
-    ax2.bar("heavy electronic", avg_loudness_elec, color="#1DB954")
-    ax2.bar("metal", avg_loudness_metal, color="#FFFFFF", alpha=.9)
-    ax2.set_title("loudness", fontname="monospace", backgroundcolor="#191414", color="#FFFFFF")
-    ax2.set_ylabel("avg loudness (lufs)", fontname="monospace")
-    ax2.grid(color="#FFFFFF", linestyle="--", alpha=.3)
-
-    ax3.bar("heavy electronic", avg_valence_elec, color="#1DB954")
-    ax3.bar("metal", avg_valence_metal, color="#FFFFFF", alpha=.9)
-    ax3.set_title("valence", fontname="monospace", backgroundcolor="#191414", color="#FFFFFF")
-    ax3.set_ylabel("avg valence score", fontname="monospace")
-    ax3.grid(color="#FFFFFF", linestyle="--", alpha=.3)
-
-    ax4.bar("heavy electronic", avg_tempo_elec, color="#1DB954")
-    ax4.bar("metal", avg_tempo_metal, color="#FFFFFF", alpha=.9)
-    ax4.set_title("tempo", fontname="monospace", backgroundcolor="#191414", color="#FFFFFF")
-    ax4.set_ylabel("avg tempo (bpm)", fontname="monospace")
-    ax4.grid(color="#FFFFFF", linestyle="--", alpha=.3)
+    make_axes_genres(ax1, avg_danceability_elec, avg_danceability_metal, "danceability", "avg danceability score")
+    make_axes_genres(ax2, avg_loudness_elec, avg_loudness_metal, "loudness", "avg loudness (lufs)")
+    make_axes_genres(ax3, avg_valence_elec, avg_valence_metal, "valence", "avg valence score")
+    make_axes_genres(ax4, avg_tempo_elec, avg_tempo_metal, "tempo", "avg tempo (bpm)")
 
     plt.tight_layout()
     plt.savefig("images/genre-style-comparison.png", bbox_inches='tight', pad_inches=.8)
 
 
-# # SUB-GENRE STYLE COMPARISONS ###################
+
+def makes_axes_subgenres(ax, df, filt1, filt2, metric, xlabel):
+    ax.barh(df["genre"][filt1], df[metric][filt1], color="#FFFFFF", label="metal", alpha=.9)
+    ax.barh(df["genre"][filt2], df[metric][filt2], color="#1DB954", label="heavy electronic")
+    ax.set_title(metric, fontname="monospace", backgroundcolor="#191414", color="#FFFFFF")
+    ax.set_xlabel(xlabel, fontname="monospace")
+    ax.grid(color="#FFFFFF", linestyle="--", alpha=.3)
+    
 def subgenre_style_comparison(db):
     # GET DATA
     db.execute("SELECT * FROM V_genre_features")
@@ -122,11 +108,14 @@ def subgenre_style_comparison(db):
     fig, ((ax1, ax2), (ax3, ax4)) = plt.subplots(2, 2, figsize=(10, 6))
     fig.suptitle('sub-genre style comparisons', fontsize=18, fontname="monospace", y=1.01, backgroundcolor="#FFFFFF", color="#191414")
 
-    ax1.barh(df["genre"][metal_filter], df["danceability"][metal_filter], color="#FFFFFF", label="metal", alpha=.9)
-    ax1.barh(df["genre"][elec_filter], df["danceability"][elec_filter], color="#1DB954", label="heavy electronic")
-    ax1.set_title("danceability", fontname="monospace", backgroundcolor="#191414", color="#FFFFFF")
-    ax1.set_xlabel("danceability score", fontname="monospace")
-    ax1.grid(color="#FFFFFF", linestyle="--", alpha=.3)
+    
+    makes_axes_subgenres(ax1, df, metal_filter, elec_filter, "danceability", "danceability score")
+    
+    # ax1.barh(df["genre"][metal_filter], df["danceability"][metal_filter], color="#FFFFFF", label="metal", alpha=.9)
+    # ax1.barh(df["genre"][elec_filter], df["danceability"][elec_filter], color="#1DB954", label="heavy electronic")
+    # ax1.set_title("danceability", fontname="monospace", backgroundcolor="#191414", color="#FFFFFF")
+    # ax1.set_xlabel("danceability score", fontname="monospace")
+    # ax1.grid(color="#FFFFFF", linestyle="--", alpha=.3)
 
     ax2.barh(df["genre"][metal_filter], df["loudness"][metal_filter], color="#FFFFFF", alpha=.9)
     ax2.barh(df["genre"][elec_filter], df["loudness"][elec_filter], color="#1DB954",)
@@ -156,10 +145,11 @@ def subgenre_style_comparison(db):
 def main():
     db = DB()
     plt.style.use("dark_background")
-    # energy_vs_loudness_tempo(db)
-    # loudness_vs_danceability(db)
+    plt.tight_layout()
+    energy_vs_loudness_tempo(db)
+    loudness_vs_danceability(db)
     genre_style_comparison(db)
-    # subgenre_style_comparison(db)
+    subgenre_style_comparison(db)
 
 
 if __name__ == "__main__":
