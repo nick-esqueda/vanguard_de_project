@@ -1,6 +1,6 @@
 import pandas as pd
-from app.utils import DB
-from app.utils.queries import *
+from .utils import DB, V_ARTIST_TOP_SONGS_BY_DURATION, V_TOP_ARTISTS_BY_FOLLOWERS, V_ARTIST_TOP_SONGS_BY_TEMPO
+from .utils import V_ARTIST_OVERVIEW, V_POPULAR_ARTIST_FEATURES, V_GENRE_FEATURES, V_GENRE_RELEASE_PATTERNS
 
 
 # VIEWS #########################################

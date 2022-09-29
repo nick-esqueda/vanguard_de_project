@@ -1,6 +1,5 @@
 import pandas as pd
-from .utils import DB
-from .utils.queries import *
+from .utils import DB, CREATE_ARTISTS, CREATE_ALBUMS, CREATE_TRACKS, CREATE_TRACK_FEATURES
 
 
 # CREATE TABLES #################################
