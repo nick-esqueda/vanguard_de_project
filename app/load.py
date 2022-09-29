@@ -1,7 +1,6 @@
 import pandas as pd
-import transform
-from utils import DB
-from utils.queries import *
+from .utils import DB
+from .utils.queries import *
 
 
 # CREATE TABLES #################################
@@ -34,22 +33,4 @@ def test_table_creation(db: DB) -> None:
     print(db.result())
     db.execute("SELECT * FROM track_features LIMIT 5")
     print(db.result())
-
-
-# MAIN ###################################################################
-##########################################################################
-def main():
-    artists, albums, tracks, track_features = transform.main()
     
-    db = DB()
-    create_tables(db)
-    load_data(artists, "artists", db)
-    load_data(albums, "albums", db)
-    load_data(tracks, "tracks", db)
-    load_data(track_features, "track_features", db)
-    # test_table_creation(db)
-    db.close()
-
-
-if __name__ == "__main__":
-    main()

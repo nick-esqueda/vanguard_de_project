@@ -1,6 +1,6 @@
 import pandas as pd
-from utils import DB
-from utils.queries import *
+from app.utils import DB
+from app.utils.queries import *
 
 
 # VIEWS #########################################
@@ -47,16 +47,3 @@ def test_custom_views(db: DB) -> None:
     db.execute("SELECT * FROM V_genre_release_patterns;")
     t = pd.DataFrame(db.result())
     print(t)
-    
-    
-# MAIN ###################################################################
-##########################################################################
-def main():
-    db = DB()
-    create_views(db)
-    # test_prompt_views(db)
-    # test_custom_views(db)
-
-
-if __name__ == "__main__":
-    main()

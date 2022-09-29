@@ -3,7 +3,7 @@ from app.transform import *
 from app.load import *
 from app.analytics import create_views
 from app.visualizations import *
-from app.utils import ARTIST_URLS, DB
+from app.utils import DB, ARTIST_URLS, write_to_csv
 
 
 def extract_and_transform_all(write_csv=False):
@@ -32,7 +32,7 @@ def load_all(db, artists, albums, tracks, track_features):
     load_data(track_features, "track_features", db)
     
 def create_visualizations(db):
-    plt.style.use("dark_background")
+    plt.style.use("dark_background") # put this at the top of visualizations.py?
     energy_vs_loudness_tempo(db)
     loudness_vs_danceability(db)
     genre_style_comparison(db)
@@ -42,9 +42,11 @@ def create_visualizations(db):
 # RUN PROGRAM ############################################################
 ##########################################################################
 def run():
+    # NOTE: add condition to allow user to read from csv's instead of extracting again.
     data = extract_and_transform_all()
     db = DB()
-    load_all(db, *data)
+    load_all(db, *data) 
     create_views(db)
+    db.close()
 
 run()

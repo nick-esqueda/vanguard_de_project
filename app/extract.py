@@ -1,13 +1,8 @@
-# import json
-# import pandas as pd
 import spotipy
 from spotipy.oauth2 import SpotifyClientCredentials
 from dotenv import load_dotenv
 from typing import Iterable
-from utils import ARTIST_URLS
-from utils import write_to_csv
-from utils import prune_all, add_id
-import transform
+from .utils import prune_all, add_id
 load_dotenv()
 
 
@@ -124,27 +119,3 @@ def extract_track_features(track_ids: list[str]) -> list[dict]:
     track_features = fetch_track_features(track_ids)
     pruned_track_features = prune_all(track_features, "track_features")
     return pruned_track_features
-
-
-# MAIN ###################################################################
-##########################################################################
-def main():
-    artists = extract_artists(ARTIST_URLS)
-    write_to_csv(artists, "data/artists.csv")
-    
-    albums = extract_artists_albums(ARTIST_URLS)
-    albums = transform.clean_albums(albums)
-    write_to_csv(albums, "data/albums.csv")
-    
-    tracks = extract_albums_tracks(albums["album_id"])
-    tracks = transform.clean_tracks(tracks, albums, artists)
-    write_to_csv(tracks, "data/tracks.csv")
-    
-    track_features = extract_track_features(tracks["track_id"])
-    write_to_csv(track_features, "data/track_features.csv")
-    
-    return artists, albums, tracks, track_features
-
-
-if __name__ == "__main__":
-    main()

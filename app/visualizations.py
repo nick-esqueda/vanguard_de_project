@@ -1,6 +1,5 @@
-from matplotlib import pyplot as plt
 import pandas as pd
-from utils import DB
+from matplotlib import pyplot as plt
 
 
 # CREATE PLOTS ##################################
@@ -107,17 +106,3 @@ def makes_subgenres_axes(ax, df, filt1, filt2, metric, xlabel):
     ax.set_xlabel(xlabel, fontname="monospace")
     ax.grid(color="#FFFFFF", linestyle="--", alpha=.3)
     
-    
-# MAIN ###################################################################
-##########################################################################
-def main():
-    db = DB()
-    plt.style.use("dark_background")
-    energy_vs_loudness_tempo(db)
-    loudness_vs_danceability(db)
-    genre_style_comparison(db)
-    subgenre_style_comparison(db)
-
-
-if __name__ == "__main__":
-    main()
