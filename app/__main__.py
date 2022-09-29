@@ -61,6 +61,7 @@ def run_analytics(db):
 # RUN PROGRAM ############################################################
 ##########################################################################
 def run():
+    # ASK TO READ FROM CSV ###############################################
     read = textwrap.dedent("""\
         ********************** Welcome! *****************************
         Would you like to read files from .csv? 
@@ -71,9 +72,9 @@ def run():
         Read from csv? [y/n] """)
     read = input(read)
     
+    # PREFERRED METHOD OF EXTRACTION #####################################
     data = None
     if read.lower() == 'n':
-        print()
         write = textwrap.dedent("""\
             
             *************************************************************
@@ -96,14 +97,17 @@ def run():
         print("\nPlease run the program again and enter either 'y' or 'n' for responses.")
         return
     
+    # LOADING PHASE ######################################################
     print("\n******************* LOAD INTO DATABASE **********************")
     db = DB()
-    load_all(db, *data) 
+    load_all(db, *data)
     
+    # ANALYTICS PHASE ####################################################
     print("\n******************* CREATE ANALYTICS ************************")
     run_analytics(db)
     db.close()
     
     print("\nDONE: exiting successfully.")
+
 
 run()
