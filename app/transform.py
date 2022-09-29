@@ -74,13 +74,3 @@ def clean_track_features(track_features: DF_OR_LIST, tracks: DF_OR_LIST) -> pd.D
     track_features = track_features[filter]
     track_features.sort_index(ignore_index=True, inplace=True)
     return track_features
-    
-def print_transformations(artists, albums, tracks, track_features):
-    print("\nARTISTS:")
-    print(artists)
-    print("\nALBUMS:")
-    print(albums)
-    print("\nTRACKS:")
-    print(tracks)
-    print("\nTRACK_FEATURES:")
-    print(track_features)

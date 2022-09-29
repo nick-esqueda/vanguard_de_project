@@ -1,8 +1,10 @@
-from app.extract import *
-from app.transform import *
-from app.load import *
-from app.analytics import *
-from app.visualizations import *
+from app.extract import extract_artists, extract_artists_albums
+from app.extract import extract_albums_tracks, extract_track_features
+from app.transform import clean_artists, clean_albums, clean_tracks, clean_track_features
+from app.load import create_tables, load_data
+from app.analytics import create_views
+from app.visualizations import energy_vs_loudness_tempo, loudness_vs_danceability
+from app.visualizations import genre_style_comparison, subgenre_style_comparison
 from app.utils import DB, ARTIST_URLS, write_to_csv, read_all_from_csv
 
 
@@ -36,6 +38,7 @@ def extract_and_transform_all(write_csv=False):
     return artists, albums, tracks, track_features
     
 def load_all(db, artists, albums, tracks, track_features):
+    print("Creating tables: artists, albums, tracks, and track_features...")
     create_tables(db)
     load_data(artists, "artists", db)
     load_data(albums, "albums", db)
