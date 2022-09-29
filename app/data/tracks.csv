@@ -1169,12 +1169,12 @@ track_id,song_name,external_url,duration_ms,explicit,disc_number,type,song_uri,a
 5iXnDpczRvMLg8FYDQtc1B,Diggid,https://open.spotify.com/track/5iXnDpczRvMLg8FYDQtc1B,162377,False,1,track,spotify:track:5iXnDpczRvMLg8FYDQtc1B,0v8PS5uppcsQA1JDAdwCFW
 5p1zQuE7HX6lflI5bTqR0o,Holy Chit,https://open.spotify.com/track/5p1zQuE7HX6lflI5bTqR0o,198439,True,1,track,spotify:track:5p1zQuE7HX6lflI5bTqR0o,4rIb1bQEgcz6R3zntvSFDw
 162VYgs5ug2QRQMSR3ci6K,Doughboi,https://open.spotify.com/track/162VYgs5ug2QRQMSR3ci6K,175448,False,1,track,spotify:track:162VYgs5ug2QRQMSR3ci6K,7i6x3v9cE4EnKm80AyYsuU
-7LiHvXMjagrGQVMriLXktA,Between the Devil and the Sea,https://open.spotify.com/track/7LiHvXMjagrGQVMriLXktA,262523,False,1,track,spotify:track:7LiHvXMjagrGQVMriLXktA,1ndLKiSH63sm3S5l51rqOG
-1L2MrvQkVKXrz4N87kK4cR,Bye,https://open.spotify.com/track/1L2MrvQkVKXrz4N87kK4cR,164942,False,2,track,spotify:track:1L2MrvQkVKXrz4N87kK4cR,1ndLKiSH63sm3S5l51rqOG
-5OJLSy01fNes7OSUjpdnGT,Ing,https://open.spotify.com/track/5OJLSy01fNes7OSUjpdnGT,178465,True,3,track,spotify:track:5OJLSy01fNes7OSUjpdnGT,1ndLKiSH63sm3S5l51rqOG
-35E70i7yisnhCxm9mXVYMW,Flatline,https://open.spotify.com/track/35E70i7yisnhCxm9mXVYMW,207779,False,4,track,spotify:track:35E70i7yisnhCxm9mXVYMW,1ndLKiSH63sm3S5l51rqOG
-3gXCCFlO02OE0zIFghVMvU,Fragile,https://open.spotify.com/track/3gXCCFlO02OE0zIFghVMvU,221892,False,5,track,spotify:track:3gXCCFlO02OE0zIFghVMvU,1ndLKiSH63sm3S5l51rqOG
-76CRdRhHZTOS7w0tScxHlO,"Pluto, the Black Cat",https://open.spotify.com/track/76CRdRhHZTOS7w0tScxHlO,186726,True,6,track,spotify:track:76CRdRhHZTOS7w0tScxHlO,1ndLKiSH63sm3S5l51rqOG
+5iC8ImdzDuL4ThLuWJZevG,Between the Devil and the Sea,https://open.spotify.com/track/5iC8ImdzDuL4ThLuWJZevG,262523,False,1,track,spotify:track:5iC8ImdzDuL4ThLuWJZevG,6Yg6PIZWeoVG61fTLuwzhf
+5FmeFaecW78PngzFZgTBBK,Bye,https://open.spotify.com/track/5FmeFaecW78PngzFZgTBBK,164942,False,2,track,spotify:track:5FmeFaecW78PngzFZgTBBK,6Yg6PIZWeoVG61fTLuwzhf
+3rxq7CbUdWRHGVQvj4ll3c,Ing,https://open.spotify.com/track/3rxq7CbUdWRHGVQvj4ll3c,178465,True,3,track,spotify:track:3rxq7CbUdWRHGVQvj4ll3c,6Yg6PIZWeoVG61fTLuwzhf
+64jN4J3gB6NqNjdgr3gBzX,Flatline,https://open.spotify.com/track/64jN4J3gB6NqNjdgr3gBzX,207779,False,4,track,spotify:track:64jN4J3gB6NqNjdgr3gBzX,6Yg6PIZWeoVG61fTLuwzhf
+6RLhS056PArQCWMl8yQhON,Fragile,https://open.spotify.com/track/6RLhS056PArQCWMl8yQhON,221892,False,5,track,spotify:track:6RLhS056PArQCWMl8yQhON,6Yg6PIZWeoVG61fTLuwzhf
+57HieM7d3ao5R3kNvDgRq2,"Pluto, the Black Cat",https://open.spotify.com/track/57HieM7d3ao5R3kNvDgRq2,186726,True,6,track,spotify:track:57HieM7d3ao5R3kNvDgRq2,6Yg6PIZWeoVG61fTLuwzhf
 3gxQcoMn5azQ19Dr2I6H5t,Dusk,https://open.spotify.com/track/3gxQcoMn5azQ19Dr2I6H5t,156000,False,1,track,spotify:track:3gxQcoMn5azQ19Dr2I6H5t,2lw4IdoN1lscANEJoh3Gre
 6uymiV8dJU9PScOlUaRohp,Harbinger,https://open.spotify.com/track/6uymiV8dJU9PScOlUaRohp,184000,False,2,track,spotify:track:6uymiV8dJU9PScOlUaRohp,2lw4IdoN1lscANEJoh3Gre
 2cBsbCErzzNh2AlsPeja9W,Dang,https://open.spotify.com/track/2cBsbCErzzNh2AlsPeja9W,147200,False,3,track,spotify:track:2cBsbCErzzNh2AlsPeja9W,2lw4IdoN1lscANEJoh3Gre
@@ -1473,10 +1473,10 @@ track_id,song_name,external_url,duration_ms,explicit,disc_number,type,song_uri,a
 6oONQp6eECa7qMbYsy4TIc,Rude Boi,https://open.spotify.com/track/6oONQp6eECa7qMbYsy4TIc,161910,True,4,track,spotify:track:6oONQp6eECa7qMbYsy4TIc,07y3NuodIPscXhZ3iXVKgR
 6WC4MsYNtOCHs5Z7Zavwrk,Subterfuge,https://open.spotify.com/track/6WC4MsYNtOCHs5Z7Zavwrk,230040,False,5,track,spotify:track:6WC4MsYNtOCHs5Z7Zavwrk,07y3NuodIPscXhZ3iXVKgR
 21lLamB5MLf4ciNLengwuQ,PUSHNPULL,https://open.spotify.com/track/21lLamB5MLf4ciNLengwuQ,153716,False,1,track,spotify:track:21lLamB5MLf4ciNLengwuQ,6SMTTcNrQNA9hlRjFL79Rp
-1Dn7e55CdDh0PlK5toHB1d,Baked,https://open.spotify.com/track/1Dn7e55CdDh0PlK5toHB1d,224548,False,1,track,spotify:track:1Dn7e55CdDh0PlK5toHB1d,1MVRLecZCmKG57FYiktKpQ
-6lovjXdWi2U2mWDnxpQUvP,Second Baked,https://open.spotify.com/track/6lovjXdWi2U2mWDnxpQUvP,289053,False,2,track,spotify:track:6lovjXdWi2U2mWDnxpQUvP,1MVRLecZCmKG57FYiktKpQ
-67pyUcLM1CScgRZPcsFXjM,Over Baked,https://open.spotify.com/track/67pyUcLM1CScgRZPcsFXjM,239999,False,3,track,spotify:track:67pyUcLM1CScgRZPcsFXjM,1MVRLecZCmKG57FYiktKpQ
-3ydG7Xky7xCYePoCXiupe4,Stop Getting Baked,https://open.spotify.com/track/3ydG7Xky7xCYePoCXiupe4,221340,False,4,track,spotify:track:3ydG7Xky7xCYePoCXiupe4,1MVRLecZCmKG57FYiktKpQ
+094fQpPoSk4O5qbj8u0K26,Baked,https://open.spotify.com/track/094fQpPoSk4O5qbj8u0K26,224548,False,1,track,spotify:track:094fQpPoSk4O5qbj8u0K26,3nsAQptPmp65AmIu3O7QxK
+27iz86Ipnn26jH6NS9uWeS,Second Baked,https://open.spotify.com/track/27iz86Ipnn26jH6NS9uWeS,289053,False,2,track,spotify:track:27iz86Ipnn26jH6NS9uWeS,3nsAQptPmp65AmIu3O7QxK
+180kO04kwhPfEcVR3vnMLL,Over Baked,https://open.spotify.com/track/180kO04kwhPfEcVR3vnMLL,239999,False,3,track,spotify:track:180kO04kwhPfEcVR3vnMLL,3nsAQptPmp65AmIu3O7QxK
+4nkR74xoh4NwRXED5tf0MJ,Stop Getting Baked,https://open.spotify.com/track/4nkR74xoh4NwRXED5tf0MJ,221340,False,4,track,spotify:track:4nkR74xoh4NwRXED5tf0MJ,3nsAQptPmp65AmIu3O7QxK
 3oVJKMowlkeQbxtMNPSG51,MOVE,https://open.spotify.com/track/3oVJKMowlkeQbxtMNPSG51,180665,True,1,track,spotify:track:3oVJKMowlkeQbxtMNPSG51,5HZDogiS6bohFEVW0vWBrb
 3uj62wixZStgiogJwKpvvY,Brainwash,https://open.spotify.com/track/3uj62wixZStgiogJwKpvvY,199816,False,1,track,spotify:track:3uj62wixZStgiogJwKpvvY,1r3gzOThNc4ymdLUEjjVsE
 55AwnVYj2Zzip7g2zy2EMy,KIEF,https://open.spotify.com/track/55AwnVYj2Zzip7g2zy2EMy,163200,False,1,track,spotify:track:55AwnVYj2Zzip7g2zy2EMy,0bjkCXpDhP6xkNsjmpeqM6

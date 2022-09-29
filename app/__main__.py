@@ -1,3 +1,4 @@
+import textwrap
 from app.extract import extract_artists, extract_artists_albums
 from app.extract import extract_albums_tracks, extract_track_features
 from app.transform import clean_artists, clean_albums, clean_tracks, clean_track_features
@@ -30,10 +31,10 @@ def extract_and_transform_all(write_csv=False):
     print("\ttrack feature data has been extracted and transformed!")
     
     if write_csv is True:
-        write_to_csv(artists, "data/artists.csv")
-        write_to_csv(albums, "data/albums.csv")
-        write_to_csv(tracks, "data/tracks.csv")
-        write_to_csv(track_features, "data/track_features.csv")
+        write_to_csv(artists, "app/data/artists.csv")
+        write_to_csv(albums, "app/data/albums.csv")
+        write_to_csv(tracks, "app/data/tracks.csv")
+        write_to_csv(track_features, "app/data/track_features.csv")
         
     return artists, albums, tracks, track_features
     
@@ -60,10 +61,39 @@ def run_analytics(db):
 # RUN PROGRAM ############################################################
 ##########################################################################
 def run():
-    # NOTE: add condition to allow user to read from csv's instead of extracting again.
-    print("\n******************* EXTRACT AND TRANSFORM *******************")
-    data = extract_and_transform_all()
-    # data = read_all_from_csv()
+    read = textwrap.dedent("""\
+    Welcome!! Would you like to read files from .csv? 
+    This will skip the extraction process and move on to the 
+    transformation, loading, and analytics processes.\n
+    NOTE: this will only work if you have previously chosen to write to .csv.\n
+    Please choose 'n' if you haven't ran the program yet.\n
+    Read from csv? [y/n] """)
+    read = input(read)
+    
+    data = None
+    if read.lower() == 'n':
+        print()
+        write = textwrap.dedent("""\
+            
+            *************************************************************
+            Would you like to save the data to individual .csv files?\n
+            These .csv's will be written to the app/data directory.
+            This will help save time when running this program again.
+            Feel free to check them out after the program is done!\n
+            Write to .csv? [y/n] """)
+        write = input(write)
+        
+        print("\n******************* EXTRACT AND TRANSFORM *******************")
+        data = extract_and_transform_all(True if write.lower() == 'y' else False)
+        
+    elif read.lower() == 'y':
+        data = read_all_from_csv()
+        if data is None:
+            return
+        
+    else:
+        print("\nPlease run the program again and enter either 'y' or 'n' for responses.")
+        return
     
     print("\n******************* LOAD INTO DATABASE **********************")
     db = DB()
