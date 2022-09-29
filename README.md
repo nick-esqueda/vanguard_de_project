@@ -2,12 +2,12 @@
 
 This is my submission for Vanguard's Data Engineering Apprenticeship take home project. 
 
-## Important:
+### Important:
 
 If you would like to see all of the git commit and branch history, please stop by the original version of this repo! This fork was created to submit the project after completion, but all of the git history exists in my personal repo here:
 > [Nick Esqueda - Vanguard DE Project](https://github.com/nick-esqueda/vanguard_de_project)
 
-## About Me:
+### About Me:
 
 > [Nick Esqueda](https://www.nickesqueda.com/) (my portfolio site!)
 
@@ -66,7 +66,7 @@ Cutting down on unnecessary queries allows the program to avoid wasting time wai
 
 ## Storage
 
-The storage phase, starting off from the call to `load_all()` in `\__main__.py`, simply takes all of the cleaned and transformed data and stores it inside of the SQLite database file, located in `app/data/spotify.db`. 
+The storage phase, starting off from the call to `load_all()` in `__main__.py`, simply takes all of the cleaned and transformed data and stores it inside of the SQLite database file, located in `app/data/spotify.db`. 
 
 To dive deeper, first, a connection needs to be made to the SQLite database. The `DB` class from `app/utils/db.py` serves this purpose, and an instance of that class is then used to run SQL statements against the database to create these tables:
 
@@ -78,6 +78,10 @@ To dive deeper, first, a connection needs to be made to the SQLite database. The
 The `create_tables()` function inside of `load.py` runs that SQL.
 
 Then, the `load_data()` function is used to insert the cleaned and transformed data into those newly created tables, using the same `DB` instance.
+
+Here is a visualization of the database schema:
+
+![image](./db_schema.png)
 
 ## Analytics / Visualization
 
