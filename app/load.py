@@ -18,19 +18,12 @@ def create_tables(db: DB) -> None:
     db.execute(CREATE_TRACKS)
     db.execute(CREATE_TRACK_FEATURES)
         
-        
 # INSERTING DATA ################################
 def load_data(data: pd.DataFrame, tablename: str, db: DB) -> None:
     data.to_sql(tablename, db.conn, if_exists="replace", index=False)
     print(f"Finished loading data into table: {tablename}")
 
-def test_table_creation(db: DB) -> None:
-    db.execute("SELECT * FROM artists LIMIT 5")
-    print(db.result())
-    db.execute("SELECT * FROM albums LIMIT 5")
-    print(db.result())
-    db.execute("SELECT * FROM tracks LIMIT 5")
-    print(db.result())
-    db.execute("SELECT * FROM track_features LIMIT 5")
+def test_table_creation(db: DB, query: str) -> None:
+    db.execute(query)
     print(db.result())
     

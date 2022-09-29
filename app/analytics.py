@@ -24,27 +24,7 @@ def create_views(db: DB) -> None:
     db.execute(V_GENRE_FEATURES)
     db.execute(V_GENRE_RELEASE_PATTERNS)
     
-def test_prompt_views(db: DB) -> None:
-    # db.execute("SELECT * FROM V_artist_top_songs_by_duration;")
-    # t = pd.DataFrame(db.result())
-    # print(t.head(50))
-    # db.execute("SELECT * FROM V_top_artists_by_followers;")
-    # t = pd.DataFrame(db.result())
-    # print(t)
-    db.execute("SELECT * FROM V_artist_top_songs_by_tempo;")
+def test_views(db: DB, view_name: str) -> None:
+    db.execute(view_name)
     t = pd.DataFrame(db.result())
     print(t.head(50))
-    
-def test_custom_views(db: DB) -> None:
-    # db.execute("SELECT * FROM V_artist_overview;")
-    # t = pd.DataFrame(db.result())
-    # print(t)
-    # db.execute("SELECT * FROM V_popular_artist_features;")
-    # t = pd.DataFrame(db.result())
-    # print(t)
-    # db.execute("SELECT * FROM V_genre_features;")
-    # t = pd.DataFrame(db.result())
-    # print(t)
-    db.execute("SELECT * FROM V_genre_release_patterns;")
-    t = pd.DataFrame(db.result())
-    print(t)
