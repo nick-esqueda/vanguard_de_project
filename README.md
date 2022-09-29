@@ -22,18 +22,22 @@ Here are a series of steps to run the project! This project was created to be so
 
 ## Setup
 
-1. Create a file named `.env`.
+1. Clone or download a zip of this repo.
 
-2. Copy and paste everything from `.env.example` into your `.env` file.
+2. Create a file named `.env` in the root directory of this project.
 
-3. Provide your spotify client id and client secret keys to the `.env` file.
+3. Copy and paste everything from `.env.example` into your `.env` file.
+
+4. Provide your Spotify Client Id and Client Secret keys to the `.env` file.
 
 ## Running the Program
 
 1. `cd` into the root directory.
+
 2. Run `pipenv install` to create the virtual environment and install all project dependencies.
+
 3. There are 2 different ways you can run this program. From the root directory, you can either:
-    1. Run `pipenv run python -m app`.
+	1. Run `pipenv run python -m app`.
 - OR:
 	1. Run `pipenv shell` to enter the shell subprocess.
 	2. Then, run `python -m app` to run the program!
@@ -48,7 +52,7 @@ This is an overview of the different stages/processes involved in this project a
 
 > The entry point of this program is `app/__main__.py`. Feel free to take a look at it to see the flow of the application from a high level. 
 > 
-> This file imports and runs all of the functions required to run the program at each phase: 
+> That file imports and runs all of the functions required to run the program at each phase: 
 >
 > _Ingestion -> Transformation -> Storage -> Analytics / Visualization_.
 
