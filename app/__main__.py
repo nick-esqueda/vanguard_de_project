@@ -62,12 +62,13 @@ def run_analytics(db):
 ##########################################################################
 def run():
     read = textwrap.dedent("""\
-    Welcome!! Would you like to read files from .csv? 
-    This will skip the extraction process and move on to the 
-    transformation, loading, and analytics processes.\n
-    NOTE: this will only work if you have previously chosen to write to .csv.\n
-    Please choose 'n' if you haven't ran the program yet.\n
-    Read from csv? [y/n] """)
+        ********************** Welcome! *****************************
+        Would you like to read files from .csv? 
+        This will skip the extraction process and move on to the 
+        transformation, loading, and analytics processes.\n
+        NOTE: this will only work if you have previously chosen to write to .csv.\n
+        Please choose 'n' if you haven't ran the program yet.\n
+        Read from csv? [y/n] """)
     read = input(read)
     
     data = None

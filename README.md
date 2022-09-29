@@ -1,6 +1,14 @@
 # Welcome to the Data Engineering Take Home Project!
 
-This is my submission for Vanguard's Data Engineering Apprenticeship take home project. 
+This is my submission for Vanguard's Data Engineering Apprenticeship take home project.
+
+Relevant files:
+
+* All python code for API calls, transformations, and visualizations can be found in the `app/` directory.
+
+* The SQLite database file `spotify.db` can be found inside `app/data/`
+
+* `visualizations.pdf` can be found in the root directory.
 
 ### Important:
 
@@ -123,7 +131,7 @@ First, the `create_views()` function inside of `analytics.py` is used to run pre
 
 After the database views have been created, it's finally time to see some results! Functions such as `energy_vs_loudness_tempo()` and `loudness_vs_danceability()` will create these visualizations using the `matplotlib` third party library. Each of these functions will call on the database to retrieve the desired data, and then create plots to compare and see the relationship between that data.
 
-Once these plots are created, there are saved into the `app/images` directory. Once the program is done running, feel free to check them out!
+Once these plots are created, there are saved into the `app/images/` directory. Once the program is done running, feel free to check them out!
 
 ## Finished
 
