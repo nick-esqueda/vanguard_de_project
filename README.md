@@ -137,6 +137,17 @@ Once these plots are created, there are saved into the `app/images/` directory. 
 
 That's it! The program has been completed and you know have some real data to look at.
 
+# Testing
+
+Any testing/queries against the database may be done inside of `app/__main__.py` at the bottom of the `run()` function. Comment in the following lines:
+
+```python
+# db.execute("SELECT * FROM V_genre_features")
+# print(db.result())
+```
+    
+and then enter your own SQL query inside `db.execute()`.
+
 # Conclusion
 
 Thank you for checking this project out and for giving me consideration in this opportunity. I had an absolute blast creating this application, and learned a lot along the way. I hope to expand on this project a lot more and take it to where I really want it to be. Thanks for stopping by!!
