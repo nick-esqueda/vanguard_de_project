@@ -5,8 +5,6 @@ from .utils import CREATE_ARTISTS, CREATE_ALBUMS, CREATE_TRACKS, CREATE_TRACK_FE
 
 # CREATE TABLES #################################
 def create_tables(db: DB) -> None:
-    print("Creating tables: artists, albums, tracks, and track_features...")
-    
     # drop the tables if they had already been created. (this is to "start fresh" every time.)
     db.execute("DROP TABLE IF EXISTS artists")
     db.execute("DROP TABLE IF EXISTS albums")

@@ -24,7 +24,7 @@ def create_views(db: DB) -> None:
     db.execute(V_GENRE_FEATURES)
     db.execute(V_GENRE_RELEASE_PATTERNS)
     
-def test_views(db: DB, view_name: str) -> None:
+def test_view(db: DB, view_name: str) -> None:
     db.execute(view_name)
     t = pd.DataFrame(db.result())
     print(t.head(50))

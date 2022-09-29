@@ -38,6 +38,7 @@ def extract_and_transform_all(write_csv=False):
     return artists, albums, tracks, track_features
     
 def load_all(db, artists, albums, tracks, track_features):
+    print("Creating tables: artists, albums, tracks, and track_features...")
     create_tables(db)
     load_data(artists, "artists", db)
     load_data(albums, "albums", db)
