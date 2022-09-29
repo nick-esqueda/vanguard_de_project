@@ -3,7 +3,7 @@ import sqlite3
 
 class DB:
     def __init__(self) -> None:
-        self.conn = sqlite3.connect("data/spotify.db")
+        self.conn = sqlite3.connect("app/data/spotify.db")
         self.curs = self.conn.cursor()
         
     def execute(self, query: str) -> None:

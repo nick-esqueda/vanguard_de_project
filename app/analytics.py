@@ -21,7 +21,6 @@ def create_views(db: DB) -> None:
     db.execute(V_POPULAR_ARTIST_FEATURES)
     db.execute(V_GENRE_FEATURES)
     db.execute(V_GENRE_RELEASE_PATTERNS)
-    print("Views have been successfully created!")
     
 def test_prompt_views(db: DB) -> None:
     # db.execute("SELECT * FROM V_artist_top_songs_by_duration;")

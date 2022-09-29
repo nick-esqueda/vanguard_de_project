@@ -22,7 +22,7 @@ def create_tables(db: DB) -> None:
 # INSERTING DATA ################################
 def load_data(data: pd.DataFrame, tablename: str, db: DB) -> None:
     data.to_sql(tablename, db.conn, if_exists="replace", index=False)
-    print(f"Finished loading data into {tablename}")
+    print(f"Finished loading data into table: {tablename}")
 
 def test_table_creation(db: DB) -> None:
     db.execute("SELECT * FROM artists LIMIT 5")

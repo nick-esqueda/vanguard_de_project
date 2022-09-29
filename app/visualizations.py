@@ -2,6 +2,8 @@ import pandas as pd
 from matplotlib import pyplot as plt
 
 
+plt.style.use("dark_background")
+
 # CREATE PLOTS ##################################
 def energy_vs_loudness_tempo(db):
     db.execute("SELECT * FROM track_features")
@@ -13,7 +15,7 @@ def energy_vs_loudness_tempo(db):
     make_energy_axes(ax2, df, "tempo", "tempo (bpm)")
 
     plt.tight_layout()
-    plt.savefig("images/energy-vs-loudness-tempo.png", bbox_inches='tight', pad_inches=.8)
+    plt.savefig("app/images/energy-vs-loudness-tempo.png", bbox_inches='tight', pad_inches=.8)
 
 def loudness_vs_danceability(db):
     db.execute("SELECT * FROM track_features")
@@ -31,7 +33,7 @@ def loudness_vs_danceability(db):
     plt.grid(color="#FFFFFF", linestyle="--", alpha=.3)
 
     plt.tight_layout()
-    plt.savefig("images/loudness-vs-danceability.png", bbox_inches='tight', pad_inches=.6)
+    plt.savefig("app/images/loudness-vs-danceability.png", bbox_inches='tight', pad_inches=.6)
 
 def genre_style_comparison(db):
     # GET DATA
@@ -59,7 +61,7 @@ def genre_style_comparison(db):
     make_genres_axes(ax4, avg_tempo_elec, avg_tempo_metal, "tempo", "avg tempo (bpm)")
 
     plt.tight_layout()
-    plt.savefig("images/genre-style-comparison.png", bbox_inches='tight', pad_inches=.8)
+    plt.savefig("app/images/genre-style-comparison.png", bbox_inches='tight', pad_inches=.8)
 
 def subgenre_style_comparison(db):
     # GET DATA
@@ -82,7 +84,7 @@ def subgenre_style_comparison(db):
 
     plt.figlegend(["metal", "heavy electronic"], loc='lower center', bbox_to_anchor=(0.5, -0.1))
     plt.tight_layout()
-    plt.savefig("images/sub-genre-style-comparison.png", bbox_inches='tight', pad_inches=.6)
+    plt.savefig("app/images/sub-genre-style-comparison.png", bbox_inches='tight', pad_inches=.6)
     
 
 # HELPERS #######################################
