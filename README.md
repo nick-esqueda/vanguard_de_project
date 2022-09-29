@@ -2,12 +2,12 @@
 
 This is my submission for Vanguard's Data Engineering Apprenticeship take home project. 
 
-## Important:
+### Important:
 
 If you would like to see all of the git commit and branch history, please stop by the original version of this repo! This fork was created to submit the project after completion, but all of the git history exists in my personal repo here:
 > [Nick Esqueda - Vanguard DE Project](https://github.com/nick-esqueda/vanguard_de_project)
 
-## About Me:
+### About Me:
 
 > [Nick Esqueda](https://www.nickesqueda.com/) (my portfolio site!)
 
@@ -22,18 +22,22 @@ Here are a series of steps to run the project! This project was created to be so
 
 ## Setup
 
-1. Create a file named `.env`.
+1. Clone or download a zip of this repo.
 
-2. Copy and paste everything from `.env.example` into your `.env` file.
+2. Create a file named `.env` in the root directory of this project.
 
-3. Provide your spotify client id and client secret keys to the `.env` file.
+3. Copy and paste everything from `.env.example` into your `.env` file.
+
+4. Provide your Spotify Client Id and Client Secret keys to the `.env` file.
 
 ## Running the Program
 
 1. `cd` into the root directory.
+
 2. Run `pipenv install` to create the virtual environment and install all project dependencies.
+
 3. There are 2 different ways you can run this program. From the root directory, you can either:
-    1. Run `pipenv run python -m app`.
+	1. Run `pipenv run python -m app`.
 - OR:
 	1. Run `pipenv shell` to enter the shell subprocess.
 	2. Then, run `python -m app` to run the program!
@@ -48,7 +52,7 @@ This is an overview of the different stages/processes involved in this project a
 
 > The entry point of this program is `app/__main__.py`. Feel free to take a look at it to see the flow of the application from a high level. 
 > 
-> This file imports and runs all of the functions required to run the program at each phase: 
+> That file imports and runs all of the functions required to run the program at each phase: 
 >
 > _Ingestion -> Transformation -> Storage -> Analytics / Visualization_.
 
@@ -66,7 +70,7 @@ Cutting down on unnecessary queries allows the program to avoid wasting time wai
 
 ## Storage
 
-The storage phase, starting off from the call to `load_all()` in `\__main__.py`, simply takes all of the cleaned and transformed data and stores it inside of the SQLite database file, located in `app/data/spotify.db`. 
+The storage phase, starting off from the call to `load_all()` in `__main__.py`, simply takes all of the cleaned and transformed data and stores it inside of the SQLite database file, located in `app/data/spotify.db`. 
 
 To dive deeper, first, a connection needs to be made to the SQLite database. The `DB` class from `app/utils/db.py` serves this purpose, and an instance of that class is then used to run SQL statements against the database to create these tables:
 
@@ -78,6 +82,10 @@ To dive deeper, first, a connection needs to be made to the SQLite database. The
 The `create_tables()` function inside of `load.py` runs that SQL.
 
 Then, the `load_data()` function is used to insert the cleaned and transformed data into those newly created tables, using the same `DB` instance.
+
+Here is a visualization of the database schema:
+
+![image](./db_schema.png)
 
 ## Analytics / Visualization
 
