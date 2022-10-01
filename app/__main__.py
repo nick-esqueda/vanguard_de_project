@@ -30,10 +30,10 @@ def extract_and_transform_all(write_csv=False):
     print("\ttrack feature data has been extracted and transformed!")
     
     if write_csv is True:
-        write_to_csv(artists, "app/data/artists.csv")
-        write_to_csv(albums, "app/data/albums.csv")
-        write_to_csv(tracks, "app/data/tracks.csv")
-        write_to_csv(track_features, "app/data/track_features.csv")
+        write_to_csv(artists, filepath="app/data/artists.csv")
+        write_to_csv(albums, filepath="app/data/albums.csv")
+        write_to_csv(tracks, filepath="app/data/tracks.csv")
+        write_to_csv(track_features, filepath="app/data/track_features.csv")
         
     return artists, albums, tracks, track_features
     

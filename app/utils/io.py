@@ -4,13 +4,14 @@ from typing import Any, Callable, Union
 
 DF_LIKE = Union[pd.DataFrame, list[dict]]
         
-def to_df(fn: Callable):
+def to_df(fn: Callable) -> Callable:
     def wrapper(*args: DF_LIKE, **kwargs: Any) -> Any:
         args = (pd.DataFrame(arg) for arg in args if type(arg) is not pd.DataFrame)
         return fn(*args, **kwargs)
     return wrapper 
 
-def write_to_csv(data: DF_LIKE, filepath: str) -> None:
+@to_df
+def write_to_csv(data: DF_LIKE, filepath: str = "<unknown path>") -> None:
     data.to_csv(filepath, index=False)
     print(f"\tDone writing data to {filepath}")
     
