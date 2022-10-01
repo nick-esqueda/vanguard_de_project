@@ -4,8 +4,8 @@ from pandas import DataFrame
 
 class DB:
     """
-    instances of this class are used to create an immediate connection
-    to the SQLite database "spotify.db". 
+    instances of this class are used to interact with the SQLite database.
+    upon instantiation, an immediate connection to "spotify.db" is made. 
     """
     def __init__(self) -> None:
         self.conn = sqlite3.connect("app/data/spotify.db")

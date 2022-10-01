@@ -1,14 +1,12 @@
-import pandas as pd
 from matplotlib import pyplot as plt
-from .utils import make_energy_axes, make_genres_axes, make_subgenres_axes
+from .utils import DB, make_energy_axes, make_genres_axes, make_subgenres_axes
 
 
 plt.style.use("dark_background")
 
 # CREATE PLOTS ##################################
-def energy_vs_loudness_tempo(db):
-    db.execute("SELECT * FROM track_features")
-    df = pd.DataFrame(db.result())
+def energy_vs_loudness_tempo(db: DB):
+    df = db.query("SELECT * FROM track_features")
     df.columns = ["track_id", "danceability", "energy", "instrumentalness", "liveness", "loudness", "speechiness", "tempo", "type", "valence", "song_uri"]
 
     fig, (ax1, ax2) = plt.subplots(2, 1, figsize=(10, 6))
@@ -18,9 +16,8 @@ def energy_vs_loudness_tempo(db):
     plt.tight_layout()
     plt.savefig("app/images/energy-vs-loudness-tempo.png", bbox_inches='tight', pad_inches=.8)
 
-def loudness_vs_danceability(db):
-    db.execute("SELECT * FROM track_features")
-    df = pd.DataFrame(db.result())
+def loudness_vs_danceability(db: DB):
+    df = db.query("SELECT * FROM track_features")
     df.columns = ["track_id", "danceability", "energy", "instrumentalness", "liveness", "loudness", "speechiness", "tempo", "type", "valence", "song_uri"]
 
     plt.clf()
@@ -36,11 +33,11 @@ def loudness_vs_danceability(db):
     plt.tight_layout()
     plt.savefig("app/images/loudness-vs-danceability.png", bbox_inches='tight', pad_inches=.6)
 
-def genre_style_comparison(db):
+def genre_style_comparison(db: DB):
     # GET DATA
-    db.execute("SELECT * FROM V_genre_features")
-    df = pd.DataFrame(db.result())
+    df = db.query("SELECT * FROM V_genre_features")
     df.columns = ["genre", "danceability", "energy", "instrumentalness", "liveness", "loudness", "speechiness", "tempo", "valence"]
+    
     df.sort_values("loudness", ascending=True, inplace=True)
 
     # GROUP DATA
@@ -64,11 +61,11 @@ def genre_style_comparison(db):
     plt.tight_layout()
     plt.savefig("app/images/genre-style-comparison.png", bbox_inches='tight', pad_inches=.8)
 
-def subgenre_style_comparison(db):
+def subgenre_style_comparison(db: DB):
     # GET DATA
-    db.execute("SELECT * FROM V_genre_features")
-    df = pd.DataFrame(db.result())
+    df = db.query("SELECT * FROM V_genre_features")
     df.columns = ["genre", "danceability", "energy", "instrumentalness", "liveness", "loudness", "speechiness", "tempo", "valence"]
+    
     df.sort_values("loudness", ascending=True, inplace=True)
 
     # GROUP DATA
