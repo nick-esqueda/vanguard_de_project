@@ -2,12 +2,13 @@ import pandas as pd
 from .utils import DF_LIKE, to_df
 
 
-# TRANSFORMATIONS ###############################
+# ARTISTS #######################################
 @to_df
 def clean_artists(artists: DF_LIKE) -> pd.DataFrame:
     artists.dropna(inplace=True)
     return artists
 
+# ALBUMS ########################################
 @to_df
 def clean_albums(albums: DF_LIKE) -> pd.DataFrame:
     albums.dropna(subset=["album_id", "album_name", "external_url", "album_uri", "artist_id"], inplace=True)
@@ -23,6 +24,7 @@ def clean_albums(albums: DF_LIKE) -> pd.DataFrame:
     albums.sort_index(ignore_index=True, inplace=True)
     return albums
 
+# TRACKS ########################################
 @to_df
 def clean_tracks(tracks: DF_LIKE, albums: DF_LIKE, artists: DF_LIKE) -> pd.DataFrame:
     # drop any rows with any null values in the specified columns.
@@ -48,6 +50,7 @@ def clean_tracks(tracks: DF_LIKE, albums: DF_LIKE, artists: DF_LIKE) -> pd.DataF
     tracks.sort_index(ignore_index=True, inplace=True)
     return tracks
 
+# TRACK_FEATURES ################################
 @to_df
 def clean_track_features(track_features: DF_LIKE, tracks: DF_LIKE) -> pd.DataFrame:
     track_features.dropna(inplace=True)

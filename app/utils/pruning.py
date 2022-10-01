@@ -1,4 +1,4 @@
-from typing import Iterable, Literal
+from typing import Sequence, Literal
 
 
 def prune_all(data: list[dict], d_type: Literal["artist", "album", "track", "track_features"]) -> list[dict]:
@@ -75,7 +75,7 @@ def prune(data: dict, d_type: Literal["artist", "album", "track", "track_feature
         raise Exception("invalid data type. valid types: ['artist', 'album', 'track', 'track_features']")
         
         
-def add_id(data: Iterable[dict], id: str, id_type: Literal["artist_id", "album_id"]) -> None:
+def add_id(data: Sequence[dict], id: str, id_type: Literal["artist_id", "album_id"]) -> None:
     """
     mutates each of the given records, adding a property to it with the "id_type" as the key and "id" as the value.
     """

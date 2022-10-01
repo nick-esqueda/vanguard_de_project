@@ -1,18 +1,16 @@
 import spotipy
 from spotipy.oauth2 import SpotifyClientCredentials
-from pandas import DataFrame
 from dotenv import load_dotenv
-from typing import Iterable, Union
+from typing import Sequence
 from .utils import prune_all, add_id
 load_dotenv()
 
 
 auth_manager = SpotifyClientCredentials()
 spot = spotipy.Spotify(auth_manager=auth_manager)
-DF_OR_LIST = Union[DataFrame, list[dict]]
 
 # ARTISTS #######################################
-def extract_artists(urls: Iterable[str]) -> list[dict]:
+def extract_artists(urls: Sequence[str]) -> list[dict]:
     """
     fetches the artists' data from the Spotify API based on the passed in URLs,
     and then prunes those JSON responses for the relevant fields.\n
@@ -23,7 +21,7 @@ def extract_artists(urls: Iterable[str]) -> list[dict]:
     return pruned_artists
 
 # ALBUMS ########################################
-def extract_artists_albums(urls: Iterable[str]) -> list[dict]:
+def extract_artists_albums(urls: Sequence[str]) -> list[dict]:
     """
     fetches all of the artists' album data from the Spotify API based on the passed in URLs, 
     and then prunes those JSON responses for the relevant fields.\n
@@ -46,7 +44,7 @@ def extract_artists_albums(urls: Iterable[str]) -> list[dict]:
     return all_pruned_albums
 
 # ALBUM TRACKS ##################################
-def extract_albums_tracks(album_ids: Iterable[str]) -> list[dict]:
+def extract_albums_tracks(album_ids: Sequence[str]) -> list[dict]:
     """
     fetches each album's track data from the Spotify API based on the passed in album ids, 
     and then prunes those JSON responses for the relevant fields.\n
@@ -68,7 +66,7 @@ def extract_albums_tracks(album_ids: Iterable[str]) -> list[dict]:
     return all_pruned_tracks
 
 # TRACK FEATURES ################################
-def extract_track_features(track_ids: DF_OR_LIST) -> list[dict]:
+def extract_track_features(track_ids: Sequence[str]) -> list[dict]:
     """
     fetches the tracks' "track_feature" data from the Spotify API based on the passed in track ids, 
     and then prunes those JSON responses for the relevant fields.\n
