@@ -2,8 +2,7 @@ import textwrap
 from app.extract import extract_artists, extract_artists_albums
 from app.extract import extract_albums_tracks, extract_track_features
 from app.transform import clean_artists, clean_albums, clean_tracks, clean_track_features
-from app.load import create_tables, load_data
-from app.analytics import create_views
+from app.load import create_tables, load_data, create_views
 from app.visualizations import energy_vs_loudness_tempo, loudness_vs_danceability
 from app.visualizations import genre_style_comparison, subgenre_style_comparison
 from app.utils import DB, ARTIST_URLS, write_to_csv, read_all_from_csv
