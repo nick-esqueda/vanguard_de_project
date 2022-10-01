@@ -7,7 +7,6 @@ plt.style.use("dark_background")
 # CREATE PLOTS ##################################
 def energy_vs_loudness_tempo(db: DB):
     df = db.query("SELECT * FROM track_features")
-    df.columns = ["track_id", "danceability", "energy", "instrumentalness", "liveness", "loudness", "speechiness", "tempo", "type", "valence", "song_uri"]
 
     fig, (ax1, ax2) = plt.subplots(2, 1, figsize=(10, 6))
     make_energy_axes(ax1, df, "loudness", "loudness (lufs)")
@@ -18,7 +17,6 @@ def energy_vs_loudness_tempo(db: DB):
 
 def loudness_vs_danceability(db: DB):
     df = db.query("SELECT * FROM track_features")
-    df.columns = ["track_id", "danceability", "energy", "instrumentalness", "liveness", "loudness", "speechiness", "tempo", "type", "valence", "song_uri"]
 
     plt.clf()
 
@@ -36,9 +34,8 @@ def loudness_vs_danceability(db: DB):
 def genre_style_comparison(db: DB):
     # GET DATA
     df = db.query("SELECT * FROM V_genre_features")
-    df.columns = ["genre", "danceability", "energy", "instrumentalness", "liveness", "loudness", "speechiness", "tempo", "valence"]
     
-    df.sort_values("loudness", ascending=True, inplace=True)
+    df.sort_values("loudness", ascending=True, inplace=True) # to visually order the plot by loudness.
 
     # GROUP DATA
     metal_filter = df["genre"].isin(["djent", "alternative metal", "deathcore"])
@@ -66,7 +63,7 @@ def subgenre_style_comparison(db: DB):
     df = db.query("SELECT * FROM V_genre_features")
     df.columns = ["genre", "danceability", "energy", "instrumentalness", "liveness", "loudness", "speechiness", "tempo", "valence"]
     
-    df.sort_values("loudness", ascending=True, inplace=True)
+    df.sort_values("loudness", ascending=True, inplace=True) # to visually order the plot by loudness.
 
     # GROUP DATA
     metal_filter = df["genre"].isin(["djent", "alternative metal", "deathcore"])
