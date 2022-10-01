@@ -1,14 +1,18 @@
 import pandas as pd
-from typing import Union
+from typing import Any, Callable, Union
 
 
-DF_OR_LIST = Union[pd.DataFrame, list[dict]]
+DF_LIKE = Union[pd.DataFrame, list[dict]]
+        
+def to_df(fn: Callable):
+    def wrapper(*args: DF_LIKE, **kwargs: Any) -> Any:
+        args = (pd.DataFrame(arg) for arg in args if type(arg) is not pd.DataFrame)
+        return fn(*args, **kwargs)
+    return wrapper 
 
-def write_to_csv(data: DF_OR_LIST, filepath: str) -> None:
-    if type(data) is list:
-        data = pd.DataFrame(data)
+def write_to_csv(data: DF_LIKE, filepath: str) -> None:
     data.to_csv(filepath, index=False)
-    print(f"    Done writing data to {filepath}")
+    print(f"\tDone writing data to {filepath}")
     
 def read_all_from_csv() -> list[pd.DataFrame]:
     try:
