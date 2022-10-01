@@ -1,6 +1,6 @@
 import pandas as pd
 from matplotlib import pyplot as plt
-from .utils import make_energy_axes, make_genres_axes, makes_subgenres_axes
+from .utils import make_energy_axes, make_genres_axes, make_subgenres_axes
 
 
 plt.style.use("dark_background")
@@ -78,10 +78,10 @@ def subgenre_style_comparison(db):
     # PLOT DATA
     fig, ((ax1, ax2), (ax3, ax4)) = plt.subplots(2, 2, figsize=(10, 6))
     fig.suptitle('sub-genre style comparisons', fontsize=18, fontname="monospace", y=1.02, backgroundcolor="#FFFFFF", color="#191414")
-    makes_subgenres_axes(ax1, df, metal_filter, elec_filter, "danceability", "danceability score")
-    makes_subgenres_axes(ax2, df, metal_filter, elec_filter, "loudness", "avg loudness (lufs)")
-    makes_subgenres_axes(ax3, df, metal_filter, elec_filter, "tempo", "tempo (bpm)")
-    makes_subgenres_axes(ax4, df, metal_filter, elec_filter, "valence", "valence score")
+    make_subgenres_axes(ax1, df, metal_filter, elec_filter, "danceability", "danceability score")
+    make_subgenres_axes(ax2, df, metal_filter, elec_filter, "loudness", "avg loudness (lufs)")
+    make_subgenres_axes(ax3, df, metal_filter, elec_filter, "tempo", "tempo (bpm)")
+    make_subgenres_axes(ax4, df, metal_filter, elec_filter, "valence", "valence score")
 
     plt.figlegend(["metal", "heavy electronic"], loc='lower center', bbox_to_anchor=(0.5, -0.1))
     plt.tight_layout()

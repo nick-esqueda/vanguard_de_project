@@ -22,7 +22,7 @@ def make_genres_axes(ax, data1, data2, title, ylabel):
     ax.set_ylabel(ylabel, fontname="monospace")
     ax.grid(color="#FFFFFF", linestyle="--", alpha=.3)
 
-def makes_subgenres_axes(ax, df, filt1, filt2, metric, xlabel):
+def make_subgenres_axes(ax, df, filt1, filt2, metric, xlabel):
     ax.barh(df["genre"][filt1], df[metric][filt1], color="#FFFFFF", label="metal", alpha=.9)
     ax.barh(df["genre"][filt2], df[metric][filt2], color="#1DB954", label="heavy electronic")
     ax.set_title(metric, fontname="monospace", backgroundcolor="#191414", color="#FFFFFF")

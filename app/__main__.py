@@ -108,7 +108,8 @@ def run():
     print("\nDONE: exiting successfully.")
     
     # FEEL FREE TO DO ANY DB TESTING HERE WITH THE DB OBJECT #############
-    db.test("SELECT * FROM artists LIMIT 10")
+    res = db.query("SELECT * FROM artists LIMIT 10")
+    print(res)
     
     db.close()
 

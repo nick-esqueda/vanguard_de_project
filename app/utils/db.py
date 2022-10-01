@@ -26,15 +26,15 @@ class DB:
         """
         return self.curs.fetchall()
         
-    def test(self, query: str) -> None:
+    def query(self, query: str) -> DataFrame:
         """
         runs the given query against the database, and immediately
         prints the results (as a Pandas DataFrame) to the terminal.
         """
         self.execute(query)
         df = DataFrame(self.result())
-        print(df)
-        
+        return df
+                
     def close(self) -> None: 
         """
         close the connection to the SQLite database. 
