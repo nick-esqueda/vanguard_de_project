@@ -6,7 +6,8 @@ DF_LIKE = Union[pd.DataFrame, list[dict]]
         
 def to_df(fn: Callable) -> Callable:
     def wrapper(*args: DF_LIKE, **kwargs: Any) -> Any:
-        args = (pd.DataFrame(arg) for arg in args if type(arg) is not pd.DataFrame)
+        args = (pd.DataFrame(arg) if type(arg) is not pd.DataFrame else arg 
+                for arg in args)
         return fn(*args, **kwargs)
     return wrapper 
 
