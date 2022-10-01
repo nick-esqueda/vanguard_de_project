@@ -1,21 +1,15 @@
 import pandas as pd
-from typing import Union
+from .utils import DF_LIKE, to_df
 
-
-DF_OR_LIST = Union[pd.DataFrame, list[dict]]
 
 # TRANSFORMATIONS ###############################
-def clean_artists(artists: DF_OR_LIST) -> pd.DataFrame:
-    if type(artists) is list:
-        artists = pd.DataFrame(artists)
-        
+@to_df
+def clean_artists(artists: DF_LIKE) -> pd.DataFrame:
     artists.dropna(inplace=True)
     return artists
 
-def clean_albums(albums: DF_OR_LIST) -> pd.DataFrame:
-    if type(albums) is list:
-        albums = pd.DataFrame(albums)
-        
+@to_df
+def clean_albums(albums: DF_LIKE) -> pd.DataFrame:
     albums.dropna(subset=["album_id", "album_name", "external_url", "album_uri", "artist_id"], inplace=True)
     
     # for duplicates from collaborations:
@@ -29,14 +23,8 @@ def clean_albums(albums: DF_OR_LIST) -> pd.DataFrame:
     albums.sort_index(ignore_index=True, inplace=True)
     return albums
 
-def clean_tracks(tracks: DF_OR_LIST, albums: DF_OR_LIST, artists: DF_OR_LIST) -> pd.DataFrame:
-    if type(tracks) is list:
-        tracks = pd.DataFrame(tracks)
-    if type(albums) is list:
-        albums = pd.DataFrame(albums)
-    if type(artists) is list:
-        artists = pd.DataFrame(artists)
-    
+@to_df
+def clean_tracks(tracks: DF_LIKE, albums: DF_LIKE, artists: DF_LIKE) -> pd.DataFrame:
     # drop any rows with any null values in the specified columns.
     tracks.dropna(subset=["track_id", "song_name", "external_url", "song_uri", "album_id"], inplace=True)
     tracks.drop_duplicates(ignore_index=True, inplace=True)
@@ -60,12 +48,8 @@ def clean_tracks(tracks: DF_OR_LIST, albums: DF_OR_LIST, artists: DF_OR_LIST) ->
     tracks.sort_index(ignore_index=True, inplace=True)
     return tracks
 
-def clean_track_features(track_features: DF_OR_LIST, tracks: DF_OR_LIST) -> pd.DataFrame:
-    if type(track_features) is list:
-        track_features = pd.DataFrame(track_features)
-    if type(tracks) is list:
-        tracks = pd.DataFrame(tracks)
-    
+@to_df
+def clean_track_features(track_features: DF_LIKE, tracks: DF_LIKE) -> pd.DataFrame:
     track_features.dropna(inplace=True)
     track_features.drop_duplicates(ignore_index=True, inplace=True)
     
