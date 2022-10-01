@@ -1,4 +1,4 @@
-import pandas as pd
+from pandas import DataFrame
 from .utils import DB, db_table_names, db_table_queries
 
 
@@ -18,7 +18,7 @@ def create_tables(db: DB) -> None:
         db.execute(t_query)
         
 # INSERTING DATA ################################
-def load_data(data: pd.DataFrame, tablename: str, db: DB) -> None:
+def load_data(data: DataFrame, tablename: str, db: DB) -> None:
     """
     this function inserts the given data into the specified table using the
     DB connection object, and prints a confirmation message to the terminal
@@ -26,8 +26,3 @@ def load_data(data: pd.DataFrame, tablename: str, db: DB) -> None:
     """
     data.to_sql(tablename, db.conn, if_exists="replace", index=False)
     print(f"Finished loading data into table: {tablename}")
-
-def test_table_creation(db: DB, query: str) -> None:
-    db.execute(query)
-    print(db.result())
-    

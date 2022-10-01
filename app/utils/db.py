@@ -1,4 +1,5 @@
 import sqlite3
+from pandas import DataFrame
 
 
 class DB:
@@ -24,6 +25,15 @@ class DB:
         to self.execute(). 
         """
         return self.curs.fetchall()
+        
+    def test(self, query: str) -> None:
+        """
+        runs the given query against the database, and immediately
+        prints the results (as a Pandas DataFrame) to the terminal.
+        """
+        self.execute(query)
+        df = DataFrame(self.result())
+        print(df)
         
     def close(self) -> None: 
         """

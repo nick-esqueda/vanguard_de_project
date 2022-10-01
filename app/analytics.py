@@ -1,4 +1,3 @@
-import pandas as pd
 from .utils import DB, db_view_names, db_view_queries
 
 
@@ -16,8 +15,3 @@ def create_views(db: DB) -> None:
         
     for v_query in db_view_queries:
         db.execute(v_query)
-    
-def test_view(db: DB, view_name: str) -> None:
-    db.execute(view_name)
-    t = pd.DataFrame(db.result())
-    print(t.head(50))
