@@ -61,7 +61,6 @@ def genre_style_comparison(db: DB):
 def subgenre_style_comparison(db: DB):
     # GET DATA
     df = db.query("SELECT * FROM V_genre_features")
-    df.columns = ["genre", "danceability", "energy", "instrumentalness", "liveness", "loudness", "speechiness", "tempo", "valence"]
     
     df.sort_values("loudness", ascending=True, inplace=True) # to visually order the plot by loudness.
 
