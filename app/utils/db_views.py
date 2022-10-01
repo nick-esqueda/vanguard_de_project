@@ -155,7 +155,7 @@ V_GENRE_RELEASE_PATTERNS = """
     ORDER BY 3;
 """
 
-db_view_names = [
+db_view_names = (
     "V_artist_top_songs_by_duration",
     "V_top_artists_by_followers",
     "V_artist_top_songs_by_tempo",
@@ -163,9 +163,9 @@ db_view_names = [
     "V_popular_artist_features",
     "V_genre_features",
     "V_genre_release_patterns",
-]
-
-db_view_queries = [
+)
+# please preserve the order/correspondence between these two lists.
+db_view_queries = (
     V_ARTIST_TOP_SONGS_BY_DURATION,
     V_TOP_ARTISTS_BY_FOLLOWERS,
     V_ARTIST_TOP_SONGS_BY_TEMPO,
@@ -173,4 +173,4 @@ db_view_queries = [
     V_POPULAR_ARTIST_FEATURES,
     V_GENRE_FEATURES,
     V_GENRE_RELEASE_PATTERNS
-]
+)

@@ -12,10 +12,8 @@ def create_tables(db: DB) -> None:
     NOTE: all tables are dropped before executing the "CREATE TABLE" queries 
     again. this is to pick up on any future changes to the tables.
     """
-    for t_name in db_table_names:
+    for t_name, t_query in zip(db_table_names, db_table_queries):
         db.execute(f"DROP TABLE IF EXISTS {t_name}")
-    
-    for t_query in db_table_queries:
         db.execute(t_query)
         
 # INSERTION #####################################
@@ -37,8 +35,6 @@ def create_views(db: DB) -> None:
     NOTE: all views are dropped before executing the "CREATE VIEW" queries 
     again. this is to pick up on any future changes to the views.
     """
-    for v_name in db_view_names:
+    for v_name, v_query in zip(db_view_names, db_view_queries):
         db.execute(f"DROP VIEW IF EXISTS {v_name};")
-        
-    for v_query in db_view_queries:
         db.execute(v_query)

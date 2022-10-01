@@ -70,16 +70,16 @@ CREATE_TRACK_FEATURES = """
     );
 """
 
-db_table_names = [
+db_table_names = (
     "artists",
     "albums",
     "tracks",
     "track_features"
-]
-
-db_table_queries = [
+)
+# please preserve the order/correspondence between these two lists.
+db_table_queries = (
     CREATE_ARTISTS,
     CREATE_ALBUMS,
     CREATE_TRACKS,
     CREATE_TRACK_FEATURES
-]
+)
