@@ -81,4 +81,4 @@ def run_analytics(db):
     loudness_vs_danceability(db)
     genre_style_comparison(db)
     subgenre_style_comparison(db)
-    print("\tYour visualizations are ready!\nPlease look in the app/images directory to find your images.")
+    print("Your visualizations are ready!\nPlease look in the app/images directory to find your images.")

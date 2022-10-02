@@ -50,10 +50,11 @@ def test():
     use this function to run any test queries against the database.
     """
     db = DB()
-    res = db.query("SELECT * FROM artists LIMIT 10")
+    res = db.query("SELECT * FROM V_genre_features")
     print(res)
     db.close()
     
-    
-run()
-test()
+
+if __name__ == "__main__":
+    run()
+    # test()

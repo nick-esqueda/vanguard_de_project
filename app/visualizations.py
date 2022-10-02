@@ -14,6 +14,7 @@ def energy_vs_loudness_tempo(db: DB):
 
     plt.tight_layout()
     plt.savefig("app/images/energy-vs-loudness-tempo.png", bbox_inches='tight', pad_inches=.8)
+    print("\tDone creating the Energy vs. Loudness and Tempo plot")
 
 def loudness_vs_danceability(db: DB):
     df = db.query("SELECT * FROM track_features")
@@ -30,6 +31,7 @@ def loudness_vs_danceability(db: DB):
 
     plt.tight_layout()
     plt.savefig("app/images/loudness-vs-danceability.png", bbox_inches='tight', pad_inches=.6)
+    print("\tDone creating the Loudness vs. Danceability plot")
 
 def genre_style_comparison(db: DB):
     # GET DATA
@@ -57,6 +59,7 @@ def genre_style_comparison(db: DB):
 
     plt.tight_layout()
     plt.savefig("app/images/genre-style-comparison.png", bbox_inches='tight', pad_inches=.8)
+    print("\tDone creating the Genre Style Comparison plot")
 
 def subgenre_style_comparison(db: DB):
     # GET DATA
@@ -79,3 +82,4 @@ def subgenre_style_comparison(db: DB):
     plt.figlegend(["metal", "heavy electronic"], loc='lower center', bbox_to_anchor=(0.5, -0.1))
     plt.tight_layout()
     plt.savefig("app/images/sub-genre-style-comparison.png", bbox_inches='tight', pad_inches=.6)
+    print("\tDone creating the Sub-Genre Style Comparison plot")
