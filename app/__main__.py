@@ -22,20 +22,16 @@ def run():
     # ASK TO READ FROM CSV ###############################################
     read = input(PROMPT_READ)
 
-    # PREFERRED METHOD OF EXTRACTION #####################################
+    # CHOOSE METHOD OF EXTRACTION ########################################
     data = None
-    if read.lower() == 'n':
-        write = input(PROMPT_WRITE)
-        
-        print("\n******************* EXTRACT AND TRANSFORM *******************")
-        data = extract_and_transform_all(True if write.lower() == 'y' else False)
-    
-    elif read.lower() == 'y':
+    if read.lower() == 'y':
         data = read_all_from_csv()
-        
+    elif read.lower() == 'n':
+        write = True if input(PROMPT_WRITE) == 'y' else False
+        print("\n******************* EXTRACT AND TRANSFORM *******************")
+        data = extract_and_transform_all(write)
     else:
-        print("\nPlease run the program again and enter either 'y' or 'n' for responses.")
-        return
+        raise SystemExit("\nPlease run the program again and enter either 'y' or 'n' for responses.")
 
     # LOADING PHASE ######################################################
     print("\n******************* LOAD INTO DATABASE **********************")
@@ -47,11 +43,17 @@ def run():
     run_analytics(db)
 
     print("\nDONE: exiting successfully.")
+    db.close()
 
-    # FEEL FREE TO DO ANY DB TESTING HERE WITH THE DB OBJECT #############
+def test():
+    """
+    use this function to run any test queries against the database.
+    """
+    db = DB()
     res = db.query("SELECT * FROM artists LIMIT 10")
     print(res)
-
     db.close()
     
+    
 run()
+test()

@@ -55,4 +55,4 @@ def read_all_from_csv() -> list[pd.DataFrame]:
         track_features = pd.read_csv("app/data/track_features.csv")
         return artists, albums, tracks, track_features
     except FileNotFoundError:
-        raise Exception("\nYou have not yet ran the program and chosen to write to .csv. Please run again.")
+        raise SystemExit("\nYou have not yet ran the program and chosen to write to .csv. Please run again.")
