@@ -1,15 +1,16 @@
+"""
+the functions in this module are used to "shape" the JSON responses after
+being retrieved from the API. they leave out any unwanted data from the API,
+and/or add information to that data.
+
+functions:
+    prune - cherry-picks the data to keep from the passed in dictionary.
+    prune_all - goes through a list of data and prunes each dictionary.
+    add_id - adds on a data point as a key/value pair to each dictionary.
+"""
+
 from typing import Sequence, Literal
 
-
-def prune_all(data: list[dict], d_type: Literal["artist", "album", "track", "track_features"]) -> list[dict]:
-    """
-    takes in a list of JSON responses (as dictionaries) and prunes out the relevant information for each of them, 
-    returning an iterator that returns the pruned data on each iteration.
-    a "d_type" must be specified to prune out the correct information.
-    """
-    # some data might come back with None in the response, so need to filter those out.
-    return [prune(record, d_type) for record in data if record is not None]
-    
 
 def prune(data: dict, d_type: Literal["artist", "album", "track", "track_features"]) -> dict:
     """
@@ -74,6 +75,14 @@ def prune(data: dict, d_type: Literal["artist", "album", "track", "track_feature
     else:
         raise Exception("invalid data type. valid types: ['artist', 'album', 'track', 'track_features']")
         
+def prune_all(data: list[dict], d_type: Literal["artist", "album", "track", "track_features"]) -> list[dict]:
+    """
+    takes in a list of JSON responses (as dictionaries) and prunes out the relevant information for each of them, 
+    returning a list of those pruned dictionaries.
+    a "d_type" must be specified to prune out the correct information.
+    """
+    # some data might come back with None in the response, so need to filter those out.
+    return [prune(record, d_type) for record in data if record is not None]
         
 def add_id(data: Sequence[dict], id: str, id_type: Literal["artist_id", "album_id"]) -> None:
     """
