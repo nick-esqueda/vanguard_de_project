@@ -46,8 +46,7 @@ def read_all_from_csv() -> list[pd.DataFrame]:
     """
     this function will read in each .csv file in app/data, convert to a
     DataFrame, and return them.
-    if any of the .csv files are missing, an error message will be printed
-    and None will be returned.
+    if any of the .csv files are missing, an exception will be raised.
     """
     try:
         artists = pd.read_csv("app/data/artists.csv")
@@ -56,5 +55,4 @@ def read_all_from_csv() -> list[pd.DataFrame]:
         track_features = pd.read_csv("app/data/track_features.csv")
         return artists, albums, tracks, track_features
     except FileNotFoundError:
-        print("\nYou have not yet ran the program and chosen to write to .csv. Please run again.")
-        return None
+        raise Exception("\nYou have not yet ran the program and chosen to write to .csv. Please run again.")
