@@ -1,6 +1,6 @@
 """
 this module is solely to define the functions that will be called from
-__main__.py upon running the whole program. each function describes the
+__main__.py upon running the whole program. each function here describes the
 different stages of the ETL process.
 """
 
@@ -15,7 +15,7 @@ from app.utils import ARTIST_URLS, write_to_csv
 
 def extract_and_transform_all(write_csv=False):
     """
-    this is a high level function that will run all functions necessary
+    this is a top level function that will run all functions necessary
     to extract and load the data from the Spotify API.
     all data is cleaned/transformed immediately after extraction from the API.
     messages will be printed to the terminal to indicate progress.
@@ -55,7 +55,7 @@ def extract_and_transform_all(write_csv=False):
     
 def load_all(db, artists, albums, tracks, track_features):
     """
-    this is a high level function that will run the necessary functions to
+    this is a top level function that will run the necessary functions to
     load all data into the SQLite database.
     messages will be printed to the terminal to indicate progress.
     """
@@ -68,7 +68,7 @@ def load_all(db, artists, albums, tracks, track_features):
     
 def run_analytics(db):
     """
-    this is a high level function that will run the necessary functions to
+    this is a top level function that will run the necessary functions to
     create the predefined database views, as well as create the visualizations
     that will reside in the app/images/ directory.
     messages will be printed to the terminal to indicate progress.
