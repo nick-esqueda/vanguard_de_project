@@ -1,4 +1,21 @@
-# this file is to store all view creation queries to keep code more concise.
+"""
+this module is to store all view creation queries to keep code more concise.
+views:
+    "V_artist_top_songs_by_duration"
+        - Returns the top 10 songs by each artist, ranked in order of duration (minutes).
+    "V_top_artists_by_followers"
+        - Returns the top 20 artists in the database, ordered by follower count.
+    "V_artist_top_songs_by_tempo"
+        - Returns the top 10 songs by each artist, ranked in order of tempo (BPM/Beats Per Minute)
+    "V_artist_overview"
+        - Returns relevant metrics for each artist, including the total number of albums and total number of tracks for that artist.
+    "V_popular_artist_features"
+        - Returns artists in order of popularity along with some average track features/metrics for all of their songs.
+    "V_genre_features"
+        - Returns each genre with the average track features/metrics for all of the songs within that genre.
+    "V_genre_release_patterns"
+        - Returns some release metrics for each genre, such as the percentage of all albums that are singles released in each genre, as well as the average track length for both singles and albums.
+"""
 
 
 V_ARTIST_TOP_SONGS_BY_DURATION = """
@@ -137,3 +154,23 @@ V_GENRE_RELEASE_PATTERNS = """
     FROM genre_stats
     ORDER BY 3;
 """
+
+db_view_names = (
+    "V_artist_top_songs_by_duration",
+    "V_top_artists_by_followers",
+    "V_artist_top_songs_by_tempo",
+    "V_artist_overview",
+    "V_popular_artist_features",
+    "V_genre_features",
+    "V_genre_release_patterns",
+)
+# please preserve the order/correspondence between these two lists.
+db_view_queries = (
+    V_ARTIST_TOP_SONGS_BY_DURATION,
+    V_TOP_ARTISTS_BY_FOLLOWERS,
+    V_ARTIST_TOP_SONGS_BY_TEMPO,
+    V_ARTIST_OVERVIEW,
+    V_POPULAR_ARTIST_FEATURES,
+    V_GENRE_FEATURES,
+    V_GENRE_RELEASE_PATTERNS
+)

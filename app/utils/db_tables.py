@@ -1,4 +1,11 @@
-# this file is to store all table creation queries to keep code more concise.
+"""
+this module is to store all DB table creation queries to keep code more concise.
+DB tables:
+    artists
+    albums
+    tracks
+    track_features
+"""
 
 
 CREATE_ARTISTS = """
@@ -62,3 +69,17 @@ CREATE_TRACK_FEATURES = """
         FOREIGN KEY (track_id) REFERENCES tracks(track_id)
     );
 """
+
+db_table_names = (
+    "artists",
+    "albums",
+    "tracks",
+    "track_features"
+)
+# please preserve the order/correspondence between these two lists.
+db_table_queries = (
+    CREATE_ARTISTS,
+    CREATE_ALBUMS,
+    CREATE_TRACKS,
+    CREATE_TRACK_FEATURES
+)

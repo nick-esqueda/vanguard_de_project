@@ -1,4 +1,9 @@
-ARTIST_URLS = [
+"""
+this module holds the "ARTIST_URLS" constant that will be used to fetch data
+from the Spotify API.
+"""
+
+ARTIST_URLS = (
     "https://open.spotify.com/artist/65C6Unk7nhg2aCnVuAPMo8?si=ASf5DfypTkC3fzuJa9AoKA", # Animals As Leaders
     "https://open.spotify.com/artist/6d24kC5fxHFOSEAmjQPPhc?si=dw_t0g69QveepoTdoon-ug", # Periphery
     "https://open.spotify.com/artist/23ytwhG1pzX6DIVWRWvW1r?si=1wZ3ak4tQqel-KIH6s1RwQ", # TesseracT
@@ -20,4 +25,4 @@ ARTIST_URLS = [
     "https://open.spotify.com/artist/7lm6PfYsdEvxXIqA5LaCA3?si=c0QggUYOS6O4TB3gPOSQEA", # Versa
     "https://open.spotify.com/artist/3sS9RKjrDJMl7zpG3cWHk7?si=ssmJvLawRKCATfXQTkIwsQ", # Aweminus
     "https://open.spotify.com/artist/3YLUvWzk9eBm1WrHFlZxM4?si=DdbVig84TCOYOpfhzkvOTw", # MARAUDA
-]
+)
