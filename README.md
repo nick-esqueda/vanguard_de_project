@@ -2,9 +2,6 @@
 
 This is my submission for Vanguard's Data Engineering Apprenticeship take home project.
 
-#### NOTE TO INTERVIEWER(S): 
-This is the original repo. Please disregard the "refactor" branch. I am currently working on this branch (past the Thursday deadline) just to clean up some things that I'd like to see through. I do not wish to have it taken into consideration, since all of it is being done past the deadline, of course. The main/master branch does not contain any of this work however, and the last commit was about 3 hours before the 7pm PT deadline!
-
 Relevant files:
 
 * All python code for API calls, transformations, and visualizations can be found in the `app/` directory.
